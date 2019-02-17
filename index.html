@@ -216,7 +216,13 @@ function bindNumberInput(name, onchange) {
     let v = parseInt(input.value)
     if (!isNaN(v) && values[name] != v) {
       values[name] = v
-      onchange && onchange(v)
+      if (onchange) {
+        let v2 = onchange(v)
+        if (v2 !== undefined && v2 != v) {
+          values[name] = v2
+          input.value = v2
+        }
+      }
       genCSS()
     }
   }
@@ -225,15 +231,19 @@ function bindNumberInput(name, onchange) {
 }
 
 bindNumberInput('minColumns', minColumns => {
+  minColumns = Math.min(Math.max(2, minColumns), 64)
   if (minColumns > values.maxColumns) {
     inputs.maxColumns.value = values.maxColumns = minColumns
   }
+  return minColumns
 })
 
 bindNumberInput('maxColumns', maxColumns => {
+  maxColumns = Math.min(Math.max(2, maxColumns), 64)
   if (maxColumns < values.minColumns) {
     inputs.minColumns.value = values.minColumns = maxColumns
   }
+  return maxColumns
 })
 
 bindNumberInput('smallScreenWidth')
