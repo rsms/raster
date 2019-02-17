@@ -1,0 +1,12 @@
+port: 3009
+lsi: false
+permalink: /:title
+markdown: kramdown
+safe: false
+exclude: ["misc", "_build"]
+kramdown:
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  syntax_highlighter_opts:
+    disable: true

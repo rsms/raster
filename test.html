@@ -1,0 +1,70 @@
+---
+layout: none
+---
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Raster test</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="base.css">
+  <style>
+
+body > grid {
+  grid-column-gap: var(--spacingv);
+  grid-row-gap: var(--spacingv);
+  margin-bottom: calc(var(--spacingv) * 4);
+}
+c {
+  padding: 1rem;
+}
+
+  </style>
+</head>
+<body>
+
+  <grid columns="8" class="debug">
+
+    <c span="1">1</c>
+    <c span="1">1</c>
+    <c span="1">1</c>
+    <c span="1">1</c>
+    <c span="1">1</c>
+    <c span="1">1</c>
+    <c span="1">1</c>
+    <c span="1">1</c>
+
+    <c span="1">1</c>
+    <c span="3">3</c>
+    <c span="1">1</c>
+    <c span="3">3</c>
+
+    <c span="2+2">2+2</c>
+    <c span="5-8">5-8</c>
+
+    <c span="1..">1..</c>
+    <c span="2..">2..</c>
+    <c span="4..">4..</c>
+    <c span="4-9">4-9</c>
+
+  </grid>
+
+<pre id="grid-gen-output"></pre>
+<script src="grid-gen.js"></script>
+<script>
+let css = Raster.generateCSS({
+  minColumns: 4,
+  maxColumns: 8,
+})
+
+let style = document.createElement('style')
+document.head.appendChild(style)
+style.appendChild(document.createTextNode(css))
+
+let outel = document.querySelector('#grid-gen-output')
+outel.appendChild(document.createTextNode(css))
+</script>
+
+</body>
+</html>

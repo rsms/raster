@@ -1,0 +1,340 @@
+---
+layout: none
+---
+{%
+
+assign version = site.data.info.version %}{%
+
+capture download_url
+  %}https://github.com/rsms/raster/releases/download/v{{ version }}/raster-{{ version }}.zip{%
+endcapture %}{%
+
+for file in site.static_files %}{%
+  assign _path = file.path | remove_first: "/inter" %}{%
+  if _path == "/base.css" %}{%
+    assign base_css_v = file.modified_time | date: "%Y%m%d%H%M%S" %}{%
+  elsif _path == "/grid.css" %}{%
+    assign grid_css_v = file.modified_time | date: "%Y%m%d%H%M%S" %}{%
+  elsif _path == "/grid-gen.js" %}{%
+    assign grid_gen_js_v = file.modified_time | date: "%Y%m%d%H%M%S" %}{%
+  endif %}{%
+endfor
+
+%}<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Raster——Simple CSS Grid System</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="base.css?v={{base_css_v}}">
+  <link rel="stylesheet" href="grid.css?v={{grid_css_v}}">
+</head>
+<body>
+  <grid columns="8">
+    <c span="2" span-s="row">
+      <h1>
+        Raster<br>
+        Simple Grid System
+      </h1>
+      <br>
+      <p>
+        Minimal and straight-forward CSS grid system
+        utilizing descriptive HTML rather than semantic CSS.
+      </p>
+      <a class="download-button" href="{{download_url}}">
+        Download &darr;
+      </a>
+      <br><br>
+    </c>
+    <c span="3.." span-s="row">
+      <grid columns=8 class="demo">
+        <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> <c>6</c> <c>7</c> <c>8</c>
+
+        <c></c>
+        <c span=3>3</c>
+        <c></c>
+        <c span=7-8>7-8</c>
+        <c span=2+2>2+2</c>
+        <c span=5-8>5-8</c>
+        <c span=1-4>1-4</c>
+        <c span=6..>6..</c>
+        <c span=2..>2..</c>
+        <c span=4..>4..</c>
+        <c span=4-5>4-5</c>
+      </grid>
+      <br><br>
+    </c>
+
+    <c span="3.." span-s=row class="h2">
+      Simplicity first
+    </c>
+
+    <c span="1-2" span-s="row">
+      <pre>&lt;grid columns=<accent1>8</accent1>&gt;
+  &lt;c&gt;&lt;/c&gt;
+  &lt;c span=<accent1>3</accent1>&gt;3&lt;/c&gt;
+  &lt;c&gt;&lt;/c&gt;
+  &lt;c span=<accent1>6-7</accent1>&gt;6-7&lt;/c&gt;
+  &lt;c span=<accent1>2+2</accent1>&gt;2+2&lt;/c&gt;
+  &lt;c span=<accent1>5-8</accent1>&gt;5-8&lt;/c&gt;
+  &lt;c span=<accent1>1-4</accent1>&gt;1-4&lt;/c&gt;
+  &lt;c span=<accent1>6..</accent1>&gt;6..&lt;/c&gt;
+  &lt;c span=<accent1>2..</accent1>&gt;2..&lt;/c&gt;
+  &lt;c span=<accent1>4..</accent1>&gt;4..&lt;/c&gt;
+  &lt;c span=<accent1>4-5</accent1>&gt;4-5&lt;/c&gt;
+&lt;/grid&gt;</pre>
+      <p>
+        This is the HTML that generates the grid you see at the top of this page.
+      </p>
+    </c>
+
+    <c span="3-6" span-s="row">
+      <p>
+        The number of columns a grid has is specified with the
+        <code>columns</code> attribute.
+        For instance, to define a grid with 8 columns, you'd write
+        <code>&lt;grid columns=8&gt;</code>.
+      </p>
+      <p>
+        Cells span a single column by default.
+        The <code>span</code> attribute is used to customize where a cell
+        starts and how many columns it spans.
+        For example, <code>&lt;c span=2-5&gt;</code> starts at column 2 and ends in column 5.
+        A cell with an empty or missing <code>span</code> attribute starts on
+        the next available column and spans one column.
+      </p>
+      <h3>Possible span= values</h3>
+      <p>
+        <grid columns=8>
+          <c><code>2-5</code></c>
+          <c span=2..>start at column 2, end in column 5.</c>
+
+          <c><code>2+3</code></c>
+          <c span=2..>start at column 2, span 3 columns.</c>
+
+          <c><code>2..</code></c>
+          <c span=2..>start at column 2, span remainder of row.</c>
+
+          <c><code>2</code></c>
+          <c span=2..>start at next available column, span 2 columns.</c>
+        </grid>
+      </p>
+      <p>
+        <a href="example.html">More examples &rarr;</a>
+      </p>
+    </c>
+
+    <c span=row class="ruler"></c>
+
+    <c span=3.. span-s=row class="h2" id="span-s">
+      Responsive design with span-s
+    </c>
+
+    <c span=1-2 span-s=row>
+       <pre>&lt;grid columns=<accent1>6</accent1>&gt;
+  &lt;c span=2 span-s=row&gt;
+  &lt;c span=3-6 span-s=row&gt;
+  &lt;c span=1-2 span-s=1&gt;
+  &lt;c span=3.. span-s=2..&gt;
+&lt;/grid&gt;</pre>
+    </c>
+    <c span=3-6 span-s=row>
+      <p>
+        Grids lend themselves really well to device-size responsive design.
+        The <code>span-s</code> attribute defines alternate layout when your
+        design is presented on a small screen.
+        This makes designing for large and small screens really simple.
+      </p>
+      <grid columns=6 class="example" id="example1">
+        <c span=2 span-s=row class="red">Acme</c>
+        <c span=3-6 span-s=row class="blue">Things &nbsp;&nbsp; About &nbsp;&nbsp; Privacy policy</c>
+        <c span=1-2 span-s=1 class="grey">Image</c>
+        <c span=3.. span-s=2.. class="green">Welcome to Acme</c>
+      </grid>
+      <p>
+        Tap the example above, or resize your web browser window to see the
+        grid above change its layout. Showing <span id="example1-label1">large</span> screen.
+      </p>
+      <p>
+        This entire website is built with grids and changes layout when the
+        window size goes below or above 600dp.
+      </p>
+    </c>
+
+    <c span=row class="ruler"></c>
+
+    <c span=3.. span-s=row class="h2" id="custom-css">
+      Customize your own CSS
+    </c>
+
+    <c span=1-2 span-s=row style="max-width:15rem">
+      <label>
+        <grid columns=4>
+          <c span=1-2>Min columns:</c>
+          <c span=3-4><input type="number" value="2" min=2 max=64 name="minColumns"></c>
+        </grid>
+      </label>
+      <label>
+        <grid columns=4>
+          <c span=1-2>Max columns:</c>
+          <c span=3-4><input type="number" value="8" min=2 max=64 name="maxColumns"></c>
+        </grid>
+      </label>
+      <label>
+        <grid columns=4>
+          <c span=1-2>Small window:</c>
+          <c span=3-4><input type="number" value="600" step="100" min=0 max="10000" name="smallScreenWidth"></c>
+        </grid>
+      </label>
+      <br>
+    </c>
+
+    <c span="3.." span-s="row">
+      <textarea class="code" id="css-output" autocomplete="off" spellcheck="false" readonly></textarea>
+      <script src="grid-gen.js?v={{grid_gen_js_v}}"></script>
+      <script>(function(){
+
+let cssOutput = document.querySelector('#css-output')
+
+let inputs = {
+  minColumns: document.querySelector('input[name="minColumns"]'),
+  maxColumns: document.querySelector('input[name="maxColumns"]'),
+  smallScreenWidth: document.querySelector('input[name="smallScreenWidth"]'),
+}
+
+let values = {
+  minColumns: parseInt(inputs.minColumns.value),
+  maxColumns: parseInt(inputs.maxColumns.value),
+  smallScreenWidth: parseInt(inputs.smallScreenWidth.value),
+}
+
+function bindNumberInput(name, onchange) {
+  let input = inputs[name]
+  let f = ev => {
+    let v = parseInt(input.value)
+    if (!isNaN(v) && values[name] != v) {
+      values[name] = v
+      onchange && onchange(v)
+      genCSS()
+    }
+  }
+  input.addEventListener('input', f)
+  input.addEventListener('change', f)
+}
+
+bindNumberInput('minColumns', minColumns => {
+  if (minColumns > values.maxColumns) {
+    inputs.maxColumns.value = values.maxColumns = minColumns
+  }
+})
+
+bindNumberInput('maxColumns', maxColumns => {
+  if (maxColumns < values.minColumns) {
+    inputs.minColumns.value = values.minColumns = maxColumns
+  }
+})
+
+bindNumberInput('smallScreenWidth')
+
+
+function genCSS() {
+  let css = Raster.generateCSS(values)
+  cssOutput.value = css
+  // cssOutput.scrollTop = 0
+  cssOutput.scrollTo(0,0)
+}
+
+let cssOutputScrolled = false
+cssOutput.addEventListener('scroll', ev => {
+  if (!cssOutputScrolled && cssOutput.scrollTop > 0) {
+    cssOutputScrolled = true
+    cssOutput.classList.add('scrolled')
+  } else if (cssOutputScrolled && cssOutput.scrollTop <= 0) {
+    cssOutputScrolled = false
+    cssOutput.classList.remove('scrolled')
+  }
+}, {passive:true, capture:false})
+
+
+cssOutput.addEventListener(
+  'PointerEvent' in window ? 'pointerup' : 'click',
+  ev => {
+    cssOutput.select()
+    // document.execCommand("copy")
+  }
+)
+
+
+genCSS()
+
+})()</script>
+    </c>
+
+    <c span=row class="ruler"></c>
+
+    <c span=3.. span-s=row>
+      <br>
+      <a href="https://github.com/rsms/raster">Source code on GitHub &rarr;</a>
+    </c>
+
+  </grid>
+
+<div id="smallScreenBeacon"></div>
+<script>(function(){
+
+// debug grid
+let sg = document.querySelector('grid.demo')
+sg.style.position = 'relative'
+let dg = sg.cloneNode(false)
+dg.classList.remove('demo')
+dg.classList.add('debug-lines')
+for (let col = 0; col < 8; col++) {
+  let c = document.createElement('c')
+  c.innerHTML = '&nbsp;'
+  dg.appendChild(c)
+}
+sg.appendChild(dg)
+
+// smallScreenBeacon
+let smallScreenBeacon = document.querySelector('#smallScreenBeacon')
+function isSmallScreen() {
+  return !!parseInt(window.getComputedStyle(smallScreenBeacon).width)
+}
+
+
+// example1 -- span-s simulator
+let triggerEvent = 'PointerEvent' in window ? 'pointerdown' : 'click'
+let example1 = document.querySelector('#example1')
+let example1Label1 = document.querySelector('#example1-label1')
+let example1IsFlipped = false
+function updateExample1Label1() {
+  let isSmall = example1IsFlipped ? !isSmallScreen() : isSmallScreen()
+  example1Label1.innerText = isSmall ? 'small' : 'large'
+}
+updateExample1Label1()
+let winResizeTimer = null
+window.addEventListener('resize', () => {
+  clearTimeout(winResizeTimer)
+  winResizeTimer = setTimeout(() => {
+    updateExample1Label1()
+  }, 200)
+})
+example1.addEventListener(triggerEvent, ev => {
+  example1IsFlipped = !example1IsFlipped
+  updateExample1Label1()
+  for (let i = 0; i < example1.children.length; i++) {
+    let c = example1.children[i]
+    // if (c.tagName != 'C') { continue }
+    let spanS = c.getAttribute('span-s')
+    let spanL = c.getAttribute('span')
+    c.setAttribute('span', spanS)
+    c.setAttribute('span-s', spanL)
+  }
+})
+
+
+})()</script>
+
+</body>
+</html>

@@ -1,0 +1,668 @@
+/* Raster Simple CSS Grid System */
+grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+grid[columns="2"] { grid-template-columns: repeat(2, 1fr) }
+grid[columns="3"] { grid-template-columns: repeat(3, 1fr) }
+grid[columns="4"] { grid-template-columns: repeat(4, 1fr) }
+grid[columns="5"] { grid-template-columns: repeat(5, 1fr) }
+grid[columns="6"] { grid-template-columns: repeat(6, 1fr) }
+grid[columns="7"] { grid-template-columns: repeat(7, 1fr) }
+grid[columns="8"] { grid-template-columns: repeat(8, 1fr) }
+grid[columns="9"] { grid-template-columns: repeat(9, 1fr) }
+grid[columns="10"] { grid-template-columns: repeat(10, 1fr) }
+grid[columns="11"] { grid-template-columns: repeat(11, 1fr) }
+grid[columns="12"] { grid-template-columns: repeat(12, 1fr) }
+grid[columns="13"] { grid-template-columns: repeat(13, 1fr) }
+grid[columns="14"] { grid-template-columns: repeat(14, 1fr) }
+grid[columns="15"] { grid-template-columns: repeat(15, 1fr) }
+grid[columns="16"] { grid-template-columns: repeat(16, 1fr) }
+
+/* c -- cell or column */
+grid > c {
+  display: block;
+  grid-column-end: span 1;
+}
+
+/* span="width" -- place automatically and span width columns */
+grid > c[span="1"] { grid-column-end: span 1 }
+grid > c[span="2"] { grid-column-end: span 2 }
+grid > c[span="3"] { grid-column-end: span 3 }
+grid > c[span="4"] { grid-column-end: span 4 }
+grid > c[span="5"] { grid-column-end: span 5 }
+grid > c[span="6"] { grid-column-end: span 6 }
+grid > c[span="7"] { grid-column-end: span 7 }
+grid > c[span="8"] { grid-column-end: span 8 }
+grid > c[span="9"] { grid-column-end: span 9 }
+grid > c[span="10"] { grid-column-end: span 10 }
+grid > c[span="11"] { grid-column-end: span 11 }
+grid > c[span="12"] { grid-column-end: span 12 }
+grid > c[span="13"] { grid-column-end: span 13 }
+grid > c[span="14"] { grid-column-end: span 14 }
+grid > c[span="15"] { grid-column-end: span 15 }
+grid > c[span="16"] { grid-column-end: span 16 }
+
+/* span="start+width" -- from start plus width columns */
+grid > c[span="1+1"] { grid-column: 1 / span 1 }
+grid > c[span="1+2"] { grid-column: 1 / span 2 }
+grid > c[span="1+3"] { grid-column: 1 / span 3 }
+grid > c[span="1+4"] { grid-column: 1 / span 4 }
+grid > c[span="1+5"] { grid-column: 1 / span 5 }
+grid > c[span="1+6"] { grid-column: 1 / span 6 }
+grid > c[span="1+7"] { grid-column: 1 / span 7 }
+grid > c[span="1+8"] { grid-column: 1 / span 8 }
+grid > c[span="1+9"] { grid-column: 1 / span 9 }
+grid > c[span="1+10"] { grid-column: 1 / span 10 }
+grid > c[span="1+11"] { grid-column: 1 / span 11 }
+grid > c[span="1+12"] { grid-column: 1 / span 12 }
+grid > c[span="1+13"] { grid-column: 1 / span 13 }
+grid > c[span="1+14"] { grid-column: 1 / span 14 }
+grid > c[span="1+15"] { grid-column: 1 / span 15 }
+grid > c[span="1+16"] { grid-column: 1 / span 16 }
+grid > c[span="2+1"] { grid-column: 2 / span 1 }
+grid > c[span="2+2"] { grid-column: 2 / span 2 }
+grid > c[span="2+3"] { grid-column: 2 / span 3 }
+grid > c[span="2+4"] { grid-column: 2 / span 4 }
+grid > c[span="2+5"] { grid-column: 2 / span 5 }
+grid > c[span="2+6"] { grid-column: 2 / span 6 }
+grid > c[span="2+7"] { grid-column: 2 / span 7 }
+grid > c[span="2+8"] { grid-column: 2 / span 8 }
+grid > c[span="2+9"] { grid-column: 2 / span 9 }
+grid > c[span="2+10"] { grid-column: 2 / span 10 }
+grid > c[span="2+11"] { grid-column: 2 / span 11 }
+grid > c[span="2+12"] { grid-column: 2 / span 12 }
+grid > c[span="2+13"] { grid-column: 2 / span 13 }
+grid > c[span="2+14"] { grid-column: 2 / span 14 }
+grid > c[span="2+15"] { grid-column: 2 / span 15 }
+grid > c[span="3+1"] { grid-column: 3 / span 1 }
+grid > c[span="3+2"] { grid-column: 3 / span 2 }
+grid > c[span="3+3"] { grid-column: 3 / span 3 }
+grid > c[span="3+4"] { grid-column: 3 / span 4 }
+grid > c[span="3+5"] { grid-column: 3 / span 5 }
+grid > c[span="3+6"] { grid-column: 3 / span 6 }
+grid > c[span="3+7"] { grid-column: 3 / span 7 }
+grid > c[span="3+8"] { grid-column: 3 / span 8 }
+grid > c[span="3+9"] { grid-column: 3 / span 9 }
+grid > c[span="3+10"] { grid-column: 3 / span 10 }
+grid > c[span="3+11"] { grid-column: 3 / span 11 }
+grid > c[span="3+12"] { grid-column: 3 / span 12 }
+grid > c[span="3+13"] { grid-column: 3 / span 13 }
+grid > c[span="3+14"] { grid-column: 3 / span 14 }
+grid > c[span="4+1"] { grid-column: 4 / span 1 }
+grid > c[span="4+2"] { grid-column: 4 / span 2 }
+grid > c[span="4+3"] { grid-column: 4 / span 3 }
+grid > c[span="4+4"] { grid-column: 4 / span 4 }
+grid > c[span="4+5"] { grid-column: 4 / span 5 }
+grid > c[span="4+6"] { grid-column: 4 / span 6 }
+grid > c[span="4+7"] { grid-column: 4 / span 7 }
+grid > c[span="4+8"] { grid-column: 4 / span 8 }
+grid > c[span="4+9"] { grid-column: 4 / span 9 }
+grid > c[span="4+10"] { grid-column: 4 / span 10 }
+grid > c[span="4+11"] { grid-column: 4 / span 11 }
+grid > c[span="4+12"] { grid-column: 4 / span 12 }
+grid > c[span="4+13"] { grid-column: 4 / span 13 }
+grid > c[span="5+1"] { grid-column: 5 / span 1 }
+grid > c[span="5+2"] { grid-column: 5 / span 2 }
+grid > c[span="5+3"] { grid-column: 5 / span 3 }
+grid > c[span="5+4"] { grid-column: 5 / span 4 }
+grid > c[span="5+5"] { grid-column: 5 / span 5 }
+grid > c[span="5+6"] { grid-column: 5 / span 6 }
+grid > c[span="5+7"] { grid-column: 5 / span 7 }
+grid > c[span="5+8"] { grid-column: 5 / span 8 }
+grid > c[span="5+9"] { grid-column: 5 / span 9 }
+grid > c[span="5+10"] { grid-column: 5 / span 10 }
+grid > c[span="5+11"] { grid-column: 5 / span 11 }
+grid > c[span="5+12"] { grid-column: 5 / span 12 }
+grid > c[span="6+1"] { grid-column: 6 / span 1 }
+grid > c[span="6+2"] { grid-column: 6 / span 2 }
+grid > c[span="6+3"] { grid-column: 6 / span 3 }
+grid > c[span="6+4"] { grid-column: 6 / span 4 }
+grid > c[span="6+5"] { grid-column: 6 / span 5 }
+grid > c[span="6+6"] { grid-column: 6 / span 6 }
+grid > c[span="6+7"] { grid-column: 6 / span 7 }
+grid > c[span="6+8"] { grid-column: 6 / span 8 }
+grid > c[span="6+9"] { grid-column: 6 / span 9 }
+grid > c[span="6+10"] { grid-column: 6 / span 10 }
+grid > c[span="6+11"] { grid-column: 6 / span 11 }
+grid > c[span="7+1"] { grid-column: 7 / span 1 }
+grid > c[span="7+2"] { grid-column: 7 / span 2 }
+grid > c[span="7+3"] { grid-column: 7 / span 3 }
+grid > c[span="7+4"] { grid-column: 7 / span 4 }
+grid > c[span="7+5"] { grid-column: 7 / span 5 }
+grid > c[span="7+6"] { grid-column: 7 / span 6 }
+grid > c[span="7+7"] { grid-column: 7 / span 7 }
+grid > c[span="7+8"] { grid-column: 7 / span 8 }
+grid > c[span="7+9"] { grid-column: 7 / span 9 }
+grid > c[span="7+10"] { grid-column: 7 / span 10 }
+grid > c[span="8+1"] { grid-column: 8 / span 1 }
+grid > c[span="8+2"] { grid-column: 8 / span 2 }
+grid > c[span="8+3"] { grid-column: 8 / span 3 }
+grid > c[span="8+4"] { grid-column: 8 / span 4 }
+grid > c[span="8+5"] { grid-column: 8 / span 5 }
+grid > c[span="8+6"] { grid-column: 8 / span 6 }
+grid > c[span="8+7"] { grid-column: 8 / span 7 }
+grid > c[span="8+8"] { grid-column: 8 / span 8 }
+grid > c[span="8+9"] { grid-column: 8 / span 9 }
+grid > c[span="9+1"] { grid-column: 9 / span 1 }
+grid > c[span="9+2"] { grid-column: 9 / span 2 }
+grid > c[span="9+3"] { grid-column: 9 / span 3 }
+grid > c[span="9+4"] { grid-column: 9 / span 4 }
+grid > c[span="9+5"] { grid-column: 9 / span 5 }
+grid > c[span="9+6"] { grid-column: 9 / span 6 }
+grid > c[span="9+7"] { grid-column: 9 / span 7 }
+grid > c[span="9+8"] { grid-column: 9 / span 8 }
+grid > c[span="10+1"] { grid-column: 10 / span 1 }
+grid > c[span="10+2"] { grid-column: 10 / span 2 }
+grid > c[span="10+3"] { grid-column: 10 / span 3 }
+grid > c[span="10+4"] { grid-column: 10 / span 4 }
+grid > c[span="10+5"] { grid-column: 10 / span 5 }
+grid > c[span="10+6"] { grid-column: 10 / span 6 }
+grid > c[span="10+7"] { grid-column: 10 / span 7 }
+grid > c[span="11+1"] { grid-column: 11 / span 1 }
+grid > c[span="11+2"] { grid-column: 11 / span 2 }
+grid > c[span="11+3"] { grid-column: 11 / span 3 }
+grid > c[span="11+4"] { grid-column: 11 / span 4 }
+grid > c[span="11+5"] { grid-column: 11 / span 5 }
+grid > c[span="11+6"] { grid-column: 11 / span 6 }
+grid > c[span="12+1"] { grid-column: 12 / span 1 }
+grid > c[span="12+2"] { grid-column: 12 / span 2 }
+grid > c[span="12+3"] { grid-column: 12 / span 3 }
+grid > c[span="12+4"] { grid-column: 12 / span 4 }
+grid > c[span="12+5"] { grid-column: 12 / span 5 }
+grid > c[span="13+1"] { grid-column: 13 / span 1 }
+grid > c[span="13+2"] { grid-column: 13 / span 2 }
+grid > c[span="13+3"] { grid-column: 13 / span 3 }
+grid > c[span="13+4"] { grid-column: 13 / span 4 }
+grid > c[span="14+1"] { grid-column: 14 / span 1 }
+grid > c[span="14+2"] { grid-column: 14 / span 2 }
+grid > c[span="14+3"] { grid-column: 14 / span 3 }
+grid > c[span="15+1"] { grid-column: 15 / span 1 }
+grid > c[span="15+2"] { grid-column: 15 / span 2 }
+grid > c[span="16+1"] { grid-column: 16 / span 1 }
+
+/* span="start-end" -- column range ("end" is inclusive) */
+grid > c[span="1-1"] { grid-column: 1 / 2 }
+grid > c[span="1-2"] { grid-column: 1 / 3 }
+grid > c[span="1-3"] { grid-column: 1 / 4 }
+grid > c[span="1-4"] { grid-column: 1 / 5 }
+grid > c[span="1-5"] { grid-column: 1 / 6 }
+grid > c[span="1-6"] { grid-column: 1 / 7 }
+grid > c[span="1-7"] { grid-column: 1 / 8 }
+grid > c[span="1-8"] { grid-column: 1 / 9 }
+grid > c[span="1-9"] { grid-column: 1 / 10 }
+grid > c[span="1-10"] { grid-column: 1 / 11 }
+grid > c[span="1-11"] { grid-column: 1 / 12 }
+grid > c[span="1-12"] { grid-column: 1 / 13 }
+grid > c[span="1-13"] { grid-column: 1 / 14 }
+grid > c[span="1-14"] { grid-column: 1 / 15 }
+grid > c[span="1-15"] { grid-column: 1 / 16 }
+grid > c[span="1-16"] { grid-column: 1 / 17 }
+grid > c[span="2-2"] { grid-column: 2 / 3 }
+grid > c[span="2-3"] { grid-column: 2 / 4 }
+grid > c[span="2-4"] { grid-column: 2 / 5 }
+grid > c[span="2-5"] { grid-column: 2 / 6 }
+grid > c[span="2-6"] { grid-column: 2 / 7 }
+grid > c[span="2-7"] { grid-column: 2 / 8 }
+grid > c[span="2-8"] { grid-column: 2 / 9 }
+grid > c[span="2-9"] { grid-column: 2 / 10 }
+grid > c[span="2-10"] { grid-column: 2 / 11 }
+grid > c[span="2-11"] { grid-column: 2 / 12 }
+grid > c[span="2-12"] { grid-column: 2 / 13 }
+grid > c[span="2-13"] { grid-column: 2 / 14 }
+grid > c[span="2-14"] { grid-column: 2 / 15 }
+grid > c[span="2-15"] { grid-column: 2 / 16 }
+grid > c[span="2-16"] { grid-column: 2 / 17 }
+grid > c[span="3-3"] { grid-column: 3 / 4 }
+grid > c[span="3-4"] { grid-column: 3 / 5 }
+grid > c[span="3-5"] { grid-column: 3 / 6 }
+grid > c[span="3-6"] { grid-column: 3 / 7 }
+grid > c[span="3-7"] { grid-column: 3 / 8 }
+grid > c[span="3-8"] { grid-column: 3 / 9 }
+grid > c[span="3-9"] { grid-column: 3 / 10 }
+grid > c[span="3-10"] { grid-column: 3 / 11 }
+grid > c[span="3-11"] { grid-column: 3 / 12 }
+grid > c[span="3-12"] { grid-column: 3 / 13 }
+grid > c[span="3-13"] { grid-column: 3 / 14 }
+grid > c[span="3-14"] { grid-column: 3 / 15 }
+grid > c[span="3-15"] { grid-column: 3 / 16 }
+grid > c[span="3-16"] { grid-column: 3 / 17 }
+grid > c[span="4-4"] { grid-column: 4 / 5 }
+grid > c[span="4-5"] { grid-column: 4 / 6 }
+grid > c[span="4-6"] { grid-column: 4 / 7 }
+grid > c[span="4-7"] { grid-column: 4 / 8 }
+grid > c[span="4-8"] { grid-column: 4 / 9 }
+grid > c[span="4-9"] { grid-column: 4 / 10 }
+grid > c[span="4-10"] { grid-column: 4 / 11 }
+grid > c[span="4-11"] { grid-column: 4 / 12 }
+grid > c[span="4-12"] { grid-column: 4 / 13 }
+grid > c[span="4-13"] { grid-column: 4 / 14 }
+grid > c[span="4-14"] { grid-column: 4 / 15 }
+grid > c[span="4-15"] { grid-column: 4 / 16 }
+grid > c[span="4-16"] { grid-column: 4 / 17 }
+grid > c[span="5-5"] { grid-column: 5 / 6 }
+grid > c[span="5-6"] { grid-column: 5 / 7 }
+grid > c[span="5-7"] { grid-column: 5 / 8 }
+grid > c[span="5-8"] { grid-column: 5 / 9 }
+grid > c[span="5-9"] { grid-column: 5 / 10 }
+grid > c[span="5-10"] { grid-column: 5 / 11 }
+grid > c[span="5-11"] { grid-column: 5 / 12 }
+grid > c[span="5-12"] { grid-column: 5 / 13 }
+grid > c[span="5-13"] { grid-column: 5 / 14 }
+grid > c[span="5-14"] { grid-column: 5 / 15 }
+grid > c[span="5-15"] { grid-column: 5 / 16 }
+grid > c[span="5-16"] { grid-column: 5 / 17 }
+grid > c[span="6-6"] { grid-column: 6 / 7 }
+grid > c[span="6-7"] { grid-column: 6 / 8 }
+grid > c[span="6-8"] { grid-column: 6 / 9 }
+grid > c[span="6-9"] { grid-column: 6 / 10 }
+grid > c[span="6-10"] { grid-column: 6 / 11 }
+grid > c[span="6-11"] { grid-column: 6 / 12 }
+grid > c[span="6-12"] { grid-column: 6 / 13 }
+grid > c[span="6-13"] { grid-column: 6 / 14 }
+grid > c[span="6-14"] { grid-column: 6 / 15 }
+grid > c[span="6-15"] { grid-column: 6 / 16 }
+grid > c[span="6-16"] { grid-column: 6 / 17 }
+grid > c[span="7-7"] { grid-column: 7 / 8 }
+grid > c[span="7-8"] { grid-column: 7 / 9 }
+grid > c[span="7-9"] { grid-column: 7 / 10 }
+grid > c[span="7-10"] { grid-column: 7 / 11 }
+grid > c[span="7-11"] { grid-column: 7 / 12 }
+grid > c[span="7-12"] { grid-column: 7 / 13 }
+grid > c[span="7-13"] { grid-column: 7 / 14 }
+grid > c[span="7-14"] { grid-column: 7 / 15 }
+grid > c[span="7-15"] { grid-column: 7 / 16 }
+grid > c[span="7-16"] { grid-column: 7 / 17 }
+grid > c[span="8-8"] { grid-column: 8 / 9 }
+grid > c[span="8-9"] { grid-column: 8 / 10 }
+grid > c[span="8-10"] { grid-column: 8 / 11 }
+grid > c[span="8-11"] { grid-column: 8 / 12 }
+grid > c[span="8-12"] { grid-column: 8 / 13 }
+grid > c[span="8-13"] { grid-column: 8 / 14 }
+grid > c[span="8-14"] { grid-column: 8 / 15 }
+grid > c[span="8-15"] { grid-column: 8 / 16 }
+grid > c[span="8-16"] { grid-column: 8 / 17 }
+grid > c[span="9-9"] { grid-column: 9 / 10 }
+grid > c[span="9-10"] { grid-column: 9 / 11 }
+grid > c[span="9-11"] { grid-column: 9 / 12 }
+grid > c[span="9-12"] { grid-column: 9 / 13 }
+grid > c[span="9-13"] { grid-column: 9 / 14 }
+grid > c[span="9-14"] { grid-column: 9 / 15 }
+grid > c[span="9-15"] { grid-column: 9 / 16 }
+grid > c[span="9-16"] { grid-column: 9 / 17 }
+grid > c[span="10-10"] { grid-column: 10 / 11 }
+grid > c[span="10-11"] { grid-column: 10 / 12 }
+grid > c[span="10-12"] { grid-column: 10 / 13 }
+grid > c[span="10-13"] { grid-column: 10 / 14 }
+grid > c[span="10-14"] { grid-column: 10 / 15 }
+grid > c[span="10-15"] { grid-column: 10 / 16 }
+grid > c[span="10-16"] { grid-column: 10 / 17 }
+grid > c[span="11-11"] { grid-column: 11 / 12 }
+grid > c[span="11-12"] { grid-column: 11 / 13 }
+grid > c[span="11-13"] { grid-column: 11 / 14 }
+grid > c[span="11-14"] { grid-column: 11 / 15 }
+grid > c[span="11-15"] { grid-column: 11 / 16 }
+grid > c[span="11-16"] { grid-column: 11 / 17 }
+grid > c[span="12-12"] { grid-column: 12 / 13 }
+grid > c[span="12-13"] { grid-column: 12 / 14 }
+grid > c[span="12-14"] { grid-column: 12 / 15 }
+grid > c[span="12-15"] { grid-column: 12 / 16 }
+grid > c[span="12-16"] { grid-column: 12 / 17 }
+grid > c[span="13-13"] { grid-column: 13 / 14 }
+grid > c[span="13-14"] { grid-column: 13 / 15 }
+grid > c[span="13-15"] { grid-column: 13 / 16 }
+grid > c[span="13-16"] { grid-column: 13 / 17 }
+grid > c[span="14-14"] { grid-column: 14 / 15 }
+grid > c[span="14-15"] { grid-column: 14 / 16 }
+grid > c[span="14-16"] { grid-column: 14 / 17 }
+grid > c[span="15-15"] { grid-column: 15 / 16 }
+grid > c[span="15-16"] { grid-column: 15 / 17 }
+grid > c[span="16-16"] { grid-column: 16 / 17 }
+
+/* span="start.." -- from start to end of row */
+grid > c[span="1.."], grid > c[span="1..."], grid > c[span="row"] { grid-column: 1 / -1 }
+grid > c[span="2.."], grid > c[span="2..."] { grid-column: 2 / -1 }
+grid > c[span="3.."], grid > c[span="3..."] { grid-column: 3 / -1 }
+grid > c[span="4.."], grid > c[span="4..."] { grid-column: 4 / -1 }
+grid > c[span="5.."], grid > c[span="5..."] { grid-column: 5 / -1 }
+grid > c[span="6.."], grid > c[span="6..."] { grid-column: 6 / -1 }
+grid > c[span="7.."], grid > c[span="7..."] { grid-column: 7 / -1 }
+grid > c[span="8.."], grid > c[span="8..."] { grid-column: 8 / -1 }
+grid > c[span="9.."], grid > c[span="9..."] { grid-column: 9 / -1 }
+grid > c[span="10.."], grid > c[span="10..."] { grid-column: 10 / -1 }
+grid > c[span="11.."], grid > c[span="11..."] { grid-column: 11 / -1 }
+grid > c[span="12.."], grid > c[span="12..."] { grid-column: 12 / -1 }
+grid > c[span="13.."], grid > c[span="13..."] { grid-column: 13 / -1 }
+grid > c[span="14.."], grid > c[span="14..."] { grid-column: 14 / -1 }
+grid > c[span="15.."], grid > c[span="15..."] { grid-column: 15 / -1 }
+grid > c[span="16.."], grid > c[span="16..."] { grid-column: 16 / -1 }
+
+/* for window width <= 600px */
+@media only screen and (max-width: 600px) {
+  
+  /* span-s="width" -- place automatically and span width columns */
+  grid > c[span-s="1"] { grid-column-end: span 1 }
+  grid > c[span-s="2"] { grid-column-end: span 2 }
+  grid > c[span-s="3"] { grid-column-end: span 3 }
+  grid > c[span-s="4"] { grid-column-end: span 4 }
+  grid > c[span-s="5"] { grid-column-end: span 5 }
+  grid > c[span-s="6"] { grid-column-end: span 6 }
+  grid > c[span-s="7"] { grid-column-end: span 7 }
+  grid > c[span-s="8"] { grid-column-end: span 8 }
+  grid > c[span-s="9"] { grid-column-end: span 9 }
+  grid > c[span-s="10"] { grid-column-end: span 10 }
+  grid > c[span-s="11"] { grid-column-end: span 11 }
+  grid > c[span-s="12"] { grid-column-end: span 12 }
+  grid > c[span-s="13"] { grid-column-end: span 13 }
+  grid > c[span-s="14"] { grid-column-end: span 14 }
+  grid > c[span-s="15"] { grid-column-end: span 15 }
+  grid > c[span-s="16"] { grid-column-end: span 16 }
+  
+  /* span-s="start+width" -- from start plus width columns */
+  grid > c[span-s="1+1"] { grid-column: 1 / span 1 }
+  grid > c[span-s="1+2"] { grid-column: 1 / span 2 }
+  grid > c[span-s="1+3"] { grid-column: 1 / span 3 }
+  grid > c[span-s="1+4"] { grid-column: 1 / span 4 }
+  grid > c[span-s="1+5"] { grid-column: 1 / span 5 }
+  grid > c[span-s="1+6"] { grid-column: 1 / span 6 }
+  grid > c[span-s="1+7"] { grid-column: 1 / span 7 }
+  grid > c[span-s="1+8"] { grid-column: 1 / span 8 }
+  grid > c[span-s="1+9"] { grid-column: 1 / span 9 }
+  grid > c[span-s="1+10"] { grid-column: 1 / span 10 }
+  grid > c[span-s="1+11"] { grid-column: 1 / span 11 }
+  grid > c[span-s="1+12"] { grid-column: 1 / span 12 }
+  grid > c[span-s="1+13"] { grid-column: 1 / span 13 }
+  grid > c[span-s="1+14"] { grid-column: 1 / span 14 }
+  grid > c[span-s="1+15"] { grid-column: 1 / span 15 }
+  grid > c[span-s="1+16"] { grid-column: 1 / span 16 }
+  grid > c[span-s="2+1"] { grid-column: 2 / span 1 }
+  grid > c[span-s="2+2"] { grid-column: 2 / span 2 }
+  grid > c[span-s="2+3"] { grid-column: 2 / span 3 }
+  grid > c[span-s="2+4"] { grid-column: 2 / span 4 }
+  grid > c[span-s="2+5"] { grid-column: 2 / span 5 }
+  grid > c[span-s="2+6"] { grid-column: 2 / span 6 }
+  grid > c[span-s="2+7"] { grid-column: 2 / span 7 }
+  grid > c[span-s="2+8"] { grid-column: 2 / span 8 }
+  grid > c[span-s="2+9"] { grid-column: 2 / span 9 }
+  grid > c[span-s="2+10"] { grid-column: 2 / span 10 }
+  grid > c[span-s="2+11"] { grid-column: 2 / span 11 }
+  grid > c[span-s="2+12"] { grid-column: 2 / span 12 }
+  grid > c[span-s="2+13"] { grid-column: 2 / span 13 }
+  grid > c[span-s="2+14"] { grid-column: 2 / span 14 }
+  grid > c[span-s="2+15"] { grid-column: 2 / span 15 }
+  grid > c[span-s="3+1"] { grid-column: 3 / span 1 }
+  grid > c[span-s="3+2"] { grid-column: 3 / span 2 }
+  grid > c[span-s="3+3"] { grid-column: 3 / span 3 }
+  grid > c[span-s="3+4"] { grid-column: 3 / span 4 }
+  grid > c[span-s="3+5"] { grid-column: 3 / span 5 }
+  grid > c[span-s="3+6"] { grid-column: 3 / span 6 }
+  grid > c[span-s="3+7"] { grid-column: 3 / span 7 }
+  grid > c[span-s="3+8"] { grid-column: 3 / span 8 }
+  grid > c[span-s="3+9"] { grid-column: 3 / span 9 }
+  grid > c[span-s="3+10"] { grid-column: 3 / span 10 }
+  grid > c[span-s="3+11"] { grid-column: 3 / span 11 }
+  grid > c[span-s="3+12"] { grid-column: 3 / span 12 }
+  grid > c[span-s="3+13"] { grid-column: 3 / span 13 }
+  grid > c[span-s="3+14"] { grid-column: 3 / span 14 }
+  grid > c[span-s="4+1"] { grid-column: 4 / span 1 }
+  grid > c[span-s="4+2"] { grid-column: 4 / span 2 }
+  grid > c[span-s="4+3"] { grid-column: 4 / span 3 }
+  grid > c[span-s="4+4"] { grid-column: 4 / span 4 }
+  grid > c[span-s="4+5"] { grid-column: 4 / span 5 }
+  grid > c[span-s="4+6"] { grid-column: 4 / span 6 }
+  grid > c[span-s="4+7"] { grid-column: 4 / span 7 }
+  grid > c[span-s="4+8"] { grid-column: 4 / span 8 }
+  grid > c[span-s="4+9"] { grid-column: 4 / span 9 }
+  grid > c[span-s="4+10"] { grid-column: 4 / span 10 }
+  grid > c[span-s="4+11"] { grid-column: 4 / span 11 }
+  grid > c[span-s="4+12"] { grid-column: 4 / span 12 }
+  grid > c[span-s="4+13"] { grid-column: 4 / span 13 }
+  grid > c[span-s="5+1"] { grid-column: 5 / span 1 }
+  grid > c[span-s="5+2"] { grid-column: 5 / span 2 }
+  grid > c[span-s="5+3"] { grid-column: 5 / span 3 }
+  grid > c[span-s="5+4"] { grid-column: 5 / span 4 }
+  grid > c[span-s="5+5"] { grid-column: 5 / span 5 }
+  grid > c[span-s="5+6"] { grid-column: 5 / span 6 }
+  grid > c[span-s="5+7"] { grid-column: 5 / span 7 }
+  grid > c[span-s="5+8"] { grid-column: 5 / span 8 }
+  grid > c[span-s="5+9"] { grid-column: 5 / span 9 }
+  grid > c[span-s="5+10"] { grid-column: 5 / span 10 }
+  grid > c[span-s="5+11"] { grid-column: 5 / span 11 }
+  grid > c[span-s="5+12"] { grid-column: 5 / span 12 }
+  grid > c[span-s="6+1"] { grid-column: 6 / span 1 }
+  grid > c[span-s="6+2"] { grid-column: 6 / span 2 }
+  grid > c[span-s="6+3"] { grid-column: 6 / span 3 }
+  grid > c[span-s="6+4"] { grid-column: 6 / span 4 }
+  grid > c[span-s="6+5"] { grid-column: 6 / span 5 }
+  grid > c[span-s="6+6"] { grid-column: 6 / span 6 }
+  grid > c[span-s="6+7"] { grid-column: 6 / span 7 }
+  grid > c[span-s="6+8"] { grid-column: 6 / span 8 }
+  grid > c[span-s="6+9"] { grid-column: 6 / span 9 }
+  grid > c[span-s="6+10"] { grid-column: 6 / span 10 }
+  grid > c[span-s="6+11"] { grid-column: 6 / span 11 }
+  grid > c[span-s="7+1"] { grid-column: 7 / span 1 }
+  grid > c[span-s="7+2"] { grid-column: 7 / span 2 }
+  grid > c[span-s="7+3"] { grid-column: 7 / span 3 }
+  grid > c[span-s="7+4"] { grid-column: 7 / span 4 }
+  grid > c[span-s="7+5"] { grid-column: 7 / span 5 }
+  grid > c[span-s="7+6"] { grid-column: 7 / span 6 }
+  grid > c[span-s="7+7"] { grid-column: 7 / span 7 }
+  grid > c[span-s="7+8"] { grid-column: 7 / span 8 }
+  grid > c[span-s="7+9"] { grid-column: 7 / span 9 }
+  grid > c[span-s="7+10"] { grid-column: 7 / span 10 }
+  grid > c[span-s="8+1"] { grid-column: 8 / span 1 }
+  grid > c[span-s="8+2"] { grid-column: 8 / span 2 }
+  grid > c[span-s="8+3"] { grid-column: 8 / span 3 }
+  grid > c[span-s="8+4"] { grid-column: 8 / span 4 }
+  grid > c[span-s="8+5"] { grid-column: 8 / span 5 }
+  grid > c[span-s="8+6"] { grid-column: 8 / span 6 }
+  grid > c[span-s="8+7"] { grid-column: 8 / span 7 }
+  grid > c[span-s="8+8"] { grid-column: 8 / span 8 }
+  grid > c[span-s="8+9"] { grid-column: 8 / span 9 }
+  grid > c[span-s="9+1"] { grid-column: 9 / span 1 }
+  grid > c[span-s="9+2"] { grid-column: 9 / span 2 }
+  grid > c[span-s="9+3"] { grid-column: 9 / span 3 }
+  grid > c[span-s="9+4"] { grid-column: 9 / span 4 }
+  grid > c[span-s="9+5"] { grid-column: 9 / span 5 }
+  grid > c[span-s="9+6"] { grid-column: 9 / span 6 }
+  grid > c[span-s="9+7"] { grid-column: 9 / span 7 }
+  grid > c[span-s="9+8"] { grid-column: 9 / span 8 }
+  grid > c[span-s="10+1"] { grid-column: 10 / span 1 }
+  grid > c[span-s="10+2"] { grid-column: 10 / span 2 }
+  grid > c[span-s="10+3"] { grid-column: 10 / span 3 }
+  grid > c[span-s="10+4"] { grid-column: 10 / span 4 }
+  grid > c[span-s="10+5"] { grid-column: 10 / span 5 }
+  grid > c[span-s="10+6"] { grid-column: 10 / span 6 }
+  grid > c[span-s="10+7"] { grid-column: 10 / span 7 }
+  grid > c[span-s="11+1"] { grid-column: 11 / span 1 }
+  grid > c[span-s="11+2"] { grid-column: 11 / span 2 }
+  grid > c[span-s="11+3"] { grid-column: 11 / span 3 }
+  grid > c[span-s="11+4"] { grid-column: 11 / span 4 }
+  grid > c[span-s="11+5"] { grid-column: 11 / span 5 }
+  grid > c[span-s="11+6"] { grid-column: 11 / span 6 }
+  grid > c[span-s="12+1"] { grid-column: 12 / span 1 }
+  grid > c[span-s="12+2"] { grid-column: 12 / span 2 }
+  grid > c[span-s="12+3"] { grid-column: 12 / span 3 }
+  grid > c[span-s="12+4"] { grid-column: 12 / span 4 }
+  grid > c[span-s="12+5"] { grid-column: 12 / span 5 }
+  grid > c[span-s="13+1"] { grid-column: 13 / span 1 }
+  grid > c[span-s="13+2"] { grid-column: 13 / span 2 }
+  grid > c[span-s="13+3"] { grid-column: 13 / span 3 }
+  grid > c[span-s="13+4"] { grid-column: 13 / span 4 }
+  grid > c[span-s="14+1"] { grid-column: 14 / span 1 }
+  grid > c[span-s="14+2"] { grid-column: 14 / span 2 }
+  grid > c[span-s="14+3"] { grid-column: 14 / span 3 }
+  grid > c[span-s="15+1"] { grid-column: 15 / span 1 }
+  grid > c[span-s="15+2"] { grid-column: 15 / span 2 }
+  grid > c[span-s="16+1"] { grid-column: 16 / span 1 }
+  
+  /* span-s="start-end" -- column range ("end" is inclusive) */
+  grid > c[span-s="1-1"] { grid-column: 1 / 2 }
+  grid > c[span-s="1-2"] { grid-column: 1 / 3 }
+  grid > c[span-s="1-3"] { grid-column: 1 / 4 }
+  grid > c[span-s="1-4"] { grid-column: 1 / 5 }
+  grid > c[span-s="1-5"] { grid-column: 1 / 6 }
+  grid > c[span-s="1-6"] { grid-column: 1 / 7 }
+  grid > c[span-s="1-7"] { grid-column: 1 / 8 }
+  grid > c[span-s="1-8"] { grid-column: 1 / 9 }
+  grid > c[span-s="1-9"] { grid-column: 1 / 10 }
+  grid > c[span-s="1-10"] { grid-column: 1 / 11 }
+  grid > c[span-s="1-11"] { grid-column: 1 / 12 }
+  grid > c[span-s="1-12"] { grid-column: 1 / 13 }
+  grid > c[span-s="1-13"] { grid-column: 1 / 14 }
+  grid > c[span-s="1-14"] { grid-column: 1 / 15 }
+  grid > c[span-s="1-15"] { grid-column: 1 / 16 }
+  grid > c[span-s="1-16"] { grid-column: 1 / 17 }
+  grid > c[span-s="2-2"] { grid-column: 2 / 3 }
+  grid > c[span-s="2-3"] { grid-column: 2 / 4 }
+  grid > c[span-s="2-4"] { grid-column: 2 / 5 }
+  grid > c[span-s="2-5"] { grid-column: 2 / 6 }
+  grid > c[span-s="2-6"] { grid-column: 2 / 7 }
+  grid > c[span-s="2-7"] { grid-column: 2 / 8 }
+  grid > c[span-s="2-8"] { grid-column: 2 / 9 }
+  grid > c[span-s="2-9"] { grid-column: 2 / 10 }
+  grid > c[span-s="2-10"] { grid-column: 2 / 11 }
+  grid > c[span-s="2-11"] { grid-column: 2 / 12 }
+  grid > c[span-s="2-12"] { grid-column: 2 / 13 }
+  grid > c[span-s="2-13"] { grid-column: 2 / 14 }
+  grid > c[span-s="2-14"] { grid-column: 2 / 15 }
+  grid > c[span-s="2-15"] { grid-column: 2 / 16 }
+  grid > c[span-s="2-16"] { grid-column: 2 / 17 }
+  grid > c[span-s="3-3"] { grid-column: 3 / 4 }
+  grid > c[span-s="3-4"] { grid-column: 3 / 5 }
+  grid > c[span-s="3-5"] { grid-column: 3 / 6 }
+  grid > c[span-s="3-6"] { grid-column: 3 / 7 }
+  grid > c[span-s="3-7"] { grid-column: 3 / 8 }
+  grid > c[span-s="3-8"] { grid-column: 3 / 9 }
+  grid > c[span-s="3-9"] { grid-column: 3 / 10 }
+  grid > c[span-s="3-10"] { grid-column: 3 / 11 }
+  grid > c[span-s="3-11"] { grid-column: 3 / 12 }
+  grid > c[span-s="3-12"] { grid-column: 3 / 13 }
+  grid > c[span-s="3-13"] { grid-column: 3 / 14 }
+  grid > c[span-s="3-14"] { grid-column: 3 / 15 }
+  grid > c[span-s="3-15"] { grid-column: 3 / 16 }
+  grid > c[span-s="3-16"] { grid-column: 3 / 17 }
+  grid > c[span-s="4-4"] { grid-column: 4 / 5 }
+  grid > c[span-s="4-5"] { grid-column: 4 / 6 }
+  grid > c[span-s="4-6"] { grid-column: 4 / 7 }
+  grid > c[span-s="4-7"] { grid-column: 4 / 8 }
+  grid > c[span-s="4-8"] { grid-column: 4 / 9 }
+  grid > c[span-s="4-9"] { grid-column: 4 / 10 }
+  grid > c[span-s="4-10"] { grid-column: 4 / 11 }
+  grid > c[span-s="4-11"] { grid-column: 4 / 12 }
+  grid > c[span-s="4-12"] { grid-column: 4 / 13 }
+  grid > c[span-s="4-13"] { grid-column: 4 / 14 }
+  grid > c[span-s="4-14"] { grid-column: 4 / 15 }
+  grid > c[span-s="4-15"] { grid-column: 4 / 16 }
+  grid > c[span-s="4-16"] { grid-column: 4 / 17 }
+  grid > c[span-s="5-5"] { grid-column: 5 / 6 }
+  grid > c[span-s="5-6"] { grid-column: 5 / 7 }
+  grid > c[span-s="5-7"] { grid-column: 5 / 8 }
+  grid > c[span-s="5-8"] { grid-column: 5 / 9 }
+  grid > c[span-s="5-9"] { grid-column: 5 / 10 }
+  grid > c[span-s="5-10"] { grid-column: 5 / 11 }
+  grid > c[span-s="5-11"] { grid-column: 5 / 12 }
+  grid > c[span-s="5-12"] { grid-column: 5 / 13 }
+  grid > c[span-s="5-13"] { grid-column: 5 / 14 }
+  grid > c[span-s="5-14"] { grid-column: 5 / 15 }
+  grid > c[span-s="5-15"] { grid-column: 5 / 16 }
+  grid > c[span-s="5-16"] { grid-column: 5 / 17 }
+  grid > c[span-s="6-6"] { grid-column: 6 / 7 }
+  grid > c[span-s="6-7"] { grid-column: 6 / 8 }
+  grid > c[span-s="6-8"] { grid-column: 6 / 9 }
+  grid > c[span-s="6-9"] { grid-column: 6 / 10 }
+  grid > c[span-s="6-10"] { grid-column: 6 / 11 }
+  grid > c[span-s="6-11"] { grid-column: 6 / 12 }
+  grid > c[span-s="6-12"] { grid-column: 6 / 13 }
+  grid > c[span-s="6-13"] { grid-column: 6 / 14 }
+  grid > c[span-s="6-14"] { grid-column: 6 / 15 }
+  grid > c[span-s="6-15"] { grid-column: 6 / 16 }
+  grid > c[span-s="6-16"] { grid-column: 6 / 17 }
+  grid > c[span-s="7-7"] { grid-column: 7 / 8 }
+  grid > c[span-s="7-8"] { grid-column: 7 / 9 }
+  grid > c[span-s="7-9"] { grid-column: 7 / 10 }
+  grid > c[span-s="7-10"] { grid-column: 7 / 11 }
+  grid > c[span-s="7-11"] { grid-column: 7 / 12 }
+  grid > c[span-s="7-12"] { grid-column: 7 / 13 }
+  grid > c[span-s="7-13"] { grid-column: 7 / 14 }
+  grid > c[span-s="7-14"] { grid-column: 7 / 15 }
+  grid > c[span-s="7-15"] { grid-column: 7 / 16 }
+  grid > c[span-s="7-16"] { grid-column: 7 / 17 }
+  grid > c[span-s="8-8"] { grid-column: 8 / 9 }
+  grid > c[span-s="8-9"] { grid-column: 8 / 10 }
+  grid > c[span-s="8-10"] { grid-column: 8 / 11 }
+  grid > c[span-s="8-11"] { grid-column: 8 / 12 }
+  grid > c[span-s="8-12"] { grid-column: 8 / 13 }
+  grid > c[span-s="8-13"] { grid-column: 8 / 14 }
+  grid > c[span-s="8-14"] { grid-column: 8 / 15 }
+  grid > c[span-s="8-15"] { grid-column: 8 / 16 }
+  grid > c[span-s="8-16"] { grid-column: 8 / 17 }
+  grid > c[span-s="9-9"] { grid-column: 9 / 10 }
+  grid > c[span-s="9-10"] { grid-column: 9 / 11 }
+  grid > c[span-s="9-11"] { grid-column: 9 / 12 }
+  grid > c[span-s="9-12"] { grid-column: 9 / 13 }
+  grid > c[span-s="9-13"] { grid-column: 9 / 14 }
+  grid > c[span-s="9-14"] { grid-column: 9 / 15 }
+  grid > c[span-s="9-15"] { grid-column: 9 / 16 }
+  grid > c[span-s="9-16"] { grid-column: 9 / 17 }
+  grid > c[span-s="10-10"] { grid-column: 10 / 11 }
+  grid > c[span-s="10-11"] { grid-column: 10 / 12 }
+  grid > c[span-s="10-12"] { grid-column: 10 / 13 }
+  grid > c[span-s="10-13"] { grid-column: 10 / 14 }
+  grid > c[span-s="10-14"] { grid-column: 10 / 15 }
+  grid > c[span-s="10-15"] { grid-column: 10 / 16 }
+  grid > c[span-s="10-16"] { grid-column: 10 / 17 }
+  grid > c[span-s="11-11"] { grid-column: 11 / 12 }
+  grid > c[span-s="11-12"] { grid-column: 11 / 13 }
+  grid > c[span-s="11-13"] { grid-column: 11 / 14 }
+  grid > c[span-s="11-14"] { grid-column: 11 / 15 }
+  grid > c[span-s="11-15"] { grid-column: 11 / 16 }
+  grid > c[span-s="11-16"] { grid-column: 11 / 17 }
+  grid > c[span-s="12-12"] { grid-column: 12 / 13 }
+  grid > c[span-s="12-13"] { grid-column: 12 / 14 }
+  grid > c[span-s="12-14"] { grid-column: 12 / 15 }
+  grid > c[span-s="12-15"] { grid-column: 12 / 16 }
+  grid > c[span-s="12-16"] { grid-column: 12 / 17 }
+  grid > c[span-s="13-13"] { grid-column: 13 / 14 }
+  grid > c[span-s="13-14"] { grid-column: 13 / 15 }
+  grid > c[span-s="13-15"] { grid-column: 13 / 16 }
+  grid > c[span-s="13-16"] { grid-column: 13 / 17 }
+  grid > c[span-s="14-14"] { grid-column: 14 / 15 }
+  grid > c[span-s="14-15"] { grid-column: 14 / 16 }
+  grid > c[span-s="14-16"] { grid-column: 14 / 17 }
+  grid > c[span-s="15-15"] { grid-column: 15 / 16 }
+  grid > c[span-s="15-16"] { grid-column: 15 / 17 }
+  grid > c[span-s="16-16"] { grid-column: 16 / 17 }
+  
+  /* span-s="start.." -- from start to end of row */
+  grid > c[span-s="1.."], grid > c[span-s="1..."], grid > c[span-s="row"] { grid-column: 1 / -1 }
+  grid > c[span-s="2.."], grid > c[span-s="2..."] { grid-column: 2 / -1 }
+  grid > c[span-s="3.."], grid > c[span-s="3..."] { grid-column: 3 / -1 }
+  grid > c[span-s="4.."], grid > c[span-s="4..."] { grid-column: 4 / -1 }
+  grid > c[span-s="5.."], grid > c[span-s="5..."] { grid-column: 5 / -1 }
+  grid > c[span-s="6.."], grid > c[span-s="6..."] { grid-column: 6 / -1 }
+  grid > c[span-s="7.."], grid > c[span-s="7..."] { grid-column: 7 / -1 }
+  grid > c[span-s="8.."], grid > c[span-s="8..."] { grid-column: 8 / -1 }
+  grid > c[span-s="9.."], grid > c[span-s="9..."] { grid-column: 9 / -1 }
+  grid > c[span-s="10.."], grid > c[span-s="10..."] { grid-column: 10 / -1 }
+  grid > c[span-s="11.."], grid > c[span-s="11..."] { grid-column: 11 / -1 }
+  grid > c[span-s="12.."], grid > c[span-s="12..."] { grid-column: 12 / -1 }
+  grid > c[span-s="13.."], grid > c[span-s="13..."] { grid-column: 13 / -1 }
+  grid > c[span-s="14.."], grid > c[span-s="14..."] { grid-column: 14 / -1 }
+  grid > c[span-s="15.."], grid > c[span-s="15..."] { grid-column: 15 / -1 }
+  grid > c[span-s="16.."], grid > c[span-s="16..."] { grid-column: 16 / -1 }
+}
+
+/* .debug can be added to a grid to visualize its effective cells */
+grid.debug > * {
+  --color: rgba(248,110,91 ,0.3);
+  background-image:
+    linear-gradient(to bottom, var(--color) 0%, var(--color) 100%);
+}
+grid.debug > :nth-child(6n+2) { --color: rgba(103,126,208,0.3) }
+grid.debug > :nth-child(6n+3) { --color: rgba(224,174,72 ,0.3) }
+grid.debug > :nth-child(6n+4) { --color: rgba(77, 214,115,0.3) }
+grid.debug > :nth-child(6n+5) { --color: rgba(217,103,219,0.3) }
+grid.debug > :nth-child(6n+6) { --color: rgba(94, 204,211,0.3) }
+grid.debug > :nth-child(6n+7) { --color: rgba(248,110,91 ,0.3) }
+
