@@ -22,8 +22,6 @@ mkdir -p _build/raster
 cp _site/example.html _site/example.css _site/grid.css _build/raster/
 cp LICENSE.txt _build/raster/
 
-VERSION=1
-
 cd _build/raster
 zip -q -X -r ../raster-${VERSION}.zip *
 cd ../..
