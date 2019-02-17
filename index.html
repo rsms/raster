@@ -336,6 +336,14 @@ example1.addEventListener(triggerEvent, ev => {
 
 
 })()</script>
-
+{% if site.safe == true %}
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105091131-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-105091131-1');
+</script>
+{% endif %}
 </body>
 </html>
