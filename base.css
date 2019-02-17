@@ -200,6 +200,11 @@ grid.example > c {
   pointer-events: none; -webkkit-pointer-events: none;
   user-select: none; -webkit-user-select: none;
   cursor: default;
+  border: 0.1rem solid black;
+}
+grid.example > c.black {
+  background: black;
+  color: white;
 }
 
 /* demo grid */
