@@ -15,15 +15,15 @@ for file in site.static_files %}{%
     assign base_css_v = file.modified_time | date: "%Y%m%d%H%M%S" %}{%
   elsif _path == "/grid.css" %}{%
     assign grid_css_v = file.modified_time | date: "%Y%m%d%H%M%S" %}{%
-  elsif _path == "/grid-gen.js" %}{%
-    assign grid_gen_js_v = file.modified_time | date: "%Y%m%d%H%M%S" %}{%
+  elsif _path == "/generate-grid.js" %}{%
+    assign generate_grid_js_v = file.modified_time | date: "%Y%m%d%H%M%S" %}{%
   endif %}{%
 endfor
 
 %}<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Raster——Simple CSS Grid System</title>
+  <title>Raster—CSS Grid System</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -61,6 +61,7 @@ endfor
         <c span=6..>6..</c>
         <c span=2..>2..</c>
         <c span=4..>4..</c>
+        <c span=1-2>1-2</c>
         <c span=4-5>4-5</c>
       </grid>
       <br><br>
@@ -71,27 +72,25 @@ endfor
     </c>
 
     <c span="1-2" span-s="row">
-      <pre>&lt;grid columns=<accent1>8</accent1>&gt;
+      <pre>&lt;grid columns=8&gt;
   &lt;c&gt;&lt;/c&gt;
-  &lt;c span=<accent1>3</accent1>&gt;3&lt;/c&gt;
+  &lt;c span=3&gt;3&lt;/c&gt;
   &lt;c&gt;&lt;/c&gt;
-  &lt;c span=<accent1>7-8</accent1>&gt;7-8&lt;/c&gt;
-  &lt;c span=<accent1>2+2</accent1>&gt;2+2&lt;/c&gt;
-  &lt;c span=<accent1>5-8</accent1>&gt;5-8&lt;/c&gt;
-  &lt;c span=<accent1>1-4</accent1>&gt;1-4&lt;/c&gt;
-  &lt;c span=<accent1>6..</accent1>&gt;6..&lt;/c&gt;
-  &lt;c span=<accent1>2..</accent1>&gt;2..&lt;/c&gt;
-  &lt;c span=<accent1>4..</accent1>&gt;4..&lt;/c&gt;
-  &lt;c span=<accent1>4-5</accent1>&gt;4-5&lt;/c&gt;
+  &lt;c span=7-8&gt;7-8&lt;/c&gt;
+  &lt;c span=2+2&gt;2+2&lt;/c&gt;
+  &lt;c span=5-8&gt;5-8&lt;/c&gt;
+  &lt;c span=1-4&gt;1-4&lt;/c&gt;
+  &lt;c span=6..&gt;6..&lt;/c&gt;
+  &lt;c span=2..&gt;2..&lt;/c&gt;
+  &lt;c span=4..&gt;4..&lt;/c&gt;
+  &lt;c span=1-2&gt;1-2&lt;/c&gt;
+  &lt;c span=4-5&gt;4-5&lt;/c&gt;
 &lt;/grid&gt;</pre>
-      <p>
-        This is the HTML that generates the grid you see at the top of this page.
-      </p>
     </c>
 
     <c span="3-6" span-s="row">
       <p>
-        The number of columns a grid has is specified with the
+        The number of columns a grid has is specified by the
         <code>columns</code> attribute.
         For instance, to define a grid with 8 columns, you'd write
         <code>&lt;grid columns=8&gt;</code>.
@@ -100,45 +99,55 @@ endfor
         Cells span a single column by default.
         The <code>span</code> attribute is used to customize where a cell
         starts and how many columns it spans.
-        For example, <code>&lt;c span=2-5&gt;</code> starts at column 2 and ends in column 5.
+        For example, <code>&lt;c span=2-5&gt;</code> starts in column 2 and ends in column 5.
         A cell with an empty or missing <code>span</code> attribute starts on
         the next available column and spans one column.
       </p>
-      <h3>Possible span= values</h3>
       <p>
-        <grid columns=8>
-          <c><code>2-5</code></c>
-          <c span=2..>start at column 2, end in column 5.</c>
-
-          <c><code>2+3</code></c>
-          <c span=2..>start at column 2, span 3 columns.</c>
-
-          <c><code>2..</code></c>
-          <c span=2..>start at column 2, span remainder of row.</c>
-
-          <c><code>2</code></c>
-          <c span=2..>start at next available column, span 2 columns.</c>
-        </grid>
+        Raster is <a href="grid.css?v={{version}}">pure CSS</a> — no JavaScript involved.
       </p>
       <p>
-        Raster is a <a href="grid.css?v={{version}}">pure CSS</a> — no JavaScript.<br>
-        <a href="example.html">See more examples &rarr;</a>
+        The HTML here is what generates the grid you see at the top of this page.
+      </p>
+      <p>
+        <a href="example.html">More examples</a>
+      </p>
+    </c>
+    <c span="7.." span-s="row">
+      <h4>Possible span= values</h4>
+      <p>
+        <grid columns=8 style="column-gap:1.5rem">
+          <c><code>2-5</code></c>
+          <c span=2..>start in column 2,<br>end in column 5.</c>
+
+          <c><code>2+3</code></c>
+          <c span=2..>start in column 2,<br>span 3 columns.</c>
+
+          <c><code>2..</code></c>
+          <c span=2..>start in column 2,<br>span remainder of row.</c>
+
+          <c><code>2</code></c>
+          <c span=2..>start in next column,<br>span 2 columns.</c>
+
+          <c><code>row</code></c>
+          <c span=2..>span a full row</c>
+        </grid>
       </p>
     </c>
 
-    <c span=row class="ruler"></c>
+    <c span=3.. class="ruler only-large-screen"></c>
 
-    <c span=3.. span-s=row class="h2" id="span-s">
-      Responsive design with span-s
+    <c span=3.. span-s=row class="h2" id="responsive-design">
+      Responsive design
     </c>
 
     <c span=1-2 span-s=row>
-       <pre>&lt;grid columns=<accent1>6</accent1>&gt;
-  &lt;c span=2 span-s=row&gt;
-  &lt;c span=3-6 span-s=row&gt;
-  &lt;c span=1-2 span-s=1&gt;
-  &lt;c span=3.. span-s=2..&gt;
-&lt;/grid&gt;</pre>
+       <pre>&lt;grid columns=6&gt;
+  &lt;c span=2   <b>span-s=row</b>&gt;
+  &lt;c span=3-6 <b>span-s=row</b>&gt;
+  &lt;c span=1-2 <b>span-s=1</b>&gt;
+  &lt;c span=3.. <b>span-s=2..</b>&gt;
+&lt;/grid&gt;</pre><br>
     </c>
     <c span=3-6 span-s=row>
       <p>
@@ -154,60 +163,147 @@ endfor
         <c span=3.. span-s=2..>Welcome to Acme</c>
       </grid>
       <p>
-        Tap the example above, or resize your web browser window to see the
-        grid above change its layout. Showing <span id="example1-label1">large</span> screen.
+        Tap the example above—or resize your web browser window—to see the
+        layout change.
+        Showing <b id="example1-label1" class="example-label">large</b> screen.
+        Additionally, the <code>span-l</code> attribute can be used to control
+        an alternate layout for really large screens.
       </p>
       <p>
         This entire website is built with grids and changes layout when the
-        window size goes below or above 600dp.
+        window size passes 600dp.
       </p>
     </c>
 
-    <c span=row class="ruler"></c>
-
-    <c span=3.. span-s=row class="h2" id="custom-css">
-      Customize your own CSS
+    <c span=3.. span-s=row class="h3" id="responsive-design">
+      Additional responsive control with columns-s
     </c>
 
-    <c span=1-2 span-s=row style="max-width:15rem">
+    <c span=1-2 span-s=row>
+       <pre>&lt;grid columns=6<br>      <b>columns-s=3</b>&gt;
+  &lt;c&gt;
+  &lt;c span=2&gt;
+  &lt;c&gt;
+  &lt;c span=2&gt;
+&lt;/grid&gt;</pre><br>
+    </c>
+    <c span=3-6 span-s=row>
+      <p>
+        Similar to <code>span-s</code>, <code>columns-s</code> is available
+        on <code>grid</code> tags for alternate layout on small screens.
+        Often a small-screen layout can be accomplished by simply setting
+        <code>columns-s</code> without the need for any <code>span-s</code>
+        attributes. The <code>columns-l</code> attribute is also available
+        for large screens.
+      </p>
+      <grid columns=6 columns-s=3 class="example" id="example2">
+        <c class=black>Foo</c>
+        <c span=2>Description of foo</c>
+        <c class=black>Bar</c>
+        <c span=2>Description of bar</c>
+      </grid>
+      <p>
+        Tap the example above—or resize your web browser window—to see the
+        layout change.
+        Showing <b id="example2-label1" class="example-label">large</b> screen.
+      </p>
+    </c>
+
+    <c span=3.. class="ruler only-large-screen"></c>
+
+    <c span=3.. span-s=row class="h2" id="custom-css">
+      grid.css
+    </c>
+
+    <c span=1-2 span-s=row class="only-large-screen form" style="max-width:15rem">
+      <label><grid columns=4>
+        <c span=1-2>Columns:</c>
+        <c span=3-4><input type="number" value="8" min=2 max=30 name="maxColumns" autocomplete="off"></c>
+      </grid></label>
+      <label><grid columns=4>
+        <c span=1-2>Default cols:</c>
+        <c span=3-4><input type="number" value="4" min=1 max=30 name="defaultColumns" autocomplete="off"></c>
+      </grid></label>
+      <label><grid columns=4>
+        <c span=1-2>Small window:</c>
+        <c span=3-4><input type="number" value="600" step="100" min=0 max="10000" name="smallScreenWidth" autocomplete="off"></c>
+      </grid></label>
+      <label><grid columns=4>
+        <c span=1-2>Large window:</c>
+        <c span=3-4><input type="number" value="1600" step="100" min=0 max="10000" name="largeScreenWidth" autocomplete="off"></c>
+      </grid></label>
+      <label><grid columns=4>
+        <c span=1-2>Grid attr:</c>
+        <c span=3-4><input type="text" value="columns" name="colsAttr" autocomplete="off"></c>
+      </grid></label>
+      <label><grid columns=4>
+        <c span=1-2>Cell attr:</c>
+        <c span=3-4><input type="text" value="span" name="spanAttr" autocomplete="off"></c>
+      </grid></label>
+      <label><grid columns=4>
+        <c span=1-2>Small suffix:</c>
+        <c span=3-4><input type="text" value="-s" name="smallAttrSuffix" autocomplete="off"></c>
+      </grid></label>
+      <label><grid columns=4>
+        <c span=1-2>Large suffix:</c>
+        <c span=3-4><input type="text" value="-l" name="largeAttrSuffix" autocomplete="off"></c>
+      </grid></label>
       <label>
-        <grid columns=4>
-          <c span=1-2>Min columns:</c>
-          <c span=3-4><input type="number" value="2" min=2 max=64 name="minColumns"></c>
-        </grid>
-      </label>
-      <label>
-        <grid columns=4>
-          <c span=1-2>Max columns:</c>
-          <c span=3-4><input type="number" value="8" min=2 max=64 name="maxColumns"></c>
-        </grid>
-      </label>
-      <label>
-        <grid columns=4>
-          <c span=1-2>Small window:</c>
-          <c span=3-4><input type="number" value="600" step="100" min=0 max="10000" name="smallScreenWidth"></c>
-        </grid>
+        <input type="checkbox" name="includeDebug" checked>
+        <span>Include .debug</span>
       </label>
       <br>
+      <p>
+        This CSS generator is also available as a script:
+        <a href="generate-grid.js">generate-grid.js</a>
+      </p>
     </c>
 
     <c span="3.." span-s="row">
-      <textarea class="code" id="css-output" autocomplete="off" spellcheck="false" readonly></textarea>
-      <script src="grid-gen.js?v={{grid_gen_js_v}}"></script>
+      <div class="code-area">
+        <div class="overlay"></div>
+        <textarea class="code" id="css-output" autocomplete="off" spellcheck="false" readonly></textarea>
+      </div>
+      <h3>Open source</h3>
+      <p>
+        Raster is an open-source project and the 
+        <a href="https://github.com/rsms/raster">source code is available on GitHub &rarr;</a>
+      </p>
+      <script src="generate-grid.js?v={{generate_grid_js_v}}"></script>
       <script>(function(){
 
 let cssOutput = document.querySelector('#css-output')
 
 let inputs = {
-  minColumns: document.querySelector('input[name="minColumns"]'),
+  // minColumns: document.querySelector('input[name="minColumns"]'),
   maxColumns: document.querySelector('input[name="maxColumns"]'),
+  defaultColumns: document.querySelector('input[name="defaultColumns"]'),
   smallScreenWidth: document.querySelector('input[name="smallScreenWidth"]'),
+  largeScreenWidth: document.querySelector('input[name="largeScreenWidth"]'),
+
+  colsAttr: document.querySelector('input[name="colsAttr"]'),
+  spanAttr: document.querySelector('input[name="spanAttr"]'),
+  smallAttrSuffix: document.querySelector('input[name="smallAttrSuffix"]'),
+  largeAttrSuffix: document.querySelector('input[name="largeAttrSuffix"]'),
+
+  includeDebug: document.querySelector('input[name="includeDebug"]'),
 }
 
 let values = {
-  minColumns: parseInt(inputs.minColumns.value),
+  // minColumns: parseInt(inputs.minColumns.value),
   maxColumns: parseInt(inputs.maxColumns.value),
+  defaultColumns: parseInt(inputs.defaultColumns.value),
   smallScreenWidth: parseInt(inputs.smallScreenWidth.value),
+  largeScreenWidth: parseInt(inputs.largeScreenWidth.value),
+
+  spanAttrNormal: 'span',
+  spanAttrSmall:  'span-s',
+  spanAttrLarge:  'span-l',
+  colsAttrNormal: 'columns',
+  colsAttrSmall:  'columns-s',
+  colsAttrLarge:  'columns-l',
+
+  includeDebug: inputs.includeDebug.checked,
 }
 
 function bindNumberInput(name, onchange) {
@@ -230,30 +326,74 @@ function bindNumberInput(name, onchange) {
   input.addEventListener('change', f)
 }
 
-bindNumberInput('minColumns', minColumns => {
-  minColumns = Math.min(Math.max(2, minColumns), 64)
-  if (minColumns > values.maxColumns) {
-    inputs.maxColumns.value = values.maxColumns = minColumns
-  }
-  return minColumns
+function updateColsAttr() {
+  let attr = inputs.colsAttr.value
+  values['colsAttrNormal'] = attr
+  values['colsAttrSmall'] =  attr + inputs.smallAttrSuffix.value
+  values['colsAttrLarge'] =  attr + inputs.largeAttrSuffix.value
+  genCSS()
+}
+
+function updateSpanAttr() {
+  let attr = inputs.spanAttr.value
+  values['spanAttrNormal'] = attr
+  values['spanAttrSmall'] =  attr + inputs.smallAttrSuffix.value
+  values['spanAttrLarge'] =  attr + inputs.largeAttrSuffix.value
+  genCSS()
+}
+
+function updateAttrs() {
+  updateColsAttr()
+  updateSpanAttr()
+}
+
+inputs.colsAttr.addEventListener('input', updateColsAttr)
+inputs.colsAttr.addEventListener('change', updateColsAttr)
+inputs.spanAttr.addEventListener('input', updateSpanAttr)
+inputs.spanAttr.addEventListener('change', updateSpanAttr)
+inputs.smallAttrSuffix.addEventListener('input', updateAttrs)
+inputs.smallAttrSuffix.addEventListener('change', updateAttrs)
+inputs.largeAttrSuffix.addEventListener('input', updateAttrs)
+inputs.largeAttrSuffix.addEventListener('change', updateAttrs)
+
+inputs.includeDebug.addEventListener('change', ev => {
+  values.includeDebug = inputs.includeDebug.checked
+  genCSS()
 })
 
+// bindNumberInput('minColumns', minColumns => {
+//   minColumns = Math.min(Math.max(2, minColumns), 30)
+//   if (minColumns > values.maxColumns) {
+//     inputs.maxColumns.value = values.maxColumns = minColumns
+//   }
+//   return minColumns
+// })
+
 bindNumberInput('maxColumns', maxColumns => {
-  maxColumns = Math.min(Math.max(2, maxColumns), 64)
+  maxColumns = Math.min(Math.max(2, maxColumns), 30)
   if (maxColumns < values.minColumns) {
     inputs.minColumns.value = values.minColumns = maxColumns
   }
   return maxColumns
 })
 
+bindNumberInput('defaultColumns', defaultColumns => {
+  defaultColumns = Math.min(Math.max(1, defaultColumns), 30)
+  if (defaultColumns > values.maxColumns) {
+    return values.maxColumns
+  }
+  return defaultColumns
+})
+
 bindNumberInput('smallScreenWidth')
+bindNumberInput('largeScreenWidth')
 
 
 function genCSS() {
   let css = Raster.generateCSS(values)
   cssOutput.value = css
   // cssOutput.scrollTop = 0
-  cssOutput.scrollTo(0,0)
+  // cssOutput.scrollTo(0,0)
 }
 
 let cssOutputScrolled = false
@@ -269,13 +409,12 @@ cssOutput.addEventListener('scroll', ev => {
 
 
 cssOutput.addEventListener(
-  'PointerEvent' in window ? 'pointerup' : 'click',
+  'PointerEvent' in window ? 'pointerdown' : 'click',
   ev => {
     cssOutput.select()
     // document.execCommand("copy")
   }
 )
-
 
 genCSS()
 
@@ -283,12 +422,95 @@ genCSS()
     </c>
 
     <c span=row class="ruler"></c>
-
-    <c span=3.. span-s=row>
-      <br>
-      <a href="https://github.com/rsms/raster">Source code on GitHub &rarr;</a>
+    <c span=1-4 span-s=row class="h3" id="custom-css">
+      <a href="example.html">Examples</a>
     </c>
-
+    <c span=row>
+      <grid columns-s=1 columns=2 columns-l=3 class="examples">
+        <c class="green">
+          <h2>8 columns</h2>
+          <grid columns="8">
+            <c>1</c><c>2</c><c>3</c><c>4</c><c>5</c><c>6</c><c>7</c><c>8</c>
+            <c></c>
+            <c span=3>3</c>
+            <c></c>
+            <c span=7-8>7-8</c>
+            <c span=2+2>2+2</c>
+            <c span=5-8>5-8</c>
+            <c span=1-4>1-4</c>
+            <c span=6..>6..</c>
+            <c span=2..>2..</c>
+            <c span=4..>4..</c>
+            <c span=4-5>4-5</c>
+          </grid>
+        </c>
+        <c class="yellow">
+          <h2>6 columns</h2>
+          <grid columns="6">
+            <c>1</c><c>2</c><c>3</c><c>4</c><c>5</c><c>6</c>
+            <c></c>
+            <c span=2>2</c>
+            <c></c>
+            <c span=5-6>5-6</c>
+            <c span=2+2>2+2</c>
+            <c span=5-6>5-6</c>
+            <c span=1-4>1-4</c>
+            <c span=6..>6..</c>
+            <c span=2..>2..</c>
+            <c span=4..>4..</c>
+            <c span=4-5>4-5</c>
+          </grid>
+        </c>
+        <c class="dark-grey">
+          <h2>9 columns</h2>
+          <grid columns="9">
+            <c>1</c><c>2</c><c>3</c><c>4</c><c>5</c><c>6</c><c>7</c><c>8</c><c>9</c>
+            <c></c>
+            <c span=3>3</c>
+            <c></c>
+            <c span=7-9>7-9</c>
+            <c span=2+2>2+2</c>
+            <c span=5-7>5-7</c>
+            <c span=1-4>1-4</c>
+            <c span=6..>6..</c>
+            <c span=2..>2..</c>
+            <c span=4..>4..</c>
+            <c span=4-5>4-5</c>
+          </grid>
+        </c>
+        <c class="blue">
+          <h2>3 columns</h2>
+          <grid columns="3">
+            <c>1</c><c>2</c><c>3</c>
+            <c></c>
+            <c span=2>2</c>
+            <c span=1-2>1-2</c>
+            <c span=2+2>2+2</c>
+            <c span=1-2>1-2</c>
+            <c span=1..>1..</c>
+            <c span=2..>2..</c>
+          </grid>
+        </c>
+        <c span=2 class="only-large-screen red">
+          <h2>16 columns</h2>
+          <grid columns="16">
+            <c>1</c><c>2</c><c>3</c><c>4</c><c>5</c><c>6</c><c>7</c><c>8</c>
+            <c>9</c><c>10</c><c>11</c><c>12</c><c>13</c><c>14</c><c>15</c><c>16</c>
+            <c></c>
+            <c span=6>6</c>
+            <c></c>
+            <c span=11-16>11-16</c>
+            <c span=2+4>2+4</c>
+            <c span=6-14>6-14</c>
+            <c span=1-4>1-4</c>
+            <c span=6..>6..</c>
+            <c span=4..>4..</c>
+            <c span=8..>8..</c>
+            <c span=4-10>4-5</c>
+          </grid>
+        </c>
+      </grid>
+    </c>
   </grid>
 
 <div id="smallScreenBeacon"></div>
@@ -316,33 +538,53 @@ function isSmallScreen() {
 
 // example1 -- span-s simulator
 let triggerEvent = 'PointerEvent' in window ? 'pointerdown' : 'click'
-let example1 = document.querySelector('#example1')
-let example1Label1 = document.querySelector('#example1-label1')
-let example1IsFlipped = false
-function updateExample1Label1() {
-  let isSmall = example1IsFlipped ? !isSmallScreen() : isSmallScreen()
-  example1Label1.innerText = isSmall ? 'small' : 'large'
-}
-updateExample1Label1()
-let winResizeTimer = null
-window.addEventListener('resize', () => {
-  clearTimeout(winResizeTimer)
-  winResizeTimer = setTimeout(() => {
-    updateExample1Label1()
-  }, 200)
-})
-example1.addEventListener(triggerEvent, ev => {
-  example1IsFlipped = !example1IsFlipped
-  updateExample1Label1()
-  for (let i = 0; i < example1.children.length; i++) {
-    let c = example1.children[i]
-    // if (c.tagName != 'C') { continue }
-    let spanS = c.getAttribute('span-s')
-    let spanL = c.getAttribute('span')
-    c.setAttribute('span', spanS)
-    c.setAttribute('span-s', spanL)
+let exampleCount = 2
+for (let i = 0; i < exampleCount; i++) {
+  let example = document.querySelector(`#example${i+1}`)
+  let exampleLabel1 = document.querySelector(`#example${i+1}-label1`)
+  let exampleIsFlipped = false
+  function updateExample1Label1() {
+    let isSmall = exampleIsFlipped ? !isSmallScreen() : isSmallScreen()
+    exampleLabel1.innerText = isSmall ? 'small' : 'large'
   }
-})
+  updateExample1Label1()
+  let winResizeTimer = null
+  window.addEventListener('resize', () => {
+    clearTimeout(winResizeTimer)
+    winResizeTimer = setTimeout(() => {
+      updateExample1Label1()
+    }, 200)
+  })
+  let flashTimer = null
+  example.addEventListener(triggerEvent, ev => {
+    exampleIsFlipped = !exampleIsFlipped
+    updateExample1Label1()
+
+    clearTimeout(flashTimer)
+    exampleLabel1.classList.add('flash')
+    flashTimer = setTimeout(() => {
+      exampleLabel1.classList.remove('flash')
+    }, 380)
+
+    let colsS = example.getAttribute('columns-s')
+    let colsM = example.getAttribute('columns')
+    if (colsS !== null && colsM !== null) {
+      example.setAttribute('columns', colsS)
+      example.setAttribute('columns-s', colsM)
+    }
+
+    for (let i = 0; i < example.children.length; i++) {
+      let c = example.children[i]
+      // if (c.tagName != 'C') { continue }
+      let spanS = c.getAttribute('span-s')
+      let spanM = c.getAttribute('span')
+      if (spanS !== null && spanM !== null) {
+        c.setAttribute('span', spanS)
+        c.setAttribute('span-s', spanM)
+      }
+    }
+  })
+}
 
 
 })()</script>

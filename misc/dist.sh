@@ -7,6 +7,9 @@ print YAML.load_file('_data/info.yml')['version']
 SRC
 )
 
+echo "Running misc/update-grid.css.sh"
+./misc/update-grid.css.sh
+
 echo "Building v${VERSION} -> _build/raster-${VERSION}.zip"
 
 if [ -f _build/raster-${VERSION}.zip ]; then
