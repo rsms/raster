@@ -172,6 +172,12 @@ h5 > a:hover, h6 > a:hover, .h1 > a:hover, .h2 > a:hover, .h3 > a:hover,
   text-decoration: underline rgba(0, 0, 0, 0.3);
   color: inherit;
 }
+a.clean { text-decoration: none; }
+a.clean:hover {
+  text-decoration: underline;
+  text-decoration: underline rgba(0, 0, 0, 0.3);
+  color: inherit;
+}
 
 hr {
   border: none;
