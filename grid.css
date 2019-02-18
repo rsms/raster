@@ -1,4 +1,4 @@
-/* Raster Simple CSS Grid System, version 2 */
+/* Raster Simple CSS Grid System, version 3 */
 grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
