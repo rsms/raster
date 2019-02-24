@@ -1,0 +1,916 @@
+---
+layout: none
+---
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Raster example</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="../raster.css">
+</head>
+<body class="show-base-grid">
+
+  <grid columns=8 columns-s=4>
+    <c span=row><h1>Raster</h1></c>
+
+    <c span=2 span-s=row>
+      <br>
+      <p>
+        Raster is a simple typography &amp; grid system for building
+        harmonious graphical websites.
+      </p>
+      <p>
+        This document showcases a variety of features of Raster.
+      </p>
+      <p>
+        Raster makes sure that text lines up across columns and provides
+        some simple customization via CSS variables.
+      </p>
+    </c>
+    <c span=5-6 span-s=1-2>
+      <h4>Settings</h4>
+      <grid columns=2 class="compact settings">
+        <c>Debug mode:     </c><c><span id="debug-mode-msg">On</span> (D)</c>
+        <c>Baseline grid:  </c><c><span id="base-grid-msg">On</span> (G)</c>
+        <c>Size mode:      </c><c><span id="size-mode-msg">Constant</span> (S)</c>
+        <c>Inverted color: </c><c><span id="inverted-msg">Off</span> (I)</c>
+      </grid>
+    </c>
+    <c span=2>
+      <h4>Values</h4>
+      <grid columns=2 class="compact">
+        <c>Font size:  </c><c id="fontsize-value-msg">10 dp</c>
+        <c>Baseline:   </c><c id="baseline-value-msg">10 dp</c>
+        <c>Line height:</c><c id="lineheight-value-msg">10 dp</c>
+      </grid>
+    </c>
+
+    <hr>
+
+    <c span=2>
+      <h1>Level 1 heading</h1>
+      <p>Paragraph<br>with two lines</p>
+      <p>Paragraph<br>with two lines</p>
+      <h2>Level 2 heading</h2>
+      <p>Paragraph<br>with two lines</p>
+      <p>Paragraph with one<br>two<br>three lines</p>
+      <h3>Level 3 heading</h3>
+      <p>Paragraph<br>with two lines</p>
+      <h4>Level 4 heading</h4>
+      <p>Paragraph<br>with two lines</p>
+    </c>
+    <c span=2>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+      <p>Paragraph with one and<br>two lines</p>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+      <p>Paragraph with one and<br>two lines</p>
+      <p>Paragraph with one line</p>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+      <p>Paragraph with one<br>and two lines</p>
+    </c>
+    <c span=2>
+      <h2>Level 2 heading</h2>
+      <p>Paragraph with one and<br>two lines</p>
+      <p>Paragraph with one and<br>two lines</p>
+      <h1>Level 1 heading</h1>
+      <p>Paragraph with one and<br>two lines</p>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+      <p>Paragraph with one line</p>
+      <h3>Level 3 heading</h3>
+      <p>Paragraph with one<br>and two lines</p>
+    </c>
+    <c span=2>
+      <h3>Level 3 heading</h3>
+      <p>Paragraph with one and<br>two lines</p>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+      <p>Paragraph with one and<br>two lines</p>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+      <h5>Level 5 heading</h5>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+    </c>
+
+    <hr>
+
+    <c span=2>
+      <h1>Level 1 heading</h1>
+      <h1>Level 1 heading</h1>
+      <p>Paragraph with one line</p>
+    </c>
+    <c span=2>
+      <h1>Level 1 heading</h1>
+      <h2>Level 2 heading</h2>
+      <p>Paragraph with one<br>and two lines</p>
+    </c>
+    <c span=2>
+      <h1>Level 1 heading</h1>
+      <h3>Level 3 heading</h3>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+    </c>
+    <c span=2>
+      <h1>Level 1 heading</h1>
+      <h4>Level 4 heading</h4>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+    </c>
+
+    <c span=row>&nbsp;</c>
+
+    <c span=2>
+      <h2>Level 2 heading</h2>
+      <h1>Level 1 heading</h1>
+      <p>Paragraph with one line</p>
+    </c>
+    <c span=2>
+      <h2>Level 2 heading</h2>
+      <h2>Level 2 heading</h2>
+      <p>Paragraph with one<br>and two lines</p>
+    </c>
+    <c span=2>
+      <h2>Level 2 heading</h2>
+      <h3>Level 3 heading</h3>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+    </c>
+    <c span=2>
+      <h2>Level 2 heading</h2>
+      <h4>Level 4 heading</h4>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+    </c>
+
+    <c span=row>&nbsp;</c>
+
+    <c span=2>
+      <h3>Level 3 heading</h3>
+      <h1>Level 1 heading</h1>
+      <p>Paragraph with one line</p>
+    </c>
+    <c span=2>
+      <h3>Level 3 heading</h3>
+      <h2>Level 2 heading</h2>
+      <p>Paragraph with one<br>and two lines</p>
+    </c>
+    <c span=2>
+      <h3>Level 3 heading</h3>
+      <h3>Level 3 heading</h3>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+    </c>
+    <c span=2>
+      <h3>Level 3 heading</h3>
+      <h4>Level 4 heading</h4>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+    </c>
+
+    <c span=row>&nbsp;</c>
+
+    <c span=2>
+      <h4>Level 4 heading</h4>
+      <h1>Level 1 heading</h1>
+      <p>Paragraph with one line</p>
+    </c>
+    <c span=2>
+      <h4>Level 4 heading</h4>
+      <h2>Level 2 heading</h2>
+      <p>Paragraph with one<br>and two lines</p>
+    </c>
+    <c span=2>
+      <h4>Level 4 heading</h4>
+      <h3>Level 3 heading</h3>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+    </c>
+    <c span=2>
+      <h4>Level 4 heading</h4>
+      <h4>Level 4 heading</h4>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+    </c>
+
+    <hr>
+
+    <c span=2>
+      <h1 class="single-line">Level 1 singĺỵ line heading</h1>
+      <h1 class="single-line">Level 1 singĺỵ line heading</h1>
+      <p>Paragraph with one line</p>
+    </c>
+    <c span=2>
+      <h1 class="single-line">Level 1 singĺỵ line heading</h1>
+      <h2 class="single-line">Level 2 singĺỵ line heading</h2>
+      <p>Paragraph with one<br>and two lines</p>
+    </c>
+    <c span=2>
+      <h1 class="single-line">Level 1 singĺỵ line heading</h1>
+      <h3 class="single-line">Level 3 singĺỵ line heading</h3>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+    </c>
+    <c span=2>
+      <h1 class="single-line">Level 1 singĺỵ line heading</h1>
+      <h4 class="single-line">Level 4 singĺỵ line heading</h4>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+    </c>
+
+    <c span=row>&nbsp;</c>
+
+    <c span=2>
+      <h2 class="single-line">Level 2 singĺỵ line heading</h2>
+      <h1 class="single-line">Level 1 singĺỵ line heading</h1>
+      <p>Paragraph with one line</p>
+    </c>
+    <c span=2>
+      <h2 class="single-line">Level 2 singĺỵ line heading</h2>
+      <h2 class="single-line">Level 2 singĺỵ line heading</h2>
+      <p>Paragraph with one<br>and two lines</p>
+    </c>
+    <c span=2>
+      <h2 class="single-line">Level 2 singĺỵ line heading</h2>
+      <h3 class="single-line">Level 3 singĺỵ line heading</h3>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+    </c>
+    <c span=2>
+      <h2 class="single-line">Level 2 singĺỵ line heading</h2>
+      <h4 class="single-line">Level 4 singĺỵ line heading</h4>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+    </c>
+
+    <c span=row>&nbsp;</c>
+
+    <c span=2>
+      <h3 class="single-line">Level 3 singĺỵ line heading</h3>
+      <h1 class="single-line">Level 1 singĺỵ line heading</h1>
+      <p>Paragraph with one line</p>
+    </c>
+    <c span=2>
+      <h3 class="single-line">Level 3 singĺỵ line heading</h3>
+      <h2 class="single-line">Level 2 singĺỵ line heading</h2>
+      <p>Paragraph with one<br>and two lines</p>
+    </c>
+    <c span=2>
+      <h3 class="single-line">Level 3 singĺỵ line heading</h3>
+      <h3 class="single-line">Level 3 singĺỵ line heading</h3>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+    </c>
+    <c span=2>
+      <h3 class="single-line">Level 3 singĺỵ line heading</h3>
+      <h4 class="single-line">Level 4 singĺỵ line heading</h4>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+    </c>
+
+    <c span=row>&nbsp;</c>
+
+    <c span=2>
+      <h4 class="single-line">Level 4 singĺỵ line heading</h4>
+      <h1 class="single-line">Level 1 singĺỵ line heading</h1>
+      <p>Paragraph with one line</p>
+    </c>
+    <c span=2>
+      <h4 class="single-line">Level 4 singĺỵ line heading</h4>
+      <h2 class="single-line">Level 2 singĺỵ line heading</h2>
+      <p>Paragraph with one<br>and two lines</p>
+    </c>
+    <c span=2>
+      <h4 class="single-line">Level 4 singĺỵ line heading</h4>
+      <h3 class="single-line">Level 3 singĺỵ line heading</h3>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+    </c>
+    <c span=2>
+      <h4 class="single-line">Level 4 singĺỵ line heading</h4>
+      <h4 class="single-line">Level 4 singĺỵ line heading</h4>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+    </c>
+
+    <hr>
+
+    <c span=2>
+      <h4>Level 4 heading</h4>
+      <h1>Level 1 heading</h1>
+      <p>single line</p>
+
+      <h4>Level 4 heading</h4>
+      <h1 class="single-line">Level 1 singĺỵ line</h1>
+      <p>single line</p>
+
+      <h4 class="single-line">Level 4 singĺỵ line</h4>
+      <h1 class="single-line">Level 1 singĺỵ line</h1>
+      <p>single line</p>
+
+      <h4 class="single-line">Level 4 singĺỵ line</h4>
+      <h1>Level 1 header</h1>
+      <p>single line</p>
+    </c>
+    <c span=2>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line<br>
+      single line
+    </c>
+
+    <c span=2>
+      <h1>Level 1 heading</h1>
+      <h2>Level 2 heading</h2>
+      <h3>Level 3 heading</h3>
+      <h4>Level 4 heading</h4>
+      <h1 class="single-line">Level 1 singĺỵ line</h1>
+      <h2 class="single-line">Level 2 singĺỵ line</h2>
+      <h3 class="single-line">Level 3 singĺỵ line</h3>
+      <h4 class="single-line">Level 4 singĺỵ line</h4>
+      <p>Paragraph with one<br>two<br>three<br>four and<br>five lines</p>
+    </c>
+    <c span=2>
+      <h4>Level 4 heading</h4>
+      <h3>Level 3 heading</h3>
+      <h2>Level 2 heading</h2>
+      <h1>Level 1 heading</h1>
+      <h4 class="single-line">Level 4 singĺỵ line</h4>
+      <h3 class="single-line">Level 3 singĺỵ line</h3>
+      <h2 class="single-line">Level 2 singĺỵ line</h2>
+      <h1 class="single-line">Level 1 singĺỵ line</h1>
+      <p>Paragraph with one<br>and two lines</p>
+    </c>
+
+    <hr>
+
+    <c span=2>
+      <h1 class="single-line">Level 1 singĺỵ line</h1>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+      <h1 class="single-line">Level 1 singĺỵ line</h1>
+      Plain text
+      <h3 class="single-line">Level 3 singĺỵ line</h3>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+      <h3 class="single-line">Level 3 singĺỵ line</h3>
+      Plain text<br>
+      Plain text<br>
+      Plain text<br>
+      Plain text
+    </c>
+    <c span=2>
+      <h2 class="single-line">Level 2 singĺỵ line</h2>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+      <h2 class="single-line">Level 2 singĺỵ line</h2>
+      Plain text<br>
+      Plain text<br>
+      Plain text
+      <h4 class="single-line">Level 4 singĺỵ line</h4>
+      <p>Paragraph with one<br>and two lines</p>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+      <h4 class="single-line">Level 4 singĺỵ line</h4>
+      Plain text
+    </c>
+
+    <hr>
+
+    <c span=2>
+      <h1>Level 1 heading</h1>
+      <h2>Level 2 heading</h2>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+    </c>
+    <c span=2>
+      <h3>Level 3 heading</h3>
+      <h4>Level 4 heading</h4>
+      <p>Paragraph with one line</p>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+    </c>
+    <c span=2>
+      <p>
+        Paragraph with<br>line<br>line<br>line<br>line<br>line<br>
+        line<br>line<br>line
+      </p>
+    </c>
+    <c span=2>
+      <h1>Level 1 heading</h1>
+      <h2>Level 2 heading</h2>
+      <h3>Level 3 heading</h3>
+      <p>Paragraph with one line</p>
+    </c>
+
+    <hr>
+
+    <c span=2>
+      <h1 class="single-line">Level 1 singĺỵ line</h1>
+      <h2 class="single-line">Level 2 singĺỵ line</h2>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+    </c>
+    <c span=2>
+      <h3 class="single-line">Level 3 singĺỵ line</h3>
+      <h4 class="single-line">Level 4 singĺỵ line</h4>
+      <p>Paragraph with one line</p>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+    </c>
+    <c span=2>
+      <p>
+        Paragraph with<br>line<br>line<br>line<br>line<br>line<br>
+        line<br>line<br>line<br>line
+      </p>
+    </c>
+    <c span=2>
+      <h1 class="single-line">Level 1 singĺỵ line</h1>
+      <h2 class="single-line">Level 2 singĺỵ line</h2>
+      <h3 class="single-line">Level 3 singĺỵ line</h3>
+      <p>Paragraph with one line</p>
+    </c>
+
+    <hr>
+
+    <c span=2 span-s=row>
+      <h1>Level 1</h1>
+      <h2>Level 2</h2>
+      <h3>Level 3</h3>
+      <h4>Level 4</h4>
+      <h5>Level 5</h5>
+    </c>
+    <c span=3.. span-s=row>
+      <h1 class="large">Level 1 header<br>large size</h1>
+      <h1 class="xlarge">Level 1 header<br>xlarge size</h1>
+      <h1 class="xxlarge">Level 1 header<br>xxlarge size</h1>
+      <h1 class="xxxlarge">Level 1 header<br>xxxlarge size</h1>
+      <h1 class="xxxlarge single-line">Single-line xxxlarge size</h1>
+    </c>
+
+    <hr>
+
+    <c span=2>
+      <h1>Level 1<br>heading<br>wråpping<br>Åuĺtipĺe<br>lines</h1>
+      <p>Paragraph with one<br>two<br>three<br>four and<br>five lines</p>
+    </c>
+    <c span=2>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+      <p>Paragraph with one and<br>two lines</p>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+      <p>Paragraph with one line</p>
+      <p>Paragraph with one<br>two and<br>three lines</p>
+    </c>
+    <c span=2>
+      <h2>Level 2 heading that wraps over Åuĺtipĺe lines and keeps on wrapping</h2>
+      <p>Paragraph with one and<br>two lines</p>
+      <h3>
+        Level 3 heading that wraps over Åuĺtipĺe lines and keeps on wrapping
+        and wrapping and wrapping and wrapping
+      </h3>
+      <p>Paragraph with one line</p>
+    </c>
+    <c span=2>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+      <p>Paragraph with one line</p>
+      <p>Paragraph with one line</p>
+      <h4>
+        Level 4 heading that wraps over Åuĺtipĺe lines and keeps on wrapping
+        and wrapping and wrapping and wrapping
+      </h3>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+      <p>Paragraph with one and<br>two lines</p>
+    </c>
+
+    <hr>
+    <c span=row class=h3>Images</c>
+
+    <c span=2>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+      <p>Paragraph with one<br>two<br>three<br>four and<br>five lines</p>
+    </c>
+    <c span=2>
+      <img src="image1.jpg" class="h-8 top" />
+      <p>Contain and align to top</p>
+    </c>
+    <c span=2>
+      <img src="image1.jpg" class="h-8 bottom right" />
+      <p>Contain and align to bottom right</p>
+    </c>
+    <c span=2>
+      <img src="image1.jpg" class="h-8 fill" />
+      <p>Fill</p>
+    </c>
+
+    <c span=3.. span-s=row><hr></c>
+
+    <c span=2>
+      <p>Paragraph with one<br>two<br>three<br>four and<br>five lines</p>
+      <p>Paragraph with one<br>two<br>three<br>four and<br>five lines</p>
+    </c>
+
+    <c span=2>
+      <p>Fill from bottom left</p>
+      <img src="image1.jpg" class="h-8 fill bottom left" />
+      <p>Fill from bottom left</p>
+    </c>
+    
+    <c span=2>
+      <p>Contain and align to top</p>
+      <img src="image1.jpg" class="h-8 top" />
+      <p>Contain and align to top</p>
+    </c>
+    
+    <c span=2 title="img is only child (no margins)">
+      <img src="image1.jpg" width="100%" class="h-8 fill" />
+    </c>
+
+    <hr>
+    <c span=row class=h3>Flow columns</c>
+
+    <c span=row flow-cols=4 flow-cols-s=2>
+      [flowing across 4 columns]
+      <p>A third of the distance across the Beach, the meadow ends and sand
+      begins. This slopes gradually up for another third of the distance, to
+      the foot of the sand hills, which seem tumbled into their places by some
+      mighty power, sometimes three tiers of them deep, sometimes two, and
+      sometimes only one. A third of the distance across the Beach, the meadow ends and sand begins.
+      </p><p>
+      This slopes gradually up for another third of the distance, to
+      the foot of the sand hills, which seem tumbled into their places by some
+      mighty power, sometimes three tiers of them deep, sometimes two, and
+      sometimes only one.
+      </p><p>The outline of this inner shore is most irregular, curving and bending
+      in and out and back upon itself, making coves and points and creeks and
+      channels, and often pushing out in flats with not water enough on them
+      at low tide to wet your ankles.
+      </p><p>
+      A third of the distance across the Beach, the meadow ends and sand
+      begins. This slopes gradually up for another third of the distance, to
+      the foot of the sand hills, which seem tumbled into their places by some
+      mighty power, sometimes three tiers of them deep, sometimes two, and
+      sometimes only one.
+      </p>
+    </c>
+
+    <c span=3-8 span-s=2-4 flow-cols=3 flow-cols-s=2>
+      [flowing across 3 columns]
+      <p>A third of the distance across the Beach, the meadow ends and sand
+      begins. This slopes gradually up for another third of the distance, to
+      the foot of the sand hills, which seem tumbled into their places by some
+      mighty power, sometimes three tiers of them deep, sometimes two, and
+      sometimes only one. A third of the distance across the Beach, the meadow ends and sand begins.
+      </p><p>
+      This slopes gradually up for another third of the distance, to
+      the foot of the sand hills, which seem tumbled into their places by some
+      mighty power, sometimes three tiers of them deep, sometimes two, and
+      sometimes only one.
+      </p><p>The outline of this inner shore is most irregular, curving and bending
+      in and out and back upon itself, making coves and points and creeks and
+      channels, and often pushing out in flats with not water enough on them
+      at low tide to wet your ankles.
+      </p><p>
+      A third of the distance across the Beach, the meadow ends and sand
+      begins. This slopes gradually up for another third of the distance, to
+      the foot of the sand hills, which seem tumbled into their places by some
+      mighty power, sometimes three tiers of them deep, sometimes two, and
+      sometimes only one.
+      </p>
+    </c>
+
+    <c span=5-8 span-s=3-4 flow-cols=2 flow-cols-s=1>
+      [flowing across column 5-8]
+      <p>A third of the distance across the Beach, the meadow ends and sand
+      begins. This slopes gradually up for another third of the distance, to
+      the foot of the sand hills, which seem tumbled into their places by some
+      mighty power, sometimes three tiers of them deep, sometimes two, and
+      sometimes only one. A third of the distance across the Beach, the meadow ends and sand begins.
+      </p><p>
+      This slopes gradually up for another third of the distance, to
+      the foot of the sand hills, which seem tumbled into their places by some
+      mighty power, sometimes three tiers of them deep, sometimes two, and
+      sometimes only one.
+      </p><p>The outline of this inner shore is most irregular, curving and bending
+      in and out and back upon itself, making coves and points and creeks and
+      channels, and often pushing out in flats with not water enough on them
+      at low tide to wet your ankles.
+      </p><p>
+      A third of the distance across the Beach, the meadow ends and sand
+      begins. This slopes gradually up for another third of the distance, to
+      the foot of the sand hills, which seem tumbled into their places by some
+      mighty power, sometimes three tiers of them deep, sometimes two, and
+      sometimes only one.
+      </p>
+    </c>
+
+    <hr>
+    <c span=row class=h3>Horizontal rules</c>
+
+    <c span=2>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+      <hr>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+    </c>
+    <c span=2>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+    </c>
+    <c span=2>
+      <p>Paragraph with one line</p>
+      <hr>
+      <p>Paragraph with one line</p>
+      <hr>
+      <p>Paragraph with one and<br>two lines</p>
+    </c>
+    <c span=2>
+      <p>Paragraph with one and<br>two lines</p>
+      <p>Paragraph with one line</p>
+      <hr>
+      <p>Paragraph with one and<br>two lines</p>
+    </c>
+
+    <hr>
+    <hr>
+    <hr>
+
+    <c span=2><hr></c>
+    <c span=2><hr></c>
+    <c span=2><hr></c>
+    <c span=2><hr></c>
+
+    <c span=2><hr>hr with text</c>
+    <c span=2>text with hr<hr></c>
+    <c span=2><hr><p>hr with p</p></c>
+    <c span=2><p>p with hr</p><hr></c>
+
+    <c span=row><hr><p>hr with p</p></c>
+    <c span=row><hr><p>hr with p (multiple entries tests fractional baseline shift)</p></c>
+    
+    <c span=row><p>p with hr</p><hr></c>
+    <c span=row><p>p with hr</p><hr></c>
+    <c span=row><p>p with hr</p><hr></c>
+
+    <hr>
+    <c span=row class=h3>Lists</c>
+
+    <c span=2>
+      <h4>Unordered list</h4>
+      <ul>
+        <li>Unordered list item<br>spannig multiple<br>lines</li>
+        <li>Unordered list item<br>spannig multiple<br>lines</li>
+        <li>Unordered list item<br>spannig multiple<br>lines</li>
+      </ul>
+      <h4>Compact unordered list</h4>
+      <ul class="compact">
+        <li>Unordered list item</li>
+        <li>Unordered list item</li>
+        <li>Unordered list item</li>
+        <li>Unordered list item</li>
+        <li>Unordered list item</li>
+        <li>Unordered list item</li>
+        <li>Unordered list item</li>
+        <li>Unordered list item</li>
+        <li>Unordered list item</li>
+        <li>Unordered list item</li>
+        <li>Unordered list item</li>
+        <li>Unordered list item</li>
+      </ul>
+      <p>Paragraph with one and<br>two lines</p>
+    </c>
+    <c span=2>
+      <h4>Ordered list</h4>
+      <ol>
+        <li>Ordered list item<br>spannig multiple<br>lines</li>
+        <li>Ordered list item<br>spannig multiple<br>lines</li>
+        <li>Ordered list item<br>spannig multiple<br>lines</li>
+      </ol>
+      <h4>Compact ordered list</h4>
+      <ol class="compact">
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+      </ol>
+      <p>Paragraph with one and<br>two lines</p>
+    </c>
+    <c span=2>
+      <h4>Ordered &amp; unordered lists</h4>
+      <ol>
+        <li>Ordered list item</li>
+        <li>
+          Plain text
+          <ul>
+            <li>Unordered list item</li>
+            <li>Unordered list item</li>
+            <li>Unordered list item</li>
+          </ul>
+        </li>
+        <li>
+          <p>Paragraph</p>
+          <ul>
+            <li>Unordered list item</li>
+            <li>Unordered list item</li>
+            <li>Unordered list item</li>
+          </ul>
+        </li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+      </ol>
+    </c>
+    <c span="2">
+      <br><br>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
+      <p>Paragraph with one line</p>
+    </c>
+
+  </grid>
+
+  <!-- ---- internal only -- not part of raster ---- -->
+  <script>(function(){
+
+let ua = navigator.userAgent
+if (ua.indexOf("Chrome/") != -1) {
+  document.documentElement.classList.add('chrome')
+} else if (ua.indexOf("Firefox/") != -1) {
+  document.documentElement.classList.add('firefox')
+}
+
+let css = `
+html.inverted { background: #010101; color: white }
+html.inverted hr { background: white }
+html.size-mode-relative {
+  --fontSize: calc(100vw / 80);
+  --hrThickness: 0.17rem;
+}
+.settings c:nth-child(2n+2) {
+  font-feature-settings:'ss02' 1;
+  user-select:none;
+}
+.baselineBeacon {
+  height: var(--baseline);
+  overflow: hidden;
+  display: none;
+  position: absolute;
+}
+`.trim()
+let style = document.createElement('style')
+style.appendChild(document.createTextNode(css))
+document.head.appendChild(style)
+let link = document.createElement('link')
+link.rel = "stylesheet"
+link.href = "../raster.debug.css"
+document.head.appendChild(link)
+
+
+let baselineBeacon = document.createElement('div')
+baselineBeacon.className = 'baselineBeacon'
+baselineBeacon.innerText = 'x'
+document.body.appendChild(baselineBeacon)
+
+function fmtnum(n) {
+  let s = n.toFixed(2)
+  if (s.substr(-3) == '.00') {
+    s = s.substr(0, s.length-3)
+  }
+  return s
+}
+
+function setLabel(id, value) {
+  let label = document.getElementById(id)
+  label && (label.innerText = value)
+}
+
+let tapevent = 'PointerEvent' in window ? 'pointerdown' : 'click'
+
+function bindTapableOption(msgname, fn) {
+  let label = document.getElementById(msgname + '-msg')
+  label && label.parentElement.addEventListener(tapevent, fn)
+}
+
+function updateComputedValueLabels() {
+  let cs = getComputedStyle(baselineBeacon)
+  let baseline = parseFloat(cs.height)
+  let fontSize = parseFloat(cs.fontSize)
+  let lineHeight = parseFloat(cs.lineHeight)
+  setLabel('baseline-value-msg', fmtnum(baseline) + ' dp')
+  setLabel('fontsize-value-msg', fmtnum(fontSize) + ' dp')
+  setLabel('lineheight-value-msg', fmtnum(lineHeight) + ' dp')
+}
+
+function updateDebugModeLabel() {
+  let on = document.body.classList.contains('debug')
+  setLabel('debug-mode-msg', on ? 'On' : 'Off')
+}
+
+function updateBaseGridLabel() {
+  let on = document.body.classList.contains('show-base-grid')
+  setLabel('base-grid-msg', on ? 'On' : 'Off')
+}
+
+function updateInvertedLabel() {
+  let on = document.documentElement.classList.contains('inverted')
+  setLabel('inverted-msg', on ? 'On' : 'Off')
+}
+
+function updateSizeModeLabel() {
+  let rel = document.documentElement.classList.contains('size-mode-relative')
+  setLabel('size-mode-msg', rel ? 'Viewport' : 'Constant')
+}
+
+function toggleDebugMode() {
+  document.body.classList.toggle('debug')
+  updateDebugModeLabel()
+}
+
+function toggleBaseGrid() {
+  document.body.classList.toggle('show-base-grid')
+  updateBaseGridLabel()
+}
+
+function toggleInvertedMode() {
+  document.documentElement.classList.toggle('inverted')
+  updateInvertedLabel()
+}
+
+function toggleSizeMode() {
+  document.documentElement.classList.toggle('size-mode-relative')
+  updateSizeModeLabel()
+  updateComputedValueLabels()
+  setTimeout(updateComputedValueLabels, 10)
+}
+
+bindTapableOption('debug-mode', toggleDebugMode)
+bindTapableOption('base-grid', toggleBaseGrid)
+bindTapableOption('inverted', toggleInvertedMode)
+bindTapableOption('size-mode', toggleSizeMode)
+
+function handleKeyPress(key) {
+  switch (key) {
+    case "d": case "D":  toggleDebugMode();    return true
+    case "g": case "G":  toggleBaseGrid();     return true
+    case "i": case "I":  toggleInvertedMode(); return true
+    case "s": case "S":  toggleSizeMode();     return true
+  }
+  return false
+}
+
+document.addEventListener('keypress', ev => {
+  if (!ev.metaKey && !ev.ctrlKey && !ev.altKey && handleKeyPress(ev.key)) {
+    ev.preventDefault()
+    ev.stopPropagation()
+  }
+}, {passive:false, capture:true})
+
+
+let resizeTimer = null
+window.addEventListener('resize', ev => {
+  if (resizeTimer === null) {
+    resizeTimer = setTimeout(() => {
+      resizeTimer = null
+      updateComputedValueLabels()
+    }, 100)
+  }
+})
+
+
+// main
+updateDebugModeLabel()
+updateBaseGridLabel()
+updateInvertedLabel()
+updateSizeModeLabel()
+
+updateComputedValueLabels()
+
+})();</script>
+  {% if site.safe == true %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105091131-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-105091131-1');
+  </script>
+  {% endif %}
+
+</body>
+</html>

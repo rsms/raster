@@ -1,0 +1,79 @@
+/*
+
+Variables
+
+*/
+:root {
+  /*
+  Font size is the basis of all other measurements.
+  It's either constant or viewport-relative. Choose one.
+  
+  Constant: */
+  --fontSize: 12px;
+  /*
+
+  Veiwport-relative (100% / EMs-across-viewport) */
+  /*--fontSize: calc(100vw / 80);*/
+}
+@media only screen and (max-width: 600px) { :root {
+  /*--fontSize: calc(100vw / 30);*/
+}}
+:root {
+  /* line height is the basis for vertical spacing */
+  --lineHeight: calc(var(--fontSize) * 1.5);
+
+  /* horizontal and vertical spacing basis */
+  --baseline: calc(var(--lineHeight) / 2);
+
+  /* spacing around blocks */
+  --blockSpacingTop: 0px;
+  --blockSpacingBottom: calc(var(--lineHeight) * 1);
+
+  /* horizontal rule */
+  --hrThickness: 2px;
+
+  /* heading size */
+  --h1-size: 2.8rem;
+  --h2-size: 2.2rem;
+  --h3-size: 1.4rem;
+  --h4-size: 1.1rem;
+
+  /* grid spacing */
+  --columnGap: var(--lineHeight);
+  --rowGap: var(--lineHeight);
+
+  /* Colors */
+  --red:    rgb(238, 39, 17);
+  --blue:   rgb(24, 113, 233);
+  --green:  rgb(18, 192, 91);
+  --yellow: rgb(249, 191, 15);
+
+  /* 1 pixel */
+  --displayScale: 1;
+  --pixel: 1px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 1.5dppx) { :root {
+  --displayScale: 2;
+  --pixel: 0.5px;
+}}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2.5),
+       only screen and (min-device-pixel-ratio: 2.5),
+       only screen and (min-resolution: 2.5dppx) { :root {
+  --displayScale: 3;
+  --pixel: 0.34px;
+}}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3.5),
+       only screen and (min-device-pixel-ratio: 3.5),
+       only screen and (min-resolution: 3.5dppx) { :root {
+  --displayScale: 4;
+  --pixel: 0.25px;
+}}
+
+/*@media only screen and (max-device-width: 812px) and (orientation: landscape) { :root {
+  --fontSize: 1.7vw;
+}}*/

@@ -3,7 +3,13 @@ lsi: false
 permalink: /:title
 markdown: kramdown
 safe: false
-exclude: ["misc", "_build"]
+exclude:
+  - misc
+  - _build
+  - src
+  - node_modules
+  - package.json
+  - package-lock.json
 kramdown:
   input: GFM
   auto_ids: true

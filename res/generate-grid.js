@@ -71,15 +71,16 @@ let generateCSS = exports.generateCSS = function generateCSS(props, writer) {
     writer(indent + mstr(s).replace(/\n/gm, '\n' + indent))
   }
 
-  w(`/* Raster Simple CSS Grid System${version ? ", version " + version : ""} */`)
+  w(`/* Raster grid subsystem (rsms.me/raster) */`)
 
   // grid
   w(`
     grid {
       display: grid;
-      grid-template-columns: repeat(${defaultColumns}, 1fr);
-      --grid-cs: 1; /* start */
-      --grid-ce: -1 /* end */
+      --grid-tc: repeat(${defaultColumns}, 1fr);
+      grid-template-columns: var(--grid-tc);
+      --grid-cs: 1; /* column start */
+      --grid-ce: -1 /* column end */
     }
     `)
 
@@ -120,7 +121,7 @@ let generateCSS = exports.generateCSS = function generateCSS(props, writer) {
   function genWidthDependent(attr, gattr, w) {
 
     for (let col = minColumns; col <= maxColumns; col++) {
-      w(`grid[${gattr}="${col}"] { grid-template-columns: repeat(${col}, 1fr) }`)
+      w(`grid[${gattr}="${col}"] { --grid-tc: repeat(${col}, 1fr) }`)
     }
 
     w("")
@@ -189,18 +190,16 @@ let generateCSS = exports.generateCSS = function generateCSS(props, writer) {
     w("")
     w(`/* .debug can be added to a grid to visualize its effective cells */`)
     w(`
-  grid.debug > * {
-    --color: rgba(${colors[0]},${alpha});
-    background-image:
-      linear-gradient(to bottom, var(--color) 0%, var(--color) 100%);
-  }
-    `)
+      grid.debug > * {
+        --color: rgba(${colors[0]},${alpha});
+        background-image:
+          linear-gradient(to bottom, var(--color) 0%, var(--color) 100%);
+      }
+      `)
     let ncolors = Math.min(maxColumns, colors.length)
     for (let col = 1; col <= ncolors; col++) {
-      w(
-        `grid.debug > :nth-child(${ncolors}n+${col+1})`+
-        ` { --color: rgba(${colors[col % colors.length]},${alpha}) }`
-      )
+      w(`grid.debug > :nth-child(${ncolors}n+${col+1})` +
+        ` { --color: rgba(${colors[col % colors.length]},${alpha}) }`)
     }
   }
 

@@ -1,0 +1,37 @@
+/* column flow */
+[flow-cols], [flow-cols-s], [flow-cols-l] {
+  column-gap: var(--columnGap);
+  column-fill: balance;
+}
+[flow-cols="1"] { column-count: 1 }
+[flow-cols="2"] { column-count: 2 }
+[flow-cols="3"] { column-count: 3 }
+[flow-cols="4"] { column-count: 4 }
+[flow-cols="5"] { column-count: 5 }
+[flow-cols="6"] { column-count: 6 }
+[flow-cols="7"] { column-count: 7 }
+[flow-cols="8"] { column-count: 8 }
+
+/* for window width <= 600 */
+@media only screen and (max-width: 600px) {
+  [flow-cols-s="1"] { column-count: 1 }
+  [flow-cols-s="2"] { column-count: 2 }
+  [flow-cols-s="3"] { column-count: 3 }
+  [flow-cols-s="4"] { column-count: 4 }
+  [flow-cols-s="5"] { column-count: 5 }
+  [flow-cols-s="6"] { column-count: 6 }
+  [flow-cols-s="7"] { column-count: 7 }
+  [flow-cols-s="8"] { column-count: 8 }
+}
+
+/* for window width >= 1600 */
+@media only screen and (min-width: 1599px) {
+  [flow-cols-l="1"] { column-count: 1 }
+  [flow-cols-l="2"] { column-count: 2 }
+  [flow-cols-l="3"] { column-count: 3 }
+  [flow-cols-l="4"] { column-count: 4 }
+  [flow-cols-l="5"] { column-count: 5 }
+  [flow-cols-l="6"] { column-count: 6 }
+  [flow-cols-l="7"] { column-count: 7 }
+  [flow-cols-l="8"] { column-count: 8 }
+}

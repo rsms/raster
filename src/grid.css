@@ -1,44 +1,45 @@
-/* Raster Simple CSS Grid System, version 3 */
+/* Raster grid subsystem (rsms.me/raster) */
 grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  --grid-cs: 1; /* start */
-  --grid-ce: -1 /* end */
+  --grid-tc: repeat(4, 1fr);
+  grid-template-columns: var(--grid-tc);
+  --grid-cs: 1; /* column start */
+  --grid-ce: -1 /* column end */
 }
 
 /* c -- cell or column */
 grid > c { display: block; appearance: none; -webkit-appearance: none }
 
-grid[columns="1"] { grid-template-columns: repeat(1, 1fr) }
-grid[columns="2"] { grid-template-columns: repeat(2, 1fr) }
-grid[columns="3"] { grid-template-columns: repeat(3, 1fr) }
-grid[columns="4"] { grid-template-columns: repeat(4, 1fr) }
-grid[columns="5"] { grid-template-columns: repeat(5, 1fr) }
-grid[columns="6"] { grid-template-columns: repeat(6, 1fr) }
-grid[columns="7"] { grid-template-columns: repeat(7, 1fr) }
-grid[columns="8"] { grid-template-columns: repeat(8, 1fr) }
-grid[columns="9"] { grid-template-columns: repeat(9, 1fr) }
-grid[columns="10"] { grid-template-columns: repeat(10, 1fr) }
-grid[columns="11"] { grid-template-columns: repeat(11, 1fr) }
-grid[columns="12"] { grid-template-columns: repeat(12, 1fr) }
-grid[columns="13"] { grid-template-columns: repeat(13, 1fr) }
-grid[columns="14"] { grid-template-columns: repeat(14, 1fr) }
-grid[columns="15"] { grid-template-columns: repeat(15, 1fr) }
-grid[columns="16"] { grid-template-columns: repeat(16, 1fr) }
-grid[columns="17"] { grid-template-columns: repeat(17, 1fr) }
-grid[columns="18"] { grid-template-columns: repeat(18, 1fr) }
-grid[columns="19"] { grid-template-columns: repeat(19, 1fr) }
-grid[columns="20"] { grid-template-columns: repeat(20, 1fr) }
-grid[columns="21"] { grid-template-columns: repeat(21, 1fr) }
-grid[columns="22"] { grid-template-columns: repeat(22, 1fr) }
-grid[columns="23"] { grid-template-columns: repeat(23, 1fr) }
-grid[columns="24"] { grid-template-columns: repeat(24, 1fr) }
-grid[columns="25"] { grid-template-columns: repeat(25, 1fr) }
-grid[columns="26"] { grid-template-columns: repeat(26, 1fr) }
-grid[columns="27"] { grid-template-columns: repeat(27, 1fr) }
-grid[columns="28"] { grid-template-columns: repeat(28, 1fr) }
-grid[columns="29"] { grid-template-columns: repeat(29, 1fr) }
-grid[columns="30"] { grid-template-columns: repeat(30, 1fr) }
+grid[columns="1"] { --grid-tc: repeat(1, 1fr) }
+grid[columns="2"] { --grid-tc: repeat(2, 1fr) }
+grid[columns="3"] { --grid-tc: repeat(3, 1fr) }
+grid[columns="4"] { --grid-tc: repeat(4, 1fr) }
+grid[columns="5"] { --grid-tc: repeat(5, 1fr) }
+grid[columns="6"] { --grid-tc: repeat(6, 1fr) }
+grid[columns="7"] { --grid-tc: repeat(7, 1fr) }
+grid[columns="8"] { --grid-tc: repeat(8, 1fr) }
+grid[columns="9"] { --grid-tc: repeat(9, 1fr) }
+grid[columns="10"] { --grid-tc: repeat(10, 1fr) }
+grid[columns="11"] { --grid-tc: repeat(11, 1fr) }
+grid[columns="12"] { --grid-tc: repeat(12, 1fr) }
+grid[columns="13"] { --grid-tc: repeat(13, 1fr) }
+grid[columns="14"] { --grid-tc: repeat(14, 1fr) }
+grid[columns="15"] { --grid-tc: repeat(15, 1fr) }
+grid[columns="16"] { --grid-tc: repeat(16, 1fr) }
+grid[columns="17"] { --grid-tc: repeat(17, 1fr) }
+grid[columns="18"] { --grid-tc: repeat(18, 1fr) }
+grid[columns="19"] { --grid-tc: repeat(19, 1fr) }
+grid[columns="20"] { --grid-tc: repeat(20, 1fr) }
+grid[columns="21"] { --grid-tc: repeat(21, 1fr) }
+grid[columns="22"] { --grid-tc: repeat(22, 1fr) }
+grid[columns="23"] { --grid-tc: repeat(23, 1fr) }
+grid[columns="24"] { --grid-tc: repeat(24, 1fr) }
+grid[columns="25"] { --grid-tc: repeat(25, 1fr) }
+grid[columns="26"] { --grid-tc: repeat(26, 1fr) }
+grid[columns="27"] { --grid-tc: repeat(27, 1fr) }
+grid[columns="28"] { --grid-tc: repeat(28, 1fr) }
+grid[columns="29"] { --grid-tc: repeat(29, 1fr) }
+grid[columns="30"] { --grid-tc: repeat(30, 1fr) }
 
 /* span=start... */
 grid > c[span^="1"] { --grid-cs: 1 }
@@ -115,36 +116,36 @@ grid > c[span="row"] { grid-column: 1 / -1 }
 
 /* for window width <= 600 */
 @media only screen and (max-width: 600px) {
-  grid[columns-s="1"] { grid-template-columns: repeat(1, 1fr) }
-  grid[columns-s="2"] { grid-template-columns: repeat(2, 1fr) }
-  grid[columns-s="3"] { grid-template-columns: repeat(3, 1fr) }
-  grid[columns-s="4"] { grid-template-columns: repeat(4, 1fr) }
-  grid[columns-s="5"] { grid-template-columns: repeat(5, 1fr) }
-  grid[columns-s="6"] { grid-template-columns: repeat(6, 1fr) }
-  grid[columns-s="7"] { grid-template-columns: repeat(7, 1fr) }
-  grid[columns-s="8"] { grid-template-columns: repeat(8, 1fr) }
-  grid[columns-s="9"] { grid-template-columns: repeat(9, 1fr) }
-  grid[columns-s="10"] { grid-template-columns: repeat(10, 1fr) }
-  grid[columns-s="11"] { grid-template-columns: repeat(11, 1fr) }
-  grid[columns-s="12"] { grid-template-columns: repeat(12, 1fr) }
-  grid[columns-s="13"] { grid-template-columns: repeat(13, 1fr) }
-  grid[columns-s="14"] { grid-template-columns: repeat(14, 1fr) }
-  grid[columns-s="15"] { grid-template-columns: repeat(15, 1fr) }
-  grid[columns-s="16"] { grid-template-columns: repeat(16, 1fr) }
-  grid[columns-s="17"] { grid-template-columns: repeat(17, 1fr) }
-  grid[columns-s="18"] { grid-template-columns: repeat(18, 1fr) }
-  grid[columns-s="19"] { grid-template-columns: repeat(19, 1fr) }
-  grid[columns-s="20"] { grid-template-columns: repeat(20, 1fr) }
-  grid[columns-s="21"] { grid-template-columns: repeat(21, 1fr) }
-  grid[columns-s="22"] { grid-template-columns: repeat(22, 1fr) }
-  grid[columns-s="23"] { grid-template-columns: repeat(23, 1fr) }
-  grid[columns-s="24"] { grid-template-columns: repeat(24, 1fr) }
-  grid[columns-s="25"] { grid-template-columns: repeat(25, 1fr) }
-  grid[columns-s="26"] { grid-template-columns: repeat(26, 1fr) }
-  grid[columns-s="27"] { grid-template-columns: repeat(27, 1fr) }
-  grid[columns-s="28"] { grid-template-columns: repeat(28, 1fr) }
-  grid[columns-s="29"] { grid-template-columns: repeat(29, 1fr) }
-  grid[columns-s="30"] { grid-template-columns: repeat(30, 1fr) }
+  grid[columns-s="1"] { --grid-tc: repeat(1, 1fr) }
+  grid[columns-s="2"] { --grid-tc: repeat(2, 1fr) }
+  grid[columns-s="3"] { --grid-tc: repeat(3, 1fr) }
+  grid[columns-s="4"] { --grid-tc: repeat(4, 1fr) }
+  grid[columns-s="5"] { --grid-tc: repeat(5, 1fr) }
+  grid[columns-s="6"] { --grid-tc: repeat(6, 1fr) }
+  grid[columns-s="7"] { --grid-tc: repeat(7, 1fr) }
+  grid[columns-s="8"] { --grid-tc: repeat(8, 1fr) }
+  grid[columns-s="9"] { --grid-tc: repeat(9, 1fr) }
+  grid[columns-s="10"] { --grid-tc: repeat(10, 1fr) }
+  grid[columns-s="11"] { --grid-tc: repeat(11, 1fr) }
+  grid[columns-s="12"] { --grid-tc: repeat(12, 1fr) }
+  grid[columns-s="13"] { --grid-tc: repeat(13, 1fr) }
+  grid[columns-s="14"] { --grid-tc: repeat(14, 1fr) }
+  grid[columns-s="15"] { --grid-tc: repeat(15, 1fr) }
+  grid[columns-s="16"] { --grid-tc: repeat(16, 1fr) }
+  grid[columns-s="17"] { --grid-tc: repeat(17, 1fr) }
+  grid[columns-s="18"] { --grid-tc: repeat(18, 1fr) }
+  grid[columns-s="19"] { --grid-tc: repeat(19, 1fr) }
+  grid[columns-s="20"] { --grid-tc: repeat(20, 1fr) }
+  grid[columns-s="21"] { --grid-tc: repeat(21, 1fr) }
+  grid[columns-s="22"] { --grid-tc: repeat(22, 1fr) }
+  grid[columns-s="23"] { --grid-tc: repeat(23, 1fr) }
+  grid[columns-s="24"] { --grid-tc: repeat(24, 1fr) }
+  grid[columns-s="25"] { --grid-tc: repeat(25, 1fr) }
+  grid[columns-s="26"] { --grid-tc: repeat(26, 1fr) }
+  grid[columns-s="27"] { --grid-tc: repeat(27, 1fr) }
+  grid[columns-s="28"] { --grid-tc: repeat(28, 1fr) }
+  grid[columns-s="29"] { --grid-tc: repeat(29, 1fr) }
+  grid[columns-s="30"] { --grid-tc: repeat(30, 1fr) }
   
   /* span-s=start... */
   grid > c[span-s^="1"] { --grid-cs: 1 }
@@ -222,36 +223,36 @@ grid > c[span="row"] { grid-column: 1 / -1 }
 
 /* for window width >= 1600 */
 @media only screen and (min-width: 1599px) {
-  grid[columns-l="1"] { grid-template-columns: repeat(1, 1fr) }
-  grid[columns-l="2"] { grid-template-columns: repeat(2, 1fr) }
-  grid[columns-l="3"] { grid-template-columns: repeat(3, 1fr) }
-  grid[columns-l="4"] { grid-template-columns: repeat(4, 1fr) }
-  grid[columns-l="5"] { grid-template-columns: repeat(5, 1fr) }
-  grid[columns-l="6"] { grid-template-columns: repeat(6, 1fr) }
-  grid[columns-l="7"] { grid-template-columns: repeat(7, 1fr) }
-  grid[columns-l="8"] { grid-template-columns: repeat(8, 1fr) }
-  grid[columns-l="9"] { grid-template-columns: repeat(9, 1fr) }
-  grid[columns-l="10"] { grid-template-columns: repeat(10, 1fr) }
-  grid[columns-l="11"] { grid-template-columns: repeat(11, 1fr) }
-  grid[columns-l="12"] { grid-template-columns: repeat(12, 1fr) }
-  grid[columns-l="13"] { grid-template-columns: repeat(13, 1fr) }
-  grid[columns-l="14"] { grid-template-columns: repeat(14, 1fr) }
-  grid[columns-l="15"] { grid-template-columns: repeat(15, 1fr) }
-  grid[columns-l="16"] { grid-template-columns: repeat(16, 1fr) }
-  grid[columns-l="17"] { grid-template-columns: repeat(17, 1fr) }
-  grid[columns-l="18"] { grid-template-columns: repeat(18, 1fr) }
-  grid[columns-l="19"] { grid-template-columns: repeat(19, 1fr) }
-  grid[columns-l="20"] { grid-template-columns: repeat(20, 1fr) }
-  grid[columns-l="21"] { grid-template-columns: repeat(21, 1fr) }
-  grid[columns-l="22"] { grid-template-columns: repeat(22, 1fr) }
-  grid[columns-l="23"] { grid-template-columns: repeat(23, 1fr) }
-  grid[columns-l="24"] { grid-template-columns: repeat(24, 1fr) }
-  grid[columns-l="25"] { grid-template-columns: repeat(25, 1fr) }
-  grid[columns-l="26"] { grid-template-columns: repeat(26, 1fr) }
-  grid[columns-l="27"] { grid-template-columns: repeat(27, 1fr) }
-  grid[columns-l="28"] { grid-template-columns: repeat(28, 1fr) }
-  grid[columns-l="29"] { grid-template-columns: repeat(29, 1fr) }
-  grid[columns-l="30"] { grid-template-columns: repeat(30, 1fr) }
+  grid[columns-l="1"] { --grid-tc: repeat(1, 1fr) }
+  grid[columns-l="2"] { --grid-tc: repeat(2, 1fr) }
+  grid[columns-l="3"] { --grid-tc: repeat(3, 1fr) }
+  grid[columns-l="4"] { --grid-tc: repeat(4, 1fr) }
+  grid[columns-l="5"] { --grid-tc: repeat(5, 1fr) }
+  grid[columns-l="6"] { --grid-tc: repeat(6, 1fr) }
+  grid[columns-l="7"] { --grid-tc: repeat(7, 1fr) }
+  grid[columns-l="8"] { --grid-tc: repeat(8, 1fr) }
+  grid[columns-l="9"] { --grid-tc: repeat(9, 1fr) }
+  grid[columns-l="10"] { --grid-tc: repeat(10, 1fr) }
+  grid[columns-l="11"] { --grid-tc: repeat(11, 1fr) }
+  grid[columns-l="12"] { --grid-tc: repeat(12, 1fr) }
+  grid[columns-l="13"] { --grid-tc: repeat(13, 1fr) }
+  grid[columns-l="14"] { --grid-tc: repeat(14, 1fr) }
+  grid[columns-l="15"] { --grid-tc: repeat(15, 1fr) }
+  grid[columns-l="16"] { --grid-tc: repeat(16, 1fr) }
+  grid[columns-l="17"] { --grid-tc: repeat(17, 1fr) }
+  grid[columns-l="18"] { --grid-tc: repeat(18, 1fr) }
+  grid[columns-l="19"] { --grid-tc: repeat(19, 1fr) }
+  grid[columns-l="20"] { --grid-tc: repeat(20, 1fr) }
+  grid[columns-l="21"] { --grid-tc: repeat(21, 1fr) }
+  grid[columns-l="22"] { --grid-tc: repeat(22, 1fr) }
+  grid[columns-l="23"] { --grid-tc: repeat(23, 1fr) }
+  grid[columns-l="24"] { --grid-tc: repeat(24, 1fr) }
+  grid[columns-l="25"] { --grid-tc: repeat(25, 1fr) }
+  grid[columns-l="26"] { --grid-tc: repeat(26, 1fr) }
+  grid[columns-l="27"] { --grid-tc: repeat(27, 1fr) }
+  grid[columns-l="28"] { --grid-tc: repeat(28, 1fr) }
+  grid[columns-l="29"] { --grid-tc: repeat(29, 1fr) }
+  grid[columns-l="30"] { --grid-tc: repeat(30, 1fr) }
   
   /* span-l=start... */
   grid > c[span-l^="1"] { --grid-cs: 1 }
@@ -329,9 +330,9 @@ grid > c[span="row"] { grid-column: 1 / -1 }
 
 /* .debug can be added to a grid to visualize its effective cells */
 grid.debug > * {
---color: rgba(248,110,91 ,0.3);
-background-image:
-  linear-gradient(to bottom, var(--color) 0%, var(--color) 100%);
+  --color: rgba(248,110,91 ,0.3);
+  background-image:
+    linear-gradient(to bottom, var(--color) 0%, var(--color) 100%);
 }
 grid.debug > :nth-child(6n+2) { --color: rgba(103,126,208,0.3) }
 grid.debug > :nth-child(6n+3) { --color: rgba(224,174,72 ,0.3) }

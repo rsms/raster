@@ -1,0 +1,9 @@
+:root {
+  --fontSize: calc(100vw / 80);
+}
+@media only screen and (max-width: 600px) { :root {
+  --fontSize: calc(100vw / 30);
+}}
+@media only screen and (max-device-width: 812px) and (orientation: landscape) { :root {
+  --fontSize: 1.7vw;
+}}

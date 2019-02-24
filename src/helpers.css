@@ -1,0 +1,130 @@
+/* visualize base grid */
+.show-base-grid {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(120, 120, 120, 0.05),
+    rgba(120, 120, 120, 0.05) 1px,
+    transparent 1px,
+    transparent calc(var(--baseline) / 2),
+    rgba(20,  230, 245, 0.3) calc(calc(var(--baseline) / 2)),
+    rgba(20,  230, 245, 0.3) calc(calc(var(--baseline) / 2) + 1px),
+    transparent calc(calc(var(--baseline) / 2) + 1px),
+    transparent var(--baseline)
+  );
+  background-repeat: repeat-y;
+  background-size: 100% var(--baseline);
+  background-position: 0 0.5px;
+}
+
+/* text */
+.single-line {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+/* layout mode */
+.block { display: block }
+.inline { display: inline-block }
+.flex-h { display: flex; flex-direction: row }
+.flex-v { display: flex; flex-direction: column }
+
+/* relative positioning */
+.top {}
+.left { text-align:left; }
+.right { text-align:right; }
+.bottom {}
+.center { text-align:center; }
+.flex-v.center { align-self:center }
+img.top { object-position: center top; align-self:center }
+img.center { object-position: center center; align-self:center }
+img.bottom { object-position: center bottom; align-self:center }
+img.left.top { object-position: left top; align-self:flex-start }
+img.left.center { object-position: left center; align-self:flex-start }
+img.left.bottom { object-position: left bottom; align-self:flex-start }
+img.right.top { object-position: right top; align-self:flex-end }
+img.right.center { object-position: right center; align-self:flex-end }
+img.right.bottom { object-position: right bottom; align-self:flex-end }
+
+/* size */
+.w-1 { width: calc(var(--lineHeight) * 1) }
+.w-2 { width: calc(var(--lineHeight) * 2) }
+.w-3 { width: calc(var(--lineHeight) * 3) }
+.w-4 { width: calc(var(--lineHeight) * 4) }
+.w-5 { width: calc(var(--lineHeight) * 5) }
+.w-6 { width: calc(var(--lineHeight) * 6) }
+.w-7 { width: calc(var(--lineHeight) * 7) }
+.w-8 { width: calc(var(--lineHeight) * 8) }
+.w-9 { width: calc(var(--lineHeight) * 9) }
+.w-10 { width: calc(var(--lineHeight) * 10) }
+.w-11 { width: calc(var(--lineHeight) * 11) }
+.w-12 { width: calc(var(--lineHeight) * 12) }
+.w-13 { width: calc(var(--lineHeight) * 13) }
+.w-14 { width: calc(var(--lineHeight) * 14) }
+.w-15 { width: calc(var(--lineHeight) * 15) }
+.w-16 { width: calc(var(--lineHeight) * 16) }
+.w-17 { width: calc(var(--lineHeight) * 17) }
+.w-18 { width: calc(var(--lineHeight) * 18) }
+.w-19 { width: calc(var(--lineHeight) * 19) }
+.w-20 { width: calc(var(--lineHeight) * 20) }
+.w-21 { width: calc(var(--lineHeight) * 21) }
+.w-22 { width: calc(var(--lineHeight) * 22) }
+.w-23 { width: calc(var(--lineHeight) * 23) }
+.w-24 { width: calc(var(--lineHeight) * 24) }
+.w-25 { width: calc(var(--lineHeight) * 25) }
+.w-26 { width: calc(var(--lineHeight) * 26) }
+.w-27 { width: calc(var(--lineHeight) * 27) }
+.w-28 { width: calc(var(--lineHeight) * 28) }
+.w-29 { width: calc(var(--lineHeight) * 29) }
+.w-30 { width: calc(var(--lineHeight) * 30) }
+.w-31 { width: calc(var(--lineHeight) * 31) }
+.w-32 { width: calc(var(--lineHeight) * 32) }
+.w-33 { width: calc(var(--lineHeight) * 33) }
+.w-34 { width: calc(var(--lineHeight) * 34) }
+.w-35 { width: calc(var(--lineHeight) * 35) }
+.w-36 { width: calc(var(--lineHeight) * 36) }
+.w-37 { width: calc(var(--lineHeight) * 37) }
+.w-38 { width: calc(var(--lineHeight) * 38) }
+.w-39 { width: calc(var(--lineHeight) * 39) }
+.w-40 { width: calc(var(--lineHeight) * 40) }
+
+.h-1 { height: calc(var(--lineHeight) * 1) }
+.h-2 { height: calc(var(--lineHeight) * 2) }
+.h-3 { height: calc(var(--lineHeight) * 3) }
+.h-4 { height: calc(var(--lineHeight) * 4) }
+.h-5 { height: calc(var(--lineHeight) * 5) }
+.h-6 { height: calc(var(--lineHeight) * 6) }
+.h-7 { height: calc(var(--lineHeight) * 7) }
+.h-8 { height: calc(var(--lineHeight) * 8) }
+.h-9 { height: calc(var(--lineHeight) * 9) }
+.h-10 { height: calc(var(--lineHeight) * 10) }
+.h-11 { height: calc(var(--lineHeight) * 11) }
+.h-12 { height: calc(var(--lineHeight) * 12) }
+.h-13 { height: calc(var(--lineHeight) * 13) }
+.h-14 { height: calc(var(--lineHeight) * 14) }
+.h-15 { height: calc(var(--lineHeight) * 15) }
+.h-16 { height: calc(var(--lineHeight) * 16) }
+.h-17 { height: calc(var(--lineHeight) * 17) }
+.h-18 { height: calc(var(--lineHeight) * 18) }
+.h-19 { height: calc(var(--lineHeight) * 19) }
+.h-20 { height: calc(var(--lineHeight) * 20) }
+.h-21 { height: calc(var(--lineHeight) * 21) }
+.h-22 { height: calc(var(--lineHeight) * 22) }
+.h-23 { height: calc(var(--lineHeight) * 23) }
+.h-24 { height: calc(var(--lineHeight) * 24) }
+.h-25 { height: calc(var(--lineHeight) * 25) }
+.h-26 { height: calc(var(--lineHeight) * 26) }
+.h-27 { height: calc(var(--lineHeight) * 27) }
+.h-28 { height: calc(var(--lineHeight) * 28) }
+.h-29 { height: calc(var(--lineHeight) * 29) }
+.h-30 { height: calc(var(--lineHeight) * 30) }
+.h-31 { height: calc(var(--lineHeight) * 31) }
+.h-32 { height: calc(var(--lineHeight) * 32) }
+.h-33 { height: calc(var(--lineHeight) * 33) }
+.h-34 { height: calc(var(--lineHeight) * 34) }
+.h-35 { height: calc(var(--lineHeight) * 35) }
+.h-36 { height: calc(var(--lineHeight) * 36) }
+.h-37 { height: calc(var(--lineHeight) * 37) }
+.h-38 { height: calc(var(--lineHeight) * 38) }
+.h-39 { height: calc(var(--lineHeight) * 39) }
+.h-40 { height: calc(var(--lineHeight) * 40) }

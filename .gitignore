@@ -1,6 +1,7 @@
 /_local
 /_site
 /_build
+/node_modules
 /_config.yml
 .DS_Store
 *~

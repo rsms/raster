@@ -1,0 +1,30 @@
+/* document */
+html { font-family: 'Inter', -system-ui, system-ui, sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', -system-ui, system-ui, sans-serif; }
+}
+
+html {
+  font-size: var(--fontSize);
+  line-height: var(--lineHeight);
+  background: #fff;
+  color: #000;
+  letter-spacing: -0.01em;
+  text-size-adjust: 100%;
+  font-variant-ligatures: contextual common-ligatures;
+  font-feature-settings: 'cv01' 1, 'cv06' 1, 'cv10' 1; /* 1, r, G */
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  padding: calc(var(--lineHeight) * 2);
+  padding-bottom: calc(var(--lineHeight) * 3);
+}
+@media only screen and (max-width: 600px) {
+  body {
+    padding: var(--lineHeight);
+    padding-bottom: calc(var(--lineHeight) * 2);
+  }
+}

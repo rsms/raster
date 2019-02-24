@@ -7,11 +7,10 @@ print YAML.load_file('_data/info.yml')['version']
 SRC
 )
 
-echo "Running misc/update-grid.css.sh"
-./misc/update-grid.css.sh
+echo "Running misc/build.sh"
+./misc/build.sh
 
-echo "Building v${VERSION} -> _build/raster-${VERSION}.zip"
-
+echo "Building version ${VERSION} -> _build/raster-${VERSION}.zip"
 if [ -f _build/raster-${VERSION}.zip ]; then
   echo "_build/raster-${VERSION}.zip already exists" >&2
   exit 1
@@ -20,22 +19,33 @@ fi
 cp misc/_config.yml _config.yml
 jekyll build > /dev/null
 
-rm -rf _build/raster
-mkdir -p _build/raster
-cp _site/example.html _site/example.css _site/grid.css _build/raster/
-cp LICENSE.txt _build/raster/
+DST=_build/Raster
+rm -rf $DST
+mkdir -p $DST
+cp LICENSE.txt \
+   _site/raster.css \
+   _site/raster.debug.css \
+   _site/raster.grid.css \
+   _site/template.html \
+   $DST/
+cp -R _site/examples $DST/examples
 
-cd _build/raster
-zip -q -X -r ../raster-${VERSION}.zip *
-cd ../..
+pushd $DST >/dev/null
+zip -q -X -r "../Raster-v${VERSION}.zip" *
+popd >/dev/null
+rm -rf $DST
 
 echo "————————————————————————————————————————————————————————"
 echo ""
 echo "Next steps:"
 echo ""
-echo "1) Create new release with _build/raster-${VERSION}.zip"
+echo "1) Create new release with _build/Raster-v${VERSION}.zip"
 echo "   https://github.com/rsms/raster/releases/new?tag=v${VERSION}"
 echo ""
 echo "2) Commit & push changes"
 echo ""
 echo "————————————————————————————————————————————————————————"
+
+if (which open >/dev/null); then
+  open _build
+fi

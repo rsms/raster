@@ -1,0 +1,32 @@
+{
+  "name": "raster",
+  "version": "4",
+  "description": "Simple grid system",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsms/raster.git"
+  },
+  "scripts": {
+    "build-w": "misc/build.sh -g -w",
+    "build": "misc/build.sh"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "grid",
+    "web"
+  ],
+  "author": "Rasmus Andersson <https://rsms.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rsms/raster/issues"
+  },
+  "homepage": "https://github.com/rsms/raster#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.4.7",
+    "cssnano": "^4.1.10",
+    "postcss-banner": "^3.0.1",
+    "postcss-cli": "^6.1.1",
+    "postcss-import": "^12.0.1"
+  }
+}

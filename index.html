@@ -10,12 +10,12 @@ capture download_url
 endcapture %}{%
 
 for file in site.static_files %}{%
-  assign _path = file.path | remove_first: "/inter" %}{%
-  if _path == "/base.css" %}{%
+  assign _path = file.path | remove_first: "/raster" %}{%
+  if _path == "/raster.css" %}{%
+    assign raster_css_v = file.modified_time | date: "%Y%m%d%H%M%S" %}{%
+  elsif _path == "/res/base.css" %}{%
     assign base_css_v = file.modified_time | date: "%Y%m%d%H%M%S" %}{%
-  elsif _path == "/grid.css" %}{%
-    assign grid_css_v = file.modified_time | date: "%Y%m%d%H%M%S" %}{%
-  elsif _path == "/generate-grid.js" %}{%
+  elsif _path == "/res/generate-grid.js" %}{%
     assign generate_grid_js_v = file.modified_time | date: "%Y%m%d%H%M%S" %}{%
   endif %}{%
 endfor
@@ -27,8 +27,8 @@ endfor
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="base.css?v={{base_css_v}}">
-  <link rel="stylesheet" href="grid.css?v={{grid_css_v}}">
+  <link rel="stylesheet" href="raster.css?v={{raster_css_v}}">
+  <link rel="stylesheet" href="res/base.css?v={{base_css_v}}">
 </head>
 <body>
   <grid columns="8">
@@ -42,10 +42,15 @@ endfor
         Minimal and straight-forward CSS grid system
         utilizing descriptive HTML rather than semantic CSS.
       </p>
-      <a class="download-button" href="{{download_url}}">
-        Download &darr;
-      </a>
-      <br><br>
+      <grid columns=2>
+        <c><a class="download-button" href="{{download_url}}">
+          Download &darr;
+        </a></c>
+        <c class="center flex-v">
+          <a href="examples/raster.html">Open example</a>
+        </c>
+      </grid>
+      <br>
     </c>
     <c span="3.." span-s="row">
       <grid columns=8 class="demo">
@@ -104,7 +109,7 @@ endfor
         the next available column and spans one column.
       </p>
       <p>
-        Raster is <a href="grid.css?v={{version}}">pure CSS</a> — no JavaScript involved.
+        Raster is <a href="raster.css?v={{version}}">pure CSS</a> — no JavaScript involved.
       </p>
       <p>
         The HTML here is what generates the grid you see at the top of this page.
@@ -114,7 +119,7 @@ endfor
       </p>
     </c>
     <c span="7.." span-s="row">
-      <h4>Possible span= values</h4>
+      <h4>Possible span= values</h4><br>
       <p>
         <grid columns=8 style="column-gap:1.5rem">
           <c><code>2-5</code></c>
@@ -211,8 +216,62 @@ endfor
 
     <c span=3.. class="ruler only-large-screen"></c>
 
+    <c span=3.. span-s=row class="h2" id="responsive-design">
+      Excellent websites with minimal effort
+    </c>
+
+    <c span=1-2 span-s=row>
+      <a href="examples/">Example gallery</a>
+    </c>
+
+    <c span=3-6 span-s=row>
+      <p>
+        Raster is a complete CSS framework for creating websites.<br>
+        The Raster system is minimal but holistic:
+      </p>
+      <ul>
+        <li>
+          Provides a simple, minimal and solid starting point for
+          websites. Get started quickly with the
+          <a href="template.html">HTML template</a>, or just include
+          <a href="raster.css?v={{version}}">raster.css</a> in your own
+          HTML.
+        </li>
+        <li>
+          Grids as the foundation assists in creating graphically harmonious
+          and expressive designs.
+        </li>
+        <li>
+          Good typography and scale harmony out of the box.
+        </li>
+        <li>
+          Easy customization via CSS variables.
+          For instance, set <code>--fontSize: 18px</code> to change
+          the entire scale of your website, or fine-tune spacing of various
+          elements using the <code>--lineHeight</code> variable, which is the
+          basis for all lengths.
+        </li>
+        <li>
+          <a href="raster.css?v={{version}}">raster.css</a> is only 5 kB gzipped
+        </li>
+      </ul>
+    </c>
+
+    <c span=3.. class="ruler only-large-screen"></c>
+
     <c span=3.. span-s=row class="h2" id="custom-css">
-      grid.css
+      Customize raster.grid.css
+    </c>
+
+    <c span=3-6 span-s=row>
+      <p>
+        <a href="raster.grid.css?v={{version}}">raster.grid.css</a>
+        provides the minimal set of <code>&lt;grid&gt;</code> functionality.
+        <br>
+        If you're looking for a wholesome framework,
+        use <a href="raster.css?v={{version}}">raster.css</a>
+        instead.
+      </p>
     </c>
 
     <c span=1-2 span-s=row class="only-large-screen form" style="max-width:15rem">
@@ -255,7 +314,7 @@ endfor
       <br>
       <p>
         This CSS generator is also available as a script:
-        <a href="generate-grid.js">generate-grid.js</a>
+        <a href="res/generate-grid.js">generate-grid.js</a>
       </p>
     </c>
 
@@ -269,7 +328,7 @@ endfor
         Raster is an open-source project and the 
         <a href="https://github.com/rsms/raster">source code is available on GitHub &rarr;</a>
       </p>
-      <script src="generate-grid.js?v={{generate_grid_js_v}}"></script>
+      <script src="res/generate-grid.js?v={{generate_grid_js_v}}"></script>
       <script>(function(){
 
 let cssOutput = document.querySelector('#css-output')
@@ -409,7 +468,7 @@ cssOutput.addEventListener('scroll', ev => {
 
 
 cssOutput.addEventListener(
-  'PointerEvent' in window ? 'pointerdown' : 'click',
+  'PointerEvent' in window ? 'pointerup' : 'click',
   ev => {
     cssOutput.select()
     // document.execCommand("copy")
@@ -422,96 +481,15 @@ genCSS()
     </c>
 
     <c span=row class="ruler"></c>
-    <c span=1-4 span-s=row class="h3" id="custom-css">
-      <a href="example.html">Examples</a>
+
+    <c span=row class="h3" id="custom-css">
+      <br>
+      <a href="examples/">Explore the example gallery &rarr;</a>
+      <br>
+      <br>
     </c>
+
     <c span=row>
-      <grid columns-s=1 columns=2 columns-l=3 class="examples">
-        <c class="green">
-          <h2>8 columns</h2>
-          <grid columns="8">
-            <c>1</c><c>2</c><c>3</c><c>4</c><c>5</c><c>6</c><c>7</c><c>8</c>
-            <c></c>
-            <c span=3>3</c>
-            <c></c>
-            <c span=7-8>7-8</c>
-            <c span=2+2>2+2</c>
-            <c span=5-8>5-8</c>
-            <c span=1-4>1-4</c>
-            <c span=6..>6..</c>
-            <c span=2..>2..</c>
-            <c span=4..>4..</c>
-            <c span=4-5>4-5</c>
-          </grid>
-        </c>
-        <c class="yellow">
-          <h2>6 columns</h2>
-          <grid columns="6">
-            <c>1</c><c>2</c><c>3</c><c>4</c><c>5</c><c>6</c>
-            <c></c>
-            <c span=2>2</c>
-            <c></c>
-            <c span=5-6>5-6</c>
-            <c span=2+2>2+2</c>
-            <c span=5-6>5-6</c>
-            <c span=1-4>1-4</c>
-            <c span=6..>6..</c>
-            <c span=2..>2..</c>
-            <c span=4..>4..</c>
-            <c span=4-5>4-5</c>
-          </grid>
-        </c>
-        <c class="dark-grey">
-          <h2>9 columns</h2>
-          <grid columns="9">
-            <c>1</c><c>2</c><c>3</c><c>4</c><c>5</c><c>6</c><c>7</c><c>8</c><c>9</c>
-            <c></c>
-            <c span=3>3</c>
-            <c></c>
-            <c span=7-9>7-9</c>
-            <c span=2+2>2+2</c>
-            <c span=5-7>5-7</c>
-            <c span=1-4>1-4</c>
-            <c span=6..>6..</c>
-            <c span=2..>2..</c>
-            <c span=4..>4..</c>
-            <c span=4-5>4-5</c>
-          </grid>
-        </c>
-        <c class="blue">
-          <h2>3 columns</h2>
-          <grid columns="3">
-            <c>1</c><c>2</c><c>3</c>
-            <c></c>
-            <c span=2>2</c>
-            <c span=1-2>1-2</c>
-            <c span=2+2>2+2</c>
-            <c span=1-2>1-2</c>
-            <c span=1..>1..</c>
-            <c span=2..>2..</c>
-          </grid>
-        </c>
-        <c span=2 class="only-large-screen red">
-          <h2>16 columns</h2>
-          <grid columns="16">
-            <c>1</c><c>2</c><c>3</c><c>4</c><c>5</c><c>6</c><c>7</c><c>8</c>
-            <c>9</c><c>10</c><c>11</c><c>12</c><c>13</c><c>14</c><c>15</c><c>16</c>
-            <c></c>
-            <c span=6>6</c>
-            <c></c>
-            <c span=11-16>11-16</c>
-            <c span=2+4>2+4</c>
-            <c span=6-14>6-14</c>
-            <c span=1-4>1-4</c>
-            <c span=6..>6..</c>
-            <c span=4..>4..</c>
-            <c span=8..>8..</c>
-            <c span=4-10>4-5</c>
-          </grid>
-        </c>
-      </grid>
-      <br>
-      <br>
       <a href="https://rsms.me/" class="clean">@rsms</a>
     </c>
   </grid>
