@@ -7,14 +7,16 @@ print YAML.load_file('_data/info.yml')['version']
 SRC
 )
 
-echo "Running misc/build.sh"
-./misc/build.sh
+ZIP=Raster-v${VERSION}.zip
 
-echo "Building version ${VERSION} -> _build/raster-${VERSION}.zip"
-if [ -f _build/raster-${VERSION}.zip ]; then
-  echo "_build/raster-${VERSION}.zip already exists" >&2
+echo "Building version ${VERSION} -> _build/$ZIP"
+if [ -f "_build/$ZIP" ]; then
+  echo "_build/$ZIP already exists" >&2
   exit 1
 fi
+
+echo "Running misc/build.sh"
+./misc/build.sh
 
 cp misc/_config.yml _config.yml
 jekyll build > /dev/null
@@ -31,7 +33,7 @@ cp LICENSE.txt \
 cp -R _site/examples $DST/examples
 
 pushd $DST >/dev/null
-zip -q -X -r "../Raster-v${VERSION}.zip" *
+zip -q -X -r "../$ZIP" *
 popd >/dev/null
 rm -rf $DST
 
@@ -39,7 +41,7 @@ echo "————————————————————————�
 echo ""
 echo "Next steps:"
 echo ""
-echo "1) Create new release with _build/Raster-v${VERSION}.zip"
+echo "1) Create new release with _build/$ZIP"
 echo "   https://github.com/rsms/raster/releases/new?tag=v${VERSION}"
 echo ""
 echo "2) Commit & push changes"

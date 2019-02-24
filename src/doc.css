@@ -22,6 +22,7 @@ body {
   padding: calc(var(--lineHeight) * 2);
   padding-bottom: calc(var(--lineHeight) * 3);
 }
+
 @media only screen and (max-width: 600px) {
   body {
     padding: var(--lineHeight);

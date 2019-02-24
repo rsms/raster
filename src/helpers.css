@@ -1,3 +1,11 @@
+/* conditional window size */
+@media only screen and (max-width: 600px) {
+  .only-large-window { display: none }
+}
+@media only screen and (min-width: 601px) {
+  .only-small-window { display: none }
+}
+
 /* visualize base grid */
 .show-base-grid {
   background-image: repeating-linear-gradient(
