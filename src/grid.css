@@ -8,7 +8,7 @@ grid {
 }
 
 /* c -- cell or column */
-grid > c { display: block; appearance: none; -webkit-appearance: none }
+grid > c { display: block; appearance: none; -webkit-appearance: none; min-width: 0; }
 
 grid[columns="1"] { --grid-tc: repeat(1, 1fr) }
 grid[columns="2"] { --grid-tc: repeat(2, 1fr) }

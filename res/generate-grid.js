@@ -85,10 +85,11 @@ let generateCSS = exports.generateCSS = function generateCSS(props, writer) {
     `)
 
   // cell
+  // min-width: 0 fixes firefox greedy grid cell
   w("")
   w(`
     /* c -- cell or column */
-    grid > c { display: block; appearance: none; -webkit-appearance: none }
+    grid > c { display: block; appearance: none; -webkit-appearance: none; min-width: 0; }
     `)
 
   // base/normal window size
