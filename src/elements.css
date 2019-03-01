@@ -156,26 +156,47 @@ grid > c.h1, grid > c.h2, grid > c.h3, grid > c.h4, grid > c.h5, grid > c.h6 {
   margin-bottom:0
 }
 
-/* XL headers */
-h1.large {
+/* large headers */
+h1.large, .h1.large {
   --h1-size: 4rem;
   line-height: calc(var(--lineHeight) * 3);
   font-weight: 730;
 }
-h1.xlarge {
+h1.xlarge, .h1.xlarge {
   --h1-size: 5.5rem;
   line-height: calc(var(--lineHeight) * 4);
   font-weight: 740;
 }
-h1.xxlarge {
+h1.xxlarge, .h1.xxlarge {
   --h1-size: 7.5rem;
   line-height: calc(var(--lineHeight) * 5);
   font-weight: 750;
 }
-h1.xxxlarge {
+h1.xxxlarge, .h1.xxxlarge {
   --h1-size: 10.5rem;
   line-height: calc(var(--lineHeight) * 7);
   font-weight: 760;
+}
+
+/* small text */
+.small {
+  font-size: 0.85rem;
+  line-height: var(--lineHeight);
+}
+.xsmall {
+  font-size: 0.8em;
+  line-height: calc(var(--lineHeight) * 0.75);
+  padding-top: calc(var(--lineHeight) * 0.25);
+}
+.xxsmall {
+  font-size: 0.65em;
+  line-height: calc(var(--lineHeight) * 0.7);
+  padding-top: calc(var(--lineHeight) * 0.3);
+}
+.xxxsmall {
+  font-size: 0.5em;
+  line-height: calc(var(--lineHeight) * 0.5);
+  padding-bottom: calc(var(--lineHeight) * 0.25);
 }
 
 

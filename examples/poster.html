@@ -1,0 +1,206 @@
+---
+layout: none
+---
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Raster grid examples</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="../raster.css?v={{site.data.info.version}}">
+  <style>
+
+:root {
+  --fontSize: calc(100vh / 94);
+  --margin: 5rem;
+}
+@media only screen and (max-width: 1000px) { :root {
+  --fontSize: calc(100vmin / 70);
+}}
+
+html {
+  background: #111;
+  background-image: linear-gradient(4deg, #111111, #141414);
+  background-size: 100%;
+  background-attachment: fixed;
+  color: rgba(252,252,252,0.99);
+}
+@media print {
+  html { background: white }
+}
+body { padding: 0 0 3rem 0 }
+
+footer { margin: var(--margin) }
+
+.flex-h { flex-wrap: wrap; justify-content: center }
+.black { color: black; }
+
+.noise {
+  background-image: url(noise512.png);
+  background-size: 256px;
+  opacity: 0.02;
+  pointer-events: none;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+@media print {
+  .noise { display:none; }
+}
+
+.poster {
+  width: 60rem;
+  height: 84rem;
+  background: #555;
+  margin: var(--margin);
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  box-shadow: 0px 2px 8px black;
+}
+@media print {
+  .poster {
+    box-shadow: none;
+    page-break-before: always;
+    page-break-after: always;
+    page-break-inside: avoid;
+    break-before: always;
+    break-after: always;
+    break-inside: avoid-page;
+  }
+}
+
+.poster1 {
+  background: #FEED01;
+  background-image: linear-gradient(175deg, #FEED01, #F9E010);
+  color: rgba(0,0,0,0.9);
+}
+
+.poster2 {
+  background: #555;
+  background-image:
+    linear-gradient(20deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.03)),
+    linear-gradient(175deg, #555, #555960);
+}
+
+  </style>
+</head>
+<body>
+  <div class=noise></div>
+  <div class="flex-h">
+
+
+    <grid columns=8 class="poster poster1 padding1">
+      <c span=row><br></c>
+      <c span=1-4>
+        <h1 class="large right" style="font-weight:500;padding-right:4rem">
+          International<br>
+          Typographic
+        </h1>
+      </c>
+      <c span=5-7>
+        <h1 class=large style="font-weight:500">
+          <br>
+          Style
+        </h1>
+      </c>
+
+      <c span=3+2 class="h5 right" style="padding-right:4rem">
+        Aka Swiss Style
+      </c>
+
+      <c span=5-7>
+        <p>
+The International Typographic Style, also known as the Swiss Style, is a graphic design style that emerged in Russia, the Netherlands, and Germany in the 1920s and was developed by designers in Switzerland during the 1950s.
+        </p>
+        <p>
+          The International Typographic Style has had profound influence on graphic design as a part of the modernist movement, impacting many design-related fields including architecture and art. It emphasizes cleanness, readability, and objectivity.
+        </p>
+      </c>
+
+      <c span=5.. style="font-size:4rem;font-weight:200;margin-left:-0.2em">
+        &darr;
+      </c>
+
+      <c span=1-4>
+        <h1 class=xxxlarge style="font-weight:800;line-height:0.9">
+          1920<br>
+          1959
+          <!-- <span style="font-weight:300;letter-spacing:0.3rem">1959</span> -->
+        </h1>
+      </c>
+      <c span=2 class=h3 style="line-height:1.5;padding-top:0.7rem;font-weight:500">
+        the solution to the design problem should emerge from its content
+      </c>
+
+      <c span=1-2 class=xsmall style="height:2rem">
+        Akzidenz Grotesk<br>
+        Univers<br>
+        Neue Haas Grotesk<br>
+        Helvetica
+      </c>
+      <c span=2 class=xsmall style="height:2rem">
+        Basel School of Design<br>
+        Kunstgewerbeschule Zürich<br>
+        McGraw-Hill<br>
+        MIT
+      </c>
+      <c span=2 class=xsmall style="height:2rem">
+        Ernst Keller<br>
+        Josef Müller-Brockmann<br>
+        Rudolph de Harak<br>
+        Jacqueline Casey
+      </c>
+      <c span=2 class=xsmall style="height:2rem">
+        Universal form of graphic expression through objective<br>
+        and impersonal presentation.
+      </c>
+
+    </grid>
+
+
+    <grid columns=4 class="poster poster2 padding1">
+      <c span=3-3>
+        Raster<br>
+        Grid system
+      </c>
+      <c span=4-4>
+        Poster 001<br>
+        February 2019
+      </c>
+      <c span=row>
+        <h1 class=large>
+          <hr>
+          Raster<br>
+          <hr>
+          Grid System<br>
+        </h1>
+      </c>
+      <c span=3-3>
+        Minimal and straight-forward CSS grid system utilizing
+        descriptive HTML rather than semantic CSS.
+      </c>
+      <c span=4-4>
+        Grids lend themselves really well to device-size responsive design. The span-s attribute defines alternate layout when your design is presented on a small screen. This makes designing for large and small screens really easy.
+      </c>
+      <c span=3+1 class="bottom">
+        4 column grid
+      </c>
+      <c class="bottom">
+        HTML
+      </c>
+    </grid>
+
+
+
+  </div>
+
+  <footer>
+    <a href="./" style="margin-left:-0.15rem">&larr; Back to examples</a>
+  </footer>
+
+{% include analytics.html %}
+</body>
+</html>

@@ -15,9 +15,9 @@ Variables
   Veiwport-relative (100% / EMs-across-viewport) */
   /*--fontSize: calc(100vw / 80);*/
 }
-@media only screen and (max-width: 600px) { :root {
-  /*--fontSize: calc(100vw / 30);*/
-}}
+/*@media only screen and (max-width: 600px) { :root {
+  --fontSize: calc(100vw / 30);
+}}*/
 :root {
   /* line height is the basis for vertical spacing */
   --lineHeight: calc(var(--fontSize) * 1.5);

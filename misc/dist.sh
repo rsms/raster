@@ -1,41 +1,54 @@
 #!/bin/bash -e
 cd "$(dirname "$0")/.."
 
+BUILDDIR=_build
+
 VERSION=$(ruby <<SRC
 require 'yaml'
 print YAML.load_file('_data/info.yml')['version']
 SRC
 )
 
-ZIP=Raster-v${VERSION}.zip
 
+# check for zip file -- only continue if not exists
+ZIP=Raster-v${VERSION}.zip
 echo "Building version ${VERSION} -> _build/$ZIP"
 if [ -f "_build/$ZIP" ]; then
   echo "_build/$ZIP already exists" >&2
   exit 1
 fi
 
+
+# generate CSS
 echo "Running misc/build.sh"
 ./misc/build.sh
 
-cp misc/_config.yml _config.yml
-jekyll build > /dev/null
 
-DST=_build/Raster
-rm -rf $DST
-mkdir -p $DST
+# generate website
+WEBDIR=$BUILDDIR/site
+rm -rf "$WEBDIR"
+mkdir -p "$WEBDIR"
+cp misc/_config.yml "$WEBDIR/_config.yml"
+jekyll build -d "$WEBDIR"  > /dev/null
+
+
+# create zip file
+DST="$BUILDDIR/Raster"
+rm -rf "$DST"
+mkdir -p "$DST"
 cp LICENSE.txt \
-   _site/raster.css \
-   _site/raster.debug.css \
-   _site/raster.grid.css \
-   _site/template.html \
-   $DST/
-cp -R _site/examples $DST/examples
+   "$WEBDIR/raster.css" \
+   "$WEBDIR/raster.debug.css" \
+   "$WEBDIR/raster.grid.css" \
+   "$WEBDIR/template.html" \
+   "$DST/"
+cp -R "$WEBDIR/examples" "$DST/examples"
 
-pushd $DST >/dev/null
+pushd "$DST" >/dev/null
 zip -q -X -r "../$ZIP" *
 popd >/dev/null
-rm -rf $DST
+rm -rf "$DST"
+
 
 echo "————————————————————————————————————————————————————————"
 echo ""

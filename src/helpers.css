@@ -27,7 +27,7 @@
 /* text */
 .single-line {
   white-space: nowrap;
-  overflow-x: hidden;
+  overflow: hidden; /* note: safari shows scrollbars unless y=hidden */
   text-overflow: ellipsis;
 }
 
@@ -39,11 +39,14 @@
 
 /* relative positioning */
 .top {}
-.left { text-align:left; }
-.right { text-align:right; }
-.bottom {}
-.center { text-align:center; }
+.left { text-align:left }
+.right { text-align:right }
+.bottom { }
+.center { text-align:center }
+
 .flex-v.center { align-self:center }
+.flex-h .bottom { align-self:flex-end }
+
 img.top { object-position: center top; align-self:center }
 img.center { object-position: center center; align-self:center }
 img.bottom { object-position: center bottom; align-self:center }
@@ -53,6 +56,26 @@ img.left.bottom { object-position: left bottom; align-self:flex-start }
 img.right.top { object-position: right top; align-self:flex-end }
 img.right.center { object-position: right center; align-self:flex-end }
 img.right.bottom { object-position: right bottom; align-self:flex-end }
+
+/* spacing */
+.padding0 { padding: 0 }
+.padding1 { padding: calc(var(--lineHeight) * 1) }
+.padding2 { padding: calc(var(--lineHeight) * 2) }
+.padding3 { padding: calc(var(--lineHeight) * 3) }
+.padding4 { padding: calc(var(--lineHeight) * 4) }
+.padding5 { padding: calc(var(--lineHeight) * 5) }
+.padding5 { padding: calc(var(--lineHeight) * 6) }
+.padding5 { padding: calc(var(--lineHeight) * 7) }
+.padding5 { padding: calc(var(--lineHeight) * 8) }
+.margin0 { margin: 0 }
+.margin1 { margin: calc(var(--lineHeight) * 1) }
+.margin2 { margin: calc(var(--lineHeight) * 2) }
+.margin3 { margin: calc(var(--lineHeight) * 3) }
+.margin4 { margin: calc(var(--lineHeight) * 4) }
+.margin5 { margin: calc(var(--lineHeight) * 5) }
+.margin5 { margin: calc(var(--lineHeight) * 6) }
+.margin5 { margin: calc(var(--lineHeight) * 7) }
+.margin5 { margin: calc(var(--lineHeight) * 8) }
 
 /* size */
 .w-1 { width: calc(var(--lineHeight) * 1) }
