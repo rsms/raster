@@ -12,8 +12,8 @@ layout: none
   <style>
 
 :root {
-  --fontSize: calc(100vh / 94);
-  --margin: 5rem;
+  --fontSize: calc(100vh / 95);
+  --margin: 6rem;
 }
 @media only screen and (max-width: 1000px) { :root {
   --fontSize: calc(100vmin / 70);
@@ -55,7 +55,7 @@ footer { margin: var(--margin) }
   width: 60rem;
   height: 84rem;
   background: #555;
-  margin: var(--margin);
+  margin: var(--margin) calc(var(--margin) / 2);
   box-sizing: border-box;
   flex: 0 0 auto;
   box-shadow: 0px 2px 8px black;
@@ -83,6 +83,15 @@ footer { margin: var(--margin) }
   background-image:
     linear-gradient(20deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.03)),
     linear-gradient(175deg, #555, #555960);
+    color: rgba(252,252,252,0.98);
+}
+
+html.white-bg {
+  background: white;
+  color:rgba(0,0,0,0.99);
+}
+html.white-bg .poster {
+  box-shadow: 0px 0.5rem 1.2rem rgba(0,0,0, 0.1);
 }
 
   </style>
@@ -198,7 +207,10 @@ The International Typographic Style, also known as the Swiss Style, is a graphic
   </div>
 
   <footer>
-    <a href="./" style="margin-left:-0.15rem">&larr; Back to examples</a>
+    <div style="margin-left:-0.15rem">
+      <a href="javascript:document.documentElement.classList.toggle('white-bg')">&uarr; Toggle background</a><br>
+      <a href="./">&larr; Back to examples</a>
+    </div>
   </footer>
 
 {% include analytics.html %}
