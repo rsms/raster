@@ -68,7 +68,7 @@ pre b, code b, tt b, .code b, .monospace b {
   font-weight: 580;
 }
 
-code > pre { white-space: pre; overflow-x: auto; }
+pre > code, code > pre { white-space: pre; overflow-x: auto; }
 
 
 /* headings */
