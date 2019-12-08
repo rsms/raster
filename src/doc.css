@@ -1,8 +1,5 @@
 /* document */
-html { font-family: 'Inter', -system-ui, system-ui, sans-serif; }
-@supports (font-variation-settings: normal) {
-  html { font-family: 'Inter var', -system-ui, system-ui, sans-serif; }
-}
+html { font-family: var(--sansFont), -system-ui, system-ui, sans-serif; }
 
 html {
   font-size: var(--fontSize);

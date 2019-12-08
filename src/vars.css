@@ -7,7 +7,7 @@ Variables
   /*
   Font size is the basis of all other measurements.
   It's either constant or viewport-relative. Choose one.
-  
+
   Constant: */
   --fontSize: 12px;
   /*
@@ -19,6 +19,9 @@ Variables
   --fontSize: calc(100vw / 30);
 }}*/
 :root {
+  --sansFont: "Inter";
+  --monoFont: "iaw-mono";  /* "IBM Plex Mono" */
+
   /* line height is the basis for vertical spacing */
   --lineHeight: calc(var(--fontSize) * 1.5);
 
@@ -39,18 +42,19 @@ Variables
   --h4-size: 1.1rem;
 
   /* grid spacing */
-  --columnGap: var(--lineHeight);
+  --columnGap: calc(var(--lineHeight) * 2);
   --rowGap: var(--lineHeight);
-
-  /* Colors */
-  --red:    rgb(238, 39, 17);
-  --blue:   rgb(24, 113, 233);
-  --green:  rgb(18, 192, 91);
-  --yellow: rgb(249, 191, 15);
 
   /* 1 pixel */
   --displayScale: 1;
   --pixel: 1px;
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    --sansFont: "Inter var";
+    --monoFont: "iaw-mono-var";
+  }
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),

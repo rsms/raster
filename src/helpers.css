@@ -159,3 +159,28 @@ img.right.bottom { object-position: right bottom; align-self:flex-end }
 .h-38 { height: calc(var(--lineHeight) * 38) }
 .h-39 { height: calc(var(--lineHeight) * 39) }
 .h-40 { height: calc(var(--lineHeight) * 40) }
+
+/* opacity */
+.opacity0  { opacity:0; }
+.opacity1  { opacity:0.1; }
+.opacity2  { opacity:0.2; }
+.opacity3  { opacity:0.3; }
+.opacity4  { opacity:0.4; }
+.opacity5  { opacity:0.5; }
+.opacity6  { opacity:0.6; }
+.opacity7  { opacity:0.7; }
+.opacity8  { opacity:0.8; }
+.opacity9  { opacity:0.9; }
+.opacity10 { opacity:1; }
+
+/* colors */
+:root {
+  --red:    rgb(238, 39, 17);
+  --blue:   rgb(24, 113, 233);
+  --green:  rgb(18, 192, 91);
+  --yellow: rgb(249, 191, 15);
+}
+.red    { color: var(--red); }    .bg-red    { background-color: var(--red); }
+.blue   { color: var(--blue); }   .bg-blue   { background-color: var(--blue); }
+.green  { color: var(--green); }  .bg-green  { background-color: var(--green); }
+.yellow { color: var(--yellow); } .bg-yellow { background-color: var(--yellow); }

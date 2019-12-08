@@ -47,22 +47,33 @@ fi
 
 node res/generate-grid.js 30 -version "${VERSION}" > src/grid.css
 
-RASTER_VERSION=$VERSION RASTER_DEBUG=$DEBUG ./node_modules/.bin/postcss \
+RASTER_VERSION="$VERSION (release package)" RASTER_DEBUG=$DEBUG ./node_modules/.bin/postcss \
   --config misc/postcss.config.js \
   ${postcss_args[@]} \
   -o raster.css \
   src/raster.css &
 
-RASTER_VERSION=$VERSION RASTER_DEBUG=$DEBUG ./node_modules/.bin/postcss \
+RASTER_VERSION="$VERSION (grid only)" RASTER_DEBUG=$DEBUG ./node_modules/.bin/postcss \
   --config misc/postcss.config.js \
   ${postcss_args[@]} \
   -o raster.grid.css \
   src/grid.css &
 
-RASTER_VERSION=$VERSION RASTER_DEBUG=$DEBUG ./node_modules/.bin/postcss \
+RASTER_VERSION="$VERSION (debugging helper extras)" RASTER_DEBUG=$DEBUG ./node_modules/.bin/postcss \
   --config misc/postcss.config.js \
   ${postcss_args[@]} \
   -o raster.debug.css \
   src/debug.css &
+
+# when building a release build, also build a "debug" product
+if [ "$DEBUG" = "0" ]; then
+  RASTER_VERSION="$VERSION (dev package)" RASTER_DEBUG=1 ./node_modules/.bin/postcss \
+    --config misc/postcss.config.js \
+    -o raster.dev.css \
+    src/raster.css &
+else
+  wait
+  cp -a raster.debug.css raster.dev.css
+fi
 
 wait

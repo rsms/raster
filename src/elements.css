@@ -47,20 +47,28 @@ grid > hr:not(:first-child):not(:last-child) + hr {
   display:none;
 }*/
 
+/* text style modifiers */
+b, strong, .bold { font-weight: 600; }
+i, em, .italic { font-style: italic; }
+
 
 /* preformatted text */
-pre, code, tt, textarea.code {
-  font-family: 'IBM Plex Mono', monospace;
-  font-feature-settings: 'ss02' 1, 'zero' 1; /* ss02: g.1 */
+pre, code, tt, .code, .monospace {
+  font-family: var(--monoFont), Inconsolata, Menlo, monospace;
+  font-weight: 430;
 }
 pre { white-space: pre-wrap; }
 code { white-space: nowrap; }
 
+b pre, b code, b tt, b .code, b .monospace {
+  font-weight: 600;
+}
+pre b, code b, tt b, .code b, .monospace b {
+  font-weight: 600;
+  font-weight: 580;
+}
 
-/* text style modifiers */
-b, strong, .bold { font-weight: 600; }
-i, em, .italic { font-style: italic; }
-pre b, code b, tt b, textarea.code b { font-weight: 540; }
+code > pre { white-space: pre; overflow-x: auto; }
 
 
 /* headings */
@@ -245,9 +253,27 @@ grid.compact { grid-row-gap: 0; }
 
 /* list */
 
+li {
+  margin-bottom: var(--baseline);
+}
+
+li > p + ul,
+li > p + ol {
+  /* <ul>|<ol> inside <li> that directly follows a <p> */
+  /* shave off 1 baseline from space in between paragraph and list */
+  margin-top: calc(var(--baseline) * -1);
+}
+
+.compact > li > p + ul,
+.compact > li > p + ol {
+  /* like above but for lists inside compact lists */
+  margin-top: calc(var(--blockSpacingBottom) * -1);
+}
+
 ul, ol {
   list-style-position: outside;
 }
+
 ul.compact > li, ol.compact > li {
   margin: 0;
 }
@@ -256,16 +282,26 @@ ul {
   padding-left: 1.3em;
 }
 
-ol {
+ol[start] {
+  /* custom start number -- undo reset */
+  padding-left: initial;
+  padding-left: revert;
+  padding-inline-start: initial;
+  padding-inline-start: revert;
+}
+
+ol:not([start]) {
   list-style: none;
   counter-reset: counter1;
   padding-left: 2em;
 }
-ol > li {
+
+ol:not([start]) > li {
   counter-increment: counter1;
   position: relative;
 }
-ol > li::before {
+
+ol:not([start]) > li::before {
   content: counter(counter1) ". ";
   font-weight: 500;
   /*font-variant-numeric: tabular-nums;*/

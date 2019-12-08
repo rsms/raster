@@ -9,6 +9,7 @@ layout: none
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="../raster.css?v={{site.data.info.version}}">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,500,500i&display=swap" rel="stylesheet">
 </head>
 <body class="show-base-grid">
 
@@ -519,13 +520,13 @@ layout: none
       <img src="image1.jpg" class="h-8 fill bottom left" />
       <p>Fill from bottom left</p>
     </c>
-    
+
     <c span=2>
       <p>Contain and align to top</p>
       <img src="image1.jpg" class="h-8 top" />
       <p>Contain and align to top</p>
     </c>
-    
+
     <c span=2 title="img is only child (no margins)">
       <img src="image1.jpg" width="100%" class="h-8 fill" />
     </c>
@@ -651,7 +652,7 @@ layout: none
 
     <c span=row><hr><p>hr with p</p></c>
     <c span=row><hr><p>hr with p (multiple entries tests fractional baseline shift)</p></c>
-    
+
     <c span=row><p>p with hr</p><hr></c>
     <c span=row><p>p with hr</p><hr></c>
     <c span=row><p>p with hr</p><hr></c>
@@ -738,10 +739,87 @@ layout: none
       </ol>
     </c>
     <c span="2">
-      <br><br>
-      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
-      <p>Paragraph with one<br>two<br>three and<br>four lines</p>
-      <p>Paragraph with one line</p>
+      <h4>Ordered list with custom start</h4>
+      <p>Paragraph</p>
+      <ol start=100>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>
+          <p>Paragraph</p>
+          <ul>
+            <li>Unordered list item</li>
+            <li>Unordered list item</li>
+            <li>Unordered list item</li>
+          </ul>
+        </li>
+      </ol>
+      <h4>Compact ordered list with custom start</h4>
+      <p>Paragraph</p>
+      <ol start=32 class=compact>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>Ordered list item</li>
+        <li>
+          <p>Paragraph</p>
+          <ul class=compact>
+            <li>Unordered list item</li>
+            <li>Unordered list item</li>
+            <li>Unordered list item</li>
+          </ul>
+        </li>
+      </ol>
+    </c>
+
+    <hr>
+    <!-- <c span=row class=h3>Code</c> -->
+    <c span=2 span-s=row>
+      <h3>Code</h3>
+      The variable <code>--fontMono</code> can be set to change the font
+      family used for monospace text.
+      CSS classes <code>.code</code> and <code>.monospace</code> can
+      be use to enable monospace text on any element.
+    </c>
+
+    <c span=4 span-s=row>
+      <h4>&lt;code&gt;&lt;pre&gt;</h4>
+      <code><pre><em class=opacity6>// CopyN copies n bytes (or until an error) from src to dst.
+// It returns the number of bytes copied and the earliest
+// error encountered while copying.
+// On return, written == n if and only if err == nil.
+//
+// If dst implements the ReaderFrom interface,
+// the copy is implemented using it.
+//</em>
+<b>func</b> CopyN(dst Writer, src Reader, n int64) (written int64, err error) {
+  written, err = Copy(dst, LimitReader(src, n))
+  <b>if</b> written == n {
+    <b>return</b> n, nil
+  }
+  <b>if</b> written < n && err == nil {
+    // src stopped early; must have been EOF.
+    err = EOF
+  }
+  <b>return</b>
+}
+      </pre></code>
+    </c>
+
+    <c span=2 span-s=row>
+      <h4>Inline</h4>
+      <p>
+        <code>CopyN</code> copies n bytes (or until an error)
+        from <code>src</code> to <code>dst</code>.
+      </p><p>
+        It returns the number of bytes copied and the earliest
+        error encountered while copying.
+      </p><p>
+        On return, <code>written == n</code> <b>if
+        and only if <code>err == nil</code>.</b>
+      </p><p>
+        If <code>dst</code> implements the <em class=code>ReaderFrom</em> interface,
+        the copy is implemented using it.
+      </p>
     </c>
 
   </grid>

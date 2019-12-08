@@ -28,5 +28,9 @@
     "postcss-banner": "^3.0.1",
     "postcss-cli": "^6.1.1",
     "postcss-import": "^12.0.1"
+  },
+  "dependencies": {
+    "browserslist": "^4.7.2",
+    "caniuse-lite": "^1.0.30001008"
   }
 }
