@@ -1,11 +1,10 @@
 /* document */
-html { font-family: var(--sansFont), -system-ui, system-ui, sans-serif; }
-
 html {
-  font-size: var(--fontSize);
+  font-family: var(--sansFont), -system-ui, system-ui, sans-serif;
+  font-size:   var(--fontSize);
   line-height: var(--lineHeight);
-  background: #fff;
-  color: #000;
+  background:  var(--background-color);
+  color:       var(--foreground-color);
   letter-spacing: -0.01em;
   text-size-adjust: 100%;
   font-variant-ligatures: contextual common-ligatures;

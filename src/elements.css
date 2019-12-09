@@ -20,7 +20,7 @@ hr:last-child {
 }
 hr, hr:only-child {
   border: none;
-  background: black;
+  background: var(--foreground-color);
   height: var(--hrThickness);
   margin-top: calc(var(--lineHeight) - calc(var(--hrThickness) / 2));
   margin-bottom: calc(var(--lineHeight) - calc(var(--hrThickness) / 2));
@@ -56,9 +56,11 @@ i, em, .italic { font-style: italic; }
 pre, code, tt, .code, .monospace {
   font-family: var(--monoFont), Inconsolata, Menlo, monospace;
   font-weight: 430;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
-pre { white-space: pre-wrap; }
-code { white-space: nowrap; }
+/*pre { white-space: pre-wrap; }*/
+/*code { white-space: nowrap; }*/
 
 b pre, b code, b tt, b .code, b .monospace {
   font-weight: 600;
@@ -67,8 +69,16 @@ pre b, code b, tt b, .code b, .monospace b {
   font-weight: 600;
   font-weight: 580;
 }
-
-pre > code, code > pre { white-space: pre; overflow-x: auto; }
+pre {
+  white-space: pre;
+  word-wrap: normal;
+  overflow-x: auto;
+  display: block;
+  & code, & tt {
+    white-space: pre;
+    word-wrap: normal;
+  }
+}
 
 
 /* headings */
@@ -252,8 +262,8 @@ grid.compact { grid-row-gap: 0; }
 
 
 /* list */
-
 li {
+  margin-left: .2em;
   margin-bottom: var(--baseline);
 }
 
@@ -264,6 +274,73 @@ li > p + ol {
   margin-top: calc(var(--baseline) * -1);
 }
 
+li.task-list-item {
+  list-style-type: none;
+
+  & > input[type=checkbox] {
+    list-style: none;
+    margin-right: 0.5em;
+    margin-left: -1.4em;
+    background: none;
+    appearance: none;
+    width:  1.5em;
+    height: var(--baseline);
+    display: inline-block;
+    position: relative;
+
+    --outlineSvgUrl: url('data:image/svg+xml;utf8,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1.75" y="1.75" width="14.5" height="14.5" rx="0.5" stroke="black" stroke-width="1.5"/></svg>');
+    --checkSvgUrl: url('data:image/svg+xml;utf8,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.7 9.3L8.1 12.6L13.8 6.9L12.3 5.3L8.1 9.5L6.3 7.7L4.7 9.3Z" fill="black"/></svg>');
+
+    &:before, &:after {
+      display: block;
+      position: absolute;
+      content: "X";
+      color: transparent;
+      left:   0;
+      top:    -0.25em;
+      bottom: -0.25em;
+      width:  1.1em;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    &:after {
+      /* box aligned with checkmark */
+      background-image: var(--outlineSvgUrl);
+    }
+
+    &[checked]:before {
+      /* checkmark aligned with box */
+      background-image: var(--checkSvgUrl);
+    }
+  }
+}
+
+
+@supports (mask-image: linear-gradient(rgba(0, 0, 0, 1.0), red)) {
+  /* use mask so that check boxes matches --foreground-color */
+  li.task-list-item > input[type=checkbox] {
+    &:before, &:after {
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center center;
+    }
+    &:after {
+      /* box aligned with checkmark */
+      background: var(--foreground-color);
+      mask-image: var(--outlineSvgUrl);
+    }
+
+    &[checked]:before {
+      /* checkmark aligned with box */
+      background: var(--foreground-color);
+      mask-image: var(--checkSvgUrl);
+    }
+  }
+}
+
+
 .compact > li > p + ul,
 .compact > li > p + ol {
   /* like above but for lists inside compact lists */
@@ -272,45 +349,123 @@ li > p + ol {
 
 ul, ol {
   list-style-position: outside;
+  --list-indentation: 2em;
 }
 
 ul.compact > li, ol.compact > li {
-  margin: 0;
+  margin-bottom: 0;
 }
 
 ul {
   padding-left: 1.3em;
 }
 
+/* custom start number -- undo reset */
 ol[start] {
-  /* custom start number -- undo reset */
-  padding-left: initial;
-  padding-left: revert;
-  padding-inline-start: initial;
-  padding-inline-start: revert;
+  padding-inline-start: var(--list-indentation);
+  /*list-style-position: inside;*/
+  /*& li {
+    color: red;
+  }*/
 }
 
 ol:not([start]) {
   list-style: none;
-  counter-reset: counter1;
-  padding-left: 2em;
+  counter-reset: ol-counter;
+  padding-left: var(--list-indentation);
 }
 
 ol:not([start]) > li {
-  counter-increment: counter1;
+  counter-increment: ol-counter;
   position: relative;
 }
 
 ol:not([start]) > li::before {
-  content: counter(counter1) ". ";
+  content: counter(ol-counter) ". ";
   font-weight: 500;
-  /*font-variant-numeric: tabular-nums;*/
+  font-variant-numeric: tabular-nums;
   position: absolute;
   --space: 0.5em;
-  --width: 2em;
-  left: calc(-1 * var(--width));
-  width: var(--width);
+  --width: calc(var(--list-indentation) - var(--space));
+  left: calc(-1 * calc(var(--width) + var(--space)));
+  width:  var(--width);
   height: var(--lineHeight);
   text-align: left;
+}
+
+
+/* table */
+table {
+  --border-width: 1px;
+  --border-opacity: 0.15;
+  --border-color:
+    rgba(var(--foreground-color-rgb), calc(var(--foreground-color-a) * var(--border-opacity)));
+
+  /*width: 100%;*/
+  overflow: auto;
+  border-spacing: 0;
+  border-collapse: collapse;
+  /*box-sizing: border-box;*/
+  border-top: var(--border-width) solid var(--border-color);
+  border-right: var(--border-width) solid var(--border-color);
+  position: relative;
+
+  margin-top: calc(calc(var(--lineHeight) * 1) + calc(var(--border-width) * -1));
+  margin-bottom: calc(var(--lineHeight) * 1.5);
+
+  &:first-child {
+    margin-top: calc(calc(var(--lineHeight) * 0.5) + calc(var(--border-width) * -1));
+    margin-bottom: calc(var(--lineHeight) * 0.5);
+  }
+
+  & * { box-sizing: border-box; }
+
+  & th,
+  & td {
+    position: relative;
+    padding: var(--baseline) 1em;
+
+    /*box-shadow: inset 1px 0 0 0 var(--border-color);*/
+    /*border-left: var(--border-width) solid var(--border-color);*/
+    /*border-right: var(--border-width) solid var(--border-color);*/
+    /*&:last-child {
+      box-shadow:
+        inset 1px 0 0 0 var(--border-color),
+        inset -1px 0 0 0 var(--border-color);
+    }*/
+
+    background-image: linear-gradient(
+      90deg,
+      var(--border-color),
+      var(--border-color) 1px,
+      transparent 1px,
+      transparent calc(var(--baseline) / 2)
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0 -1px;
+
+    &:after {
+      position:absolute;
+      left:0;
+      bottom:0;
+      right:0;
+      height: var(--border-width);
+      background: var(--border-color);
+      content:"A";
+      color: transparent;
+      pointer-events: none;
+    }
+  }
+
+  & th { text-align: left; font-weight: 600; }
+  & th[align="center"] { text-align: center; }
+  & th[align="right"] { text-align: right; }
+}
+
+
+p + table {
+  margin-top: calc(calc(var(--lineHeight) * 1.5) + calc(var(--border-width) * -1));
+  /*margin-bottom: calc(var(--lineHeight) * 1.5);*/
 }
 

@@ -10,7 +10,7 @@ layout: none
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="../raster.css?v={{site.data.info.version}}">
 </head>
-<body class="show-base-grid">
+<body>
 
   <grid columns=8 columns-s=4>
     <c span=row><h1>Raster</h1></c>
@@ -35,7 +35,7 @@ layout: none
         <c>Debug mode:     </c><c><span id="debug-mode-msg">On</span> (D)</c>
         <c>Baseline grid:  </c><c><span id="base-grid-msg">On</span> (G)</c>
         <c>Size mode:      </c><c><span id="size-mode-msg">Constant</span> (S)</c>
-        <c>Inverted color: </c><c><span id="inverted-msg">Off</span> (I)</c>
+        <c>Inverted colors:</c><c><span id="inverted-msg">Off</span> (I)</c>
       </grid>
     </c>
     <c span=2>
@@ -661,10 +661,11 @@ layout: none
 
     <c span=2>
       <h4>Unordered list</h4>
+      <p>Leading paragraph</p>
       <ul>
-        <li>Unordered list item<br>spannig multiple<br>lines</li>
-        <li>Unordered list item<br>spannig multiple<br>lines</li>
-        <li>Unordered list item<br>spannig multiple<br>lines</li>
+        <li>Unordered list item<br>spanning multiple<br>lines</li>
+        <li>Unordered list item<br>spanning multiple<br>lines</li>
+        <li>Unordered list item<br>spanning multiple<br>lines</li>
       </ul>
       <h4>Compact unordered list</h4>
       <ul class="compact">
@@ -685,10 +686,11 @@ layout: none
     </c>
     <c span=2>
       <h4>Ordered list</h4>
+      <p>Leading paragraph</p>
       <ol>
-        <li>Ordered list item<br>spannig multiple<br>lines</li>
-        <li>Ordered list item<br>spannig multiple<br>lines</li>
-        <li>Ordered list item<br>spannig multiple<br>lines</li>
+        <li>Ordered list item<br>spanning multiple<br>lines</li>
+        <li>Ordered list item<br>spanning multiple<br>lines</li>
+        <li>Ordered list item<br>spanning multiple<br>lines</li>
       </ol>
       <h4>Compact ordered list</h4>
       <ol class="compact">
@@ -721,21 +723,25 @@ layout: none
         </li>
         <li>
           <p>Paragraph</p>
-          <ul>
-            <li>Unordered list item</li>
-            <li>Unordered list item</li>
-            <li>Unordered list item</li>
-          </ul>
+          <ol>
+            <li>Ordered list item</li>
+            <li>Ordered list item</li>
+            <li>Ordered list item</li>
+          </ol>
         </li>
         <li>Ordered list item</li>
         <li>Ordered list item</li>
         <li>Ordered list item</li>
-        <li>Ordered list item</li>
-        <li>Ordered list item</li>
-        <li>Ordered list item</li>
-        <li>Ordered list item</li>
-        <li>Ordered list item</li>
       </ol>
+
+      <h4>Task list</h4>
+      <p>Leading paragraph</p>
+      <ul>
+        <li class="task-list-item"><input type="checkbox" disabled="">Buy milk</li>
+        <li class="task-list-item"><input type="checkbox" disabled="" checked="">Try Raster</li>
+        <li class="task-list-item"><input type="checkbox" disabled="">Call Mom</li>
+        <li>Regular list item</li>
+      </ul>
     </c>
     <c span="2">
       <h4>Ordered list with custom start</h4>
@@ -761,28 +767,35 @@ layout: none
         <li>Ordered list item</li>
         <li>
           <p>Paragraph</p>
-          <ul class=compact>
-            <li>Unordered list item</li>
-            <li>Unordered list item</li>
-            <li>Unordered list item</li>
-          </ul>
+          <ol class=compact>
+            <li>Ordered list item</li>
+            <li>Ordered list item</li>
+            <li>Ordered list item</li>
+          </ol>
         </li>
       </ol>
     </c>
 
+
+
+
     <hr>
-    <!-- <c span=row class=h3>Code</c> -->
     <c span=2 span-s=row>
       <h3>Code</h3>
-      The variable <code>--fontMono</code> can be set to change the font
-      family used for monospace text.
-      CSS classes <code>.code</code> and <code>.monospace</code> can
-      be use to enable monospace text on any element.
+      <p>
+        The variable <code>--fontMono</code> can be set to change the font
+        family used for monospace text.
+        CSS classes <code>.code</code> and <code>.monospace</code> can
+        be use to enable monospace text on any element.
+      </p>
+      <p>
+        <tt>Here is a really long single line that should wrap when the column is narrow</tt>
+      </p>
     </c>
 
     <c span=4 span-s=row>
       <h4>&lt;code&gt;&lt;pre&gt;</h4>
-      <code><pre><em class=opacity6>// CopyN copies n bytes (or until an error) from src to dst.
+      <pre><code><em class=opacity6>// CopyN copies n bytes (or until an error) from src to dst.
 // It returns the number of bytes copied and the earliest
 // error encountered while copying.
 // On return, written == n if and only if err == nil.
@@ -801,7 +814,7 @@ layout: none
   }
   <b>return</b>
 }
-      </pre></code>
+      </code></pre>
     </c>
 
     <c span=2 span-s=row>
@@ -821,6 +834,164 @@ layout: none
       </p>
     </c>
 
+
+
+    <hr>
+    <c span=row class=h3>Tables</c>
+    <c span=4>
+      <p>Leading paragraph before a table of file types</p>
+      <table>
+        <thead>
+          <tr><th>Header</th><th>Mime type</th>
+              <th>Extensions</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>89 50 4E 47 0D 0A 1A 0A</code></td><td>image/png</td>
+              <td>png</td><td>PNG image</td></tr>
+          <tr><td><code>47 49 46 38 39 61</code></td><td>image/gif</td>
+              <td>gif</td><td>GIF image</td></tr>
+          <tr><td><code>FF D8 FF</code></td><td>image/jpeg</td>
+              <td>jpg jpeg</td><td>JPEG image</td></tr>
+          <tr><td><code>4D 4D 00 2B</code></td><td>image/tiff</td>
+              <td>tif tiff</td><td>TIFF image</td></tr>
+          <tr><td><code>42 4D</code></td><td>image/bmp</td>
+              <td>bmp</td><td>Bitmap image</td></tr>
+          <tr><td><code>00 00 01 00</code></td><td>image/x-icon</td>
+              <td>ico</td><td>Icon image</td></tr>
+        </tbody>
+      </table>
+      <p>Trailing paragraph</p>
+    </c>
+
+    <c>
+      <p>Paragraph line one<br>line two<br>line three<br>line four</p>
+      <p>Paragraph line one<br>line two<br>line three<br>line four<br>
+        line five<br>line six<br>line seven</p>
+      <p>Paragraph line one<br>line two<br>line three<br>line four<br>
+        line five<br>line six</p>
+    </c>
+
+    <c span=3 span-s=4>
+      <p>Alignment demo. Table has <tt>class=w-full</tt></p>
+      <table class=w-full>
+      <thead>
+        <tr><th>Column 1</th><th align="left">Column 2</th>
+          <th align="center">Column 3</th><th align="right">Column 4</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>default</td><td align="left">left</td>
+          <td align="center">center</td><td align="right">right</td></tr>
+      </tbody>
+      </table>
+      <p>Paragraph line one<br>line two<br>line three<br>line four<br>
+        line five<br>line six</p>
+      <p>Paragraph line one<br>line two<br>line three<br>line four</p>
+    </c>
+
+
+    <c span=4>
+      <table>
+        <thead>
+          <tr><th>Header</th><th>Mime type</th>
+              <th>Extensions</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>89 50 4E 47 0D 0A 1A 0A</code></td><td>image/png</td>
+              <td>png</td><td>PNG image</td></tr>
+          <tr><td><code>47 49 46 38 39 61</code></td><td>image/gif</td>
+              <td>gif</td><td>GIF image</td></tr>
+          <tr><td><code>FF D8 FF</code></td><td>image/jpeg</td>
+              <td>jpg jpeg</td><td>JPEG image</td></tr>
+          <tr><td><code>4D 4D 00 2B</code></td><td>image/tiff</td>
+              <td>tif tiff</td><td>TIFF image</td></tr>
+          <tr><td><code>42 4D</code></td><td>image/bmp</td>
+              <td>bmp</td><td>Bitmap image</td></tr>
+          <tr><td><code>00 00 01 00</code></td><td>image/x-icon</td>
+              <td>ico</td><td>Icon image</td></tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr><th>Header</th><th>Mime type</th>
+              <th>Extensions</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>89 50 4E 47 0D 0A 1A 0A</code></td><td>image/png</td>
+              <td>png</td><td>PNG image</td></tr>
+          <tr><td><code>47 49 46 38 39 61</code></td><td>image/gif</td>
+              <td>gif</td><td>GIF image</td></tr>
+          <tr><td><code>FF D8 FF</code></td><td>image/jpeg</td>
+              <td>jpg jpeg</td><td>JPEG image</td></tr>
+          <tr><td><code>4D 4D 00 2B</code></td><td>image/tiff</td>
+              <td>tif tiff</td><td>TIFF image</td></tr>
+          <tr><td><code>42 4D</code></td><td>image/bmp</td>
+              <td>bmp</td><td>Bitmap image</td></tr>
+          <tr><td><code>00 00 01 00</code></td><td>image/x-icon</td>
+              <td>ico</td><td>Icon image</td></tr>
+        </tbody>
+      </table>
+      <p>Trailing paragraph</p>
+    </c>
+
+    <c>
+      <p>Paragraph line one<br>line two<br>line three<br>line four</p>
+      <p>Paragraph line one<br>line two<br>line three<br>line four<br>
+        line five<br>line six<br>line seven</p>
+      <p>Paragraph line one<br>line two<br>line three<br>line four</p>
+      <p>Paragraph line one<br>line two<br>line three<br>line four</p>
+      <p>Paragraph line one<br>line two<br>line three<br>line four</p>
+    </c>
+
+    <c>
+      <h3>H3</h3>
+      <table>
+        <thead><tr><th>Mime type</th></tr></thead>
+        <tbody>
+          <tr><td>image/png</td></tr>
+          <tr><td>image/gif</td></tr>
+          <tr><td>image/jpeg</td></tr>
+          <tr><td>image/tiff</td></tr>
+        </tbody>
+      </table>
+      <h4>H4</h4>
+      <table>
+        <thead><tr><th>Mime type</th></tr></thead>
+        <tbody>
+          <tr><td>image/png</td></tr>
+          <tr><td>image/gif</td></tr>
+          <tr><td>image/jpeg</td></tr>
+          <tr><td>image/tiff</td></tr>
+        </tbody>
+      </table>
+      <p>Trailing paragraph</p>
+    </c>
+
+    <c>
+      <img src="image1.jpg" class="h-5 fill" />
+      <table>
+        <thead><tr><th>Mime type</th></tr></thead>
+        <tbody>
+          <tr><td>image/png</td></tr>
+          <tr><td>image/gif</td></tr>
+          <tr><td>image/jpeg</td></tr>
+          <tr><td>image/tiff</td></tr>
+        </tbody>
+      </table>
+      <img src="image1.jpg" class="h-2 fill" />
+      <table>
+        <thead><tr><th>Mime type</th></tr></thead>
+        <tbody>
+          <tr><td>image/png</td></tr>
+          <tr><td>image/gif</td></tr>
+          <tr><td>image/jpeg</td></tr>
+          <tr><td>image/tiff</td></tr>
+        </tbody>
+      </table>
+      <p>Trailing paragraph</p>
+    </c>
+
+
+
   </grid>
 
   <!-- ---- internal only -- not part of raster ---- -->
@@ -834,8 +1005,28 @@ if (ua.indexOf("Chrome/") != -1) {
 }
 
 let css = `
-html.inverted { background: #010101; color: white }
-html.inverted hr { background: white }
+html {
+  --pointer-move-line-color: #03f;
+}
+html.inverted {
+  --pointer-move-line-color: #f3a;
+
+  /*--background-color: #101214;
+  --foreground-color-rgb: 250,255,240;*/
+
+  /*--background-color: #131310;
+  --foreground-color-rgb: 210,230,255;*/
+
+  /*--background-color: #111;
+  --foreground-color-rgb: 255,255,255;*/
+
+  --background-color: #111;
+  --foreground-color-rgb: 255,254,245;
+
+  --foreground-color-a: 0.8;
+  --base-grid-color1: rgba(240,155,255, 0.1);
+  --base-grid-color2: rgba(240,155,255, 0.05);
+}
 html.size-mode-relative {
   --fontSize: calc(100vw / 80);
   --hrThickness: 0.17rem;
@@ -849,6 +1040,23 @@ html.size-mode-relative {
   overflow: hidden;
   display: none;
   position: absolute;
+}
+.pointerMoveLine {
+  height: 1px;
+  pointer-events: none;
+  visibility: hidden;
+  position: absolute;
+  left:0; top:0; right:0;
+  background: var(--pointer-move-line-color);
+  transform: translate3d(0,0,0);
+  opacity:0.4;
+}
+.pointerMoveLine.active { visibility:visible; }
+.pointerMoveLine.pressed {
+  opacity:0.8;
+  box-shadow:
+    0 1px 0 0 var(--pointer-move-line-color),
+    0 -1px 0 0 var(--pointer-move-line-color);
 }
 `.trim()
 let style = document.createElement('style')
@@ -885,9 +1093,11 @@ function bindTapableOption(msgname, fn) {
   label && label.parentElement.addEventListener(tapevent, fn)
 }
 
+let baseline = 0
+
 function updateComputedValueLabels() {
   let cs = getComputedStyle(baselineBeacon)
-  let baseline = parseFloat(cs.height)
+  baseline = parseFloat(cs.height)
   let fontSize = parseFloat(cs.fontSize)
   let lineHeight = parseFloat(cs.lineHeight)
   setLabel('baseline-value-msg', fmtnum(baseline) + ' dp')
@@ -903,6 +1113,7 @@ function updateDebugModeLabel() {
 function updateBaseGridLabel() {
   let on = document.body.classList.contains('show-base-grid')
   setLabel('base-grid-msg', on ? 'On' : 'Off')
+  togglePointerLine(on)
 }
 
 function updateInvertedLabel() {
@@ -936,6 +1147,44 @@ function toggleSizeMode() {
   updateComputedValueLabels()
   setTimeout(updateComputedValueLabels, 10)
 }
+
+
+
+let pointerMoveLine = null
+
+function togglePointerLine(on) {
+  document.removeEventListener("mousemove", movePointerLine)
+  document.removeEventListener("mousedown", pointerLineMouseDown)
+  document.removeEventListener("mouseup",   pointerLineMouseUp)
+  if (on) {
+    if (!pointerMoveLine) {
+      pointerMoveLine = document.createElement('div')
+      pointerMoveLine.className = 'pointerMoveLine'
+      document.body.appendChild(pointerMoveLine)
+    }
+    document.addEventListener("mousemove", movePointerLine)
+    document.addEventListener("mousedown", pointerLineMouseDown)
+    document.addEventListener("mouseup",   pointerLineMouseUp)
+    pointerMoveLine.classList.add("active")
+  } else if (pointerMoveLine) {
+    pointerMoveLine.classList.remove("active")
+  }
+}
+
+function pointerLineMouseDown() {
+  pointerMoveLine.classList.add("pressed")
+}
+
+function pointerLineMouseUp() {
+  pointerMoveLine.classList.remove("pressed")
+}
+
+function movePointerLine(ev) {
+  let y = ev.pageY + (baseline / 4)
+  y = y - y % (baseline / 2)
+  pointerMoveLine.style.transform = `translate3d(0,${y-0.5}px,0)`
+}
+
 
 bindTapableOption('debug-mode', toggleDebugMode)
 bindTapableOption('base-grid', toggleBaseGrid)

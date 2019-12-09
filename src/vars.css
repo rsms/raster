@@ -30,7 +30,7 @@ Variables
 
   /* spacing around blocks */
   --blockSpacingTop: 0px;
-  --blockSpacingBottom: calc(var(--lineHeight) * 1);
+  --blockSpacingBottom: var(--lineHeight);
 
   /* horizontal rule */
   --hrThickness: 2px;
@@ -48,6 +48,12 @@ Variables
   /* 1 pixel */
   --displayScale: 1;
   --pixel: 1px;
+
+  /* Colors */
+  --foreground-color-rgb: 0,0,0;
+  --foreground-color-a: 1;
+  --foreground-color: rgba(var(--foreground-color-rgb), var(--foreground-color-a));
+  --background-color: white;
 }
 
 @supports (font-variation-settings: normal) {

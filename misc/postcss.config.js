@@ -3,6 +3,7 @@ let isDebug = env.RASTER_DEBUG == '1'
 
 let plugins = [
   require('postcss-import'),
+  require('postcss-nested'),
   require('autoprefixer'),
 ]
 

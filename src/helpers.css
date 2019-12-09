@@ -7,15 +7,19 @@
 }
 
 /* visualize base grid */
+:root {
+  --base-grid-color1: rgba(20,  230, 245, 0.3);
+  --base-grid-color2: rgba(120, 120, 120, 0.05);
+}
 .show-base-grid {
   background-image: repeating-linear-gradient(
     0deg,
-    rgba(120, 120, 120, 0.05),
-    rgba(120, 120, 120, 0.05) 1px,
+    var(--base-grid-color2),
+    var(--base-grid-color2) 1px,
     transparent 1px,
     transparent calc(var(--baseline) / 2),
-    rgba(20,  230, 245, 0.3) calc(calc(var(--baseline) / 2)),
-    rgba(20,  230, 245, 0.3) calc(calc(var(--baseline) / 2) + 1px),
+    var(--base-grid-color1) calc(calc(var(--baseline) / 2)),
+    var(--base-grid-color1) calc(calc(var(--baseline) / 2) + 1px),
     transparent calc(calc(var(--baseline) / 2) + 1px),
     transparent var(--baseline)
   );
@@ -118,6 +122,7 @@ img.right.bottom { object-position: right bottom; align-self:flex-end }
 .w-38 { width: calc(var(--lineHeight) * 38) }
 .w-39 { width: calc(var(--lineHeight) * 39) }
 .w-40 { width: calc(var(--lineHeight) * 40) }
+.w-full { width: 100%; }
 
 .h-1 { height: calc(var(--lineHeight) * 1) }
 .h-2 { height: calc(var(--lineHeight) * 2) }
