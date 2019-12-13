@@ -8,7 +8,7 @@ html {
   letter-spacing: -0.01em;
   text-size-adjust: 100%;
   font-variant-ligatures: contextual common-ligatures;
-  font-feature-settings: 'cv10' 1; /* G */
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'cv10' 1; /* G */
 }
 
 body {

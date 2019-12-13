@@ -14,7 +14,7 @@ SRC
 ZIP=Raster-v${VERSION}.zip
 echo "Building version ${VERSION} -> _build/$ZIP"
 if [ -f "_build/$ZIP" ]; then
-  echo "_build/$ZIP already exists" >&2
+  echo "_build/$ZIP already exists. Update version in _data/info.yml" >&2
   exit 1
 fi
 
