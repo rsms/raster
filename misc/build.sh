@@ -45,12 +45,12 @@ if [ "$DEBUG" = "0" ]; then
   postcss_args+=( --no-map )
 fi
 
-node res/generate-grid.js 30 -version "${VERSION}" > src/grid.css
+node res/generate-grid.js 30 -version "${VERSION}" -prefix "r-" > src/grid.css
 
 RASTER_VERSION="$VERSION (release package)" RASTER_DEBUG=$DEBUG ./node_modules/.bin/postcss \
   --config misc/postcss.config.js \
   ${postcss_args[@]} \
-  -o raster.css \
+  -o raster2.css \
   src/raster.css &
 
 RASTER_VERSION="$VERSION (grid only)" RASTER_DEBUG=$DEBUG ./node_modules/.bin/postcss \

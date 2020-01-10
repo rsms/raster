@@ -25,12 +25,13 @@ endfor
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="raster.css?v={{version}}">
+  <link rel="stylesheet" href="raster2.css?v={{version}}">
+  <script src="raster.js?v={{version}}"></script>
   <link rel="stylesheet" href="res/base.css?v={{base_css_v}}">
 </head>
 <body>
-  <grid columns="8">
-    <c span="2" span-s="row">
+  <r-grid columns="8">
+    <r-cell span="2" span-s="row">
       <h1>
         Raster<br>
         Simple Grid System
@@ -40,74 +41,74 @@ endfor
         Minimal and straight-forward CSS grid system
         utilizing descriptive HTML rather than semantic CSS.
       </p>
-      <grid columns=2>
-        <c><a class="download-button" href="{{download_url}}">
+      <r-grid columns=2>
+        <r-cell><a class="download-button" href="{{download_url}}">
           Download &darr;
-        </a></c>
-        <c class="center flex-v">
+        </a></r-cell>
+        <r-cell class="center flex-v">
           <a href="examples/">Examples</a>
-        </c>
-      </grid>
+        </r-cell>
+      </r-grid>
       <br>
-    </c>
-    <c span="3.." span-s="row">
-      <grid columns=8 class="demo">
-        <c>1</c> <c>2</c> <c>3</c> <c>4</c> <c>5</c> <c>6</c> <c>7</c> <c>8</c>
+    </r-cell>
+    <r-cell span="3.." span-s="row">
+      <r-grid columns=8 class="demo">
+        <r-cell>1</r-cell> <r-cell>2</r-cell> <r-cell>3</r-cell> <r-cell>4</r-cell> <r-cell>5</r-cell> <r-cell>6</r-cell> <r-cell>7</r-cell> <r-cell>8</r-cell>
 
-        <c></c>
-        <c span=3>3</c>
-        <c></c>
-        <c span=7-8>7-8</c>
-        <c span=2+2>2+2</c>
-        <c span=5-8>5-8</c>
-        <c span=1-4>1-4</c>
-        <c span=6..>6..</c>
-        <c span=2..>2..</c>
-        <c span=4..>4..</c>
-        <c span=1-2>1-2</c>
-        <c span=4-5>4-5</c>
-      </grid>
+        <r-cell></r-cell>
+        <r-cell span=3>3</r-cell>
+        <r-cell></r-cell>
+        <r-cell span=7-8>7-8</r-cell>
+        <r-cell span=2+2>2+2</r-cell>
+        <r-cell span=5-8>5-8</r-cell>
+        <r-cell span=1-4>1-4</r-cell>
+        <r-cell span=6..>6..</r-cell>
+        <r-cell span=2..>2..</r-cell>
+        <r-cell span=4..>4..</r-cell>
+        <r-cell span=1-2>1-2</r-cell>
+        <r-cell span=4-5>4-5</r-cell>
+      </r-grid>
       <br><br>
-    </c>
+    </r-cell>
 
-    <c span="3.." span-s=row class="h2">
+    <r-cell span="3.." span-s=row class="h2">
       Simplicity first
-    </c>
+    </r-cell>
 
-    <c span="1-2" span-s="row">
-      <pre>&lt;grid columns=8&gt;
-  &lt;c&gt;&lt;/c&gt;
-  &lt;c span=3&gt;3&lt;/c&gt;
-  &lt;c&gt;&lt;/c&gt;
-  &lt;c span=7-8&gt;7-8&lt;/c&gt;
-  &lt;c span=2+2&gt;2+2&lt;/c&gt;
-  &lt;c span=5-8&gt;5-8&lt;/c&gt;
-  &lt;c span=1-4&gt;1-4&lt;/c&gt;
-  &lt;c span=6..&gt;6..&lt;/c&gt;
-  &lt;c span=2..&gt;2..&lt;/c&gt;
-  &lt;c span=4..&gt;4..&lt;/c&gt;
-  &lt;c span=1-2&gt;1-2&lt;/c&gt;
-  &lt;c span=4-5&gt;4-5&lt;/c&gt;
-&lt;/grid&gt;</pre>
-    </c>
+    <r-cell span="1-2" span-s="row">
+      <pre class="side-sample">&lt;r-grid columns=8&gt;
+  &lt;r-cell&gt;&lt;/r-cell&gt;
+  &lt;r-cell span=3&gt;3&lt;/r-cell&gt;
+  &lt;r-cell&gt;&lt;/r-cell&gt;
+  &lt;r-cell span=7-8&gt;7-8&lt;/r-cell&gt;
+  &lt;r-cell span=2+2&gt;2+2&lt;/r-cell&gt;
+  &lt;r-cell span=5-8&gt;5-8&lt;/r-cell&gt;
+  &lt;r-cell span=1-4&gt;1-4&lt;/r-cell&gt;
+  &lt;r-cell span=6..&gt;6..&lt;/r-cell&gt;
+  &lt;r-cell span=2..&gt;2..&lt;/r-cell&gt;
+  &lt;r-cell span=4..&gt;4..&lt;/r-cell&gt;
+  &lt;r-cell span=1-2&gt;1-2&lt;/r-cell&gt;
+  &lt;r-cell span=4-5&gt;4-5&lt;/r-cell&gt;
+&lt;/r-grid&gt;</pre>
+    </r-cell>
 
-    <c span="3-6" span-s="row">
+    <r-cell span="3-6" span-s="row">
       <p>
         The number of columns a grid has is specified by the
         <code>columns</code> attribute.
         For instance, to define a grid with 8 columns, you'd write
-        <code>&lt;grid columns=8&gt;</code>.
+        <code>&lt;r-grid columns=8&gt;</code>.
       </p>
       <p>
         Cells span a single column by default.
         The <code>span</code> attribute is used to customize where a cell
         starts and how many columns it spans.
-        For example, <code>&lt;c span=2-5&gt;</code> starts in column 2 and ends in column 5.
+        For example, <code>&lt;r-cell span=2-5&gt;</code> starts in column 2 and ends in column 5.
         A cell with an empty or missing <code>span</code> attribute starts on
         the next available column and spans one column.
       </p>
       <p>
-        Raster is <a href="raster.css?v={{version}}">pure CSS</a> — no JavaScript involved.
+        Raster is <a href="raster2.css?v={{version}}">pure CSS</a> — no JavaScript involved.
       </p>
       <p>
         The HTML here is what generates the grid you see at the top of this page.
@@ -115,56 +116,56 @@ endfor
       <p>
         <a href="examples/">More examples</a>
       </p>
-    </c>
-    <c span="7.." span-s="row">
+    </r-cell>
+    <r-cell span="7.." span-s="row">
       <h4>Possible span= values</h4><br>
       <p>
-        <grid columns=8 style="column-gap:1.5rem">
-          <c><code>2-5</code></c>
-          <c span=2..>start in column 2,<br>end in column 5.</c>
+        <r-grid columns=8 style="column-gap:1.5rem">
+          <r-cell><code>2-5</code></r-cell>
+          <r-cell span=2..>start in column 2,<br>end in column 5.</r-cell>
 
-          <c><code>2+3</code></c>
-          <c span=2..>start in column 2,<br>span 3 columns.</c>
+          <r-cell><code>2+3</code></r-cell>
+          <r-cell span=2..>start in column 2,<br>span 3 columns.</r-cell>
 
-          <c><code>2..</code></c>
-          <c span=2..>start in column 2,<br>span remainder of row.</c>
+          <r-cell><code>2..</code></r-cell>
+          <r-cell span=2..>start in column 2,<br>span remainder of row.</r-cell>
 
-          <c><code>2</code></c>
-          <c span=2..>start in next column,<br>span 2 columns.</c>
+          <r-cell><code>2</code></r-cell>
+          <r-cell span=2..>start in next column,<br>span 2 columns.</r-cell>
 
-          <c><code>row</code></c>
-          <c span=2..>span a full row</c>
-        </grid>
+          <r-cell><code>row</code></r-cell>
+          <r-cell span=2..>span a full row</r-cell>
+        </r-grid>
       </p>
-    </c>
+    </r-cell>
 
-    <c span=3.. class="ruler only-large-screen"></c>
+    <r-cell span=3.. class="ruler only-large-screen"></r-cell>
 
-    <c span=3.. span-s=row class="h2" id="responsive-design">
+    <r-cell span=3.. span-s=row class="h2" id="responsive-design">
       Responsive design
-    </c>
+    </r-cell>
 
-    <c span=1-2 span-s=row>
-       <pre>&lt;grid columns=6&gt;
-  &lt;c span=2   <b>span-s=row</b>&gt;
-  &lt;c span=3-6 <b>span-s=row</b>&gt;
-  &lt;c span=1-2 <b>span-s=1</b>&gt;
-  &lt;c span=3.. <b>span-s=2..</b>&gt;
-&lt;/grid&gt;</pre><br>
-    </c>
-    <c span=3-6 span-s=row>
+    <r-cell span=1-2 span-s=row>
+       <pre class="side-sample">&lt;r-grid columns=6&gt;
+  &lt;r-cell span=2   <b>span-s=row</b>&gt;
+  &lt;r-cell span=3-6 <b>span-s=row</b>&gt;
+  &lt;r-cell span=1-2 <b>span-s=1</b>&gt;
+  &lt;r-cell span=3.. <b>span-s=2..</b>&gt;
+&lt;/r-grid&gt;</pre><br>
+    </r-cell>
+    <r-cell span=3-6 span-s=row>
       <p>
         Grids lend themselves really well to device-size responsive design.
         The <code>span-s</code> attribute defines alternate layout when your
         design is presented on a small screen.
         This makes designing for large and small screens really easy.
       </p>
-      <grid columns=6 class="example" id="example1">
-        <c span=2 span-s=row class=black>Acme</c>
-        <c span=3-6 span-s=row>Things &nbsp;&nbsp; About &nbsp;&nbsp; Privacy policy</c>
-        <c span=1-2 span-s=1 class=black>Image</c>
-        <c span=3.. span-s=2..>Welcome to Acme</c>
-      </grid>
+      <r-grid columns=6 class="example" id="example1">
+        <r-cell span=2 span-s=row class=black>Acme</r-cell>
+        <r-cell span=3-6 span-s=row>Things &nbsp;&nbsp; About &nbsp;&nbsp; Privacy policy</r-cell>
+        <r-cell span=1-2 span-s=1 class=black>Image</r-cell>
+        <r-cell span=3.. span-s=2..>Welcome to Acme</r-cell>
+      </r-grid>
       <p>
         Tap the example above—or resize your web browser window—to see the
         layout change.
@@ -176,53 +177,53 @@ endfor
         This entire website is built with grids and changes layout when the
         window size passes 600dp.
       </p>
-    </c>
+    </r-cell>
 
-    <c span=3.. span-s=row class="h3" id="responsive-design">
+    <r-cell span=3.. span-s=row class="h3" id="responsive-design">
       Additional responsive control with columns-s
-    </c>
+    </r-cell>
 
-    <c span=1-2 span-s=row>
-       <pre>&lt;grid columns=6<br>      <b>columns-s=3</b>&gt;
-  &lt;c&gt;
-  &lt;c span=2&gt;
-  &lt;c&gt;
-  &lt;c span=2&gt;
-&lt;/grid&gt;</pre><br>
-    </c>
-    <c span=3-6 span-s=row>
+    <r-cell span=1-2 span-s=row>
+       <pre class="side-sample">&lt;r-grid columns=6<br>      <b>columns-s=3</b>&gt;
+  &lt;r-cell&gt;
+  &lt;r-cell span=2&gt;
+  &lt;r-cell&gt;
+  &lt;r-cell span=2&gt;
+&lt;/r-grid&gt;</pre><br>
+    </r-cell>
+    <r-cell span=3-6 span-s=row>
       <p>
         Similar to <code>span-s</code>, <code>columns-s</code> is available
-        on <code>grid</code> tags for alternate layout on small screens.
+        on <code>r-grid</code> tags for alternate layout on small screens.
         Often a small-screen layout can be accomplished by simply setting
         <code>columns-s</code> without the need for any <code>span-s</code>
         attributes. The <code>columns-l</code> attribute is also available
         for large screens.
       </p>
-      <grid columns=6 columns-s=3 class="example" id="example2">
-        <c class=black>Foo</c>
-        <c span=2>Description of foo</c>
-        <c class=black>Bar</c>
-        <c span=2>Description of bar</c>
-      </grid>
+      <r-grid columns=6 columns-s=3 class="example" id="example2">
+        <r-cell class=black>Foo</r-cell>
+        <r-cell span=2>Description of foo</r-cell>
+        <r-cell class=black>Bar</r-cell>
+        <r-cell span=2>Description of bar</r-cell>
+      </r-grid>
       <p>
         Tap the example above—or resize your web browser window—to see the
         layout change.
         Showing <b id="example2-label1" class="example-label">large</b> screen.
       </p>
-    </c>
+    </r-cell>
 
-    <c span=3.. class="ruler only-large-screen"></c>
+    <r-cell span=3.. class="ruler only-large-screen"></r-cell>
 
-    <c span=3.. span-s=row class="h2" id="responsive-design">
+    <r-cell span=3.. span-s=row class="h2" id="responsive-design">
       Excellent websites with minimal effort
-    </c>
+    </r-cell>
 
-    <c span=1-2 span-s=row>
+    <r-cell span=1-2 span-s=row>
       <a href="examples/">Example gallery</a>
-    </c>
+    </r-cell>
 
-    <c span=3-6 span-s=row>
+    <r-cell span=3-6 span-s=row>
       <p>
         Raster is a complete CSS framework for creating websites.<br>
         The Raster system is minimal but complete:
@@ -232,7 +233,7 @@ endfor
           Provides a simple, minimal and solid starting point for
           websites. Get started quickly with the
           <a href="template.html">HTML template</a>, or just include
-          <a href="raster.css?v={{version}}">raster.css</a> in your own
+          <a href="raster2.css?v={{version}}">raster2.css</a> in your own
           HTML.
         </li>
         <li>
@@ -250,60 +251,64 @@ endfor
           basis for all lengths.
         </li>
         <li>
-          <a href="raster.css?v={{version}}">raster.css</a> is only 5 kB gzipped
+          <a href="raster2.css?v={{version}}">raster2.css</a> is only 5 kB gzipped
         </li>
       </ul>
-    </c>
+    </r-cell>
 
-    <c span=3.. class="ruler only-large-screen"></c>
+    <r-cell span=3.. class="ruler only-large-screen"></r-cell>
 
-    <c span=3.. span-s=row class="h2" id="custom-css">
+    <r-cell span=3.. span-s=row class="h2" id="custom-css">
       Customize raster.grid.css
-    </c>
+    </r-cell>
 
-    <c span=3-6 span-s=row>
+    <r-cell span=3-6 span-s=row>
       <p>
         <a href="raster.grid.css?v={{version}}">raster.grid.css</a>
-        provides the minimal set of <code>&lt;grid&gt;</code> functionality.
+        provides the minimal set of <code>&lt;r-grid&gt;</code> functionality.
         If you're looking for a complete framework,
-        use <a href="raster.css?v={{version}}">raster.css</a>
+        use <a href="raster2.css?v={{version}}">raster2.css</a>
         instead.
       </p>
-    </c>
+    </r-cell>
 
-    <c span=1-2 span-s=row class="only-large-screen form" style="max-width:15rem">
-      <label><grid columns=4>
-        <c span=1-2>Columns:</c>
-        <c span=3-4><input type="number" value="8" min=2 max=30 name="maxColumns" autocomplete="off"></c>
-      </grid></label>
-      <label><grid columns=4>
-        <c span=1-2>Default cols:</c>
-        <c span=3-4><input type="number" value="4" min=1 max=30 name="defaultColumns" autocomplete="off"></c>
-      </grid></label>
-      <label><grid columns=4>
-        <c span=1-2>Small window:</c>
-        <c span=3-4><input type="number" value="600" step="100" min=0 max="10000" name="smallScreenWidth" autocomplete="off"></c>
-      </grid></label>
-      <label><grid columns=4>
-        <c span=1-2>Large window:</c>
-        <c span=3-4><input type="number" value="1600" step="100" min=0 max="10000" name="largeScreenWidth" autocomplete="off"></c>
-      </grid></label>
-      <label><grid columns=4>
-        <c span=1-2>Grid attr:</c>
-        <c span=3-4><input type="text" value="columns" name="colsAttr" autocomplete="off"></c>
-      </grid></label>
-      <label><grid columns=4>
-        <c span=1-2>Cell attr:</c>
-        <c span=3-4><input type="text" value="span" name="spanAttr" autocomplete="off"></c>
-      </grid></label>
-      <label><grid columns=4>
-        <c span=1-2>Small suffix:</c>
-        <c span=3-4><input type="text" value="-s" name="smallAttrSuffix" autocomplete="off"></c>
-      </grid></label>
-      <label><grid columns=4>
-        <c span=1-2>Large suffix:</c>
-        <c span=3-4><input type="text" value="-l" name="largeAttrSuffix" autocomplete="off"></c>
-      </grid></label>
+    <r-cell span=1-2 span-s=row class="only-large-screen form" style="max-width:15rem">
+      <label><r-grid columns=4>
+        <r-cell span=1-2>Prefix:</r-cell>
+        <r-cell span=3-4><input type="text" value="r-" name="tagPrefix" autocomplete="off"></r-cell>
+      </r-grid></label>
+      <label><r-grid columns=4>
+        <r-cell span=1-2>Columns:</r-cell>
+        <r-cell span=3-4><input type="number" value="8" min=2 max=30 name="maxColumns" autocomplete="off"></r-cell>
+      </r-grid></label>
+      <label><r-grid columns=4>
+        <r-cell span=1-2>Default cols:</r-cell>
+        <r-cell span=3-4><input type="number" value="4" min=1 max=30 name="defaultColumns" autocomplete="off"></r-cell>
+      </r-grid></label>
+      <label><r-grid columns=4>
+        <r-cell span=1-2>Small window:</r-cell>
+        <r-cell span=3-4><input type="number" value="600" step="100" min=0 max="10000" name="smallScreenWidth" autocomplete="off"></r-cell>
+      </r-grid></label>
+      <label><r-grid columns=4>
+        <r-cell span=1-2>Large window:</r-cell>
+        <r-cell span=3-4><input type="number" value="1600" step="100" min=0 max="10000" name="largeScreenWidth" autocomplete="off"></r-cell>
+      </r-grid></label>
+      <label><r-grid columns=4>
+        <r-cell span=1-2>Grid attr:</r-cell>
+        <r-cell span=3-4><input type="text" value="columns" name="colsAttr" autocomplete="off"></r-cell>
+      </r-grid></label>
+      <label><r-grid columns=4>
+        <r-cell span=1-2>Cell attr:</r-cell>
+        <r-cell span=3-4><input type="text" value="span" name="spanAttr" autocomplete="off"></r-cell>
+      </r-grid></label>
+      <label><r-grid columns=4>
+        <r-cell span=1-2>Small suffix:</r-cell>
+        <r-cell span=3-4><input type="text" value="-s" name="smallAttrSuffix" autocomplete="off"></r-cell>
+      </r-grid></label>
+      <label><r-grid columns=4>
+        <r-cell span=1-2>Large suffix:</r-cell>
+        <r-cell span=3-4><input type="text" value="-l" name="largeAttrSuffix" autocomplete="off"></r-cell>
+      </r-grid></label>
       <label>
         <input type="checkbox" name="includeDebug" checked>
         <span>Include .debug</span>
@@ -313,9 +318,9 @@ endfor
         This CSS generator is also available as a script:
         <a href="res/generate-grid.js">generate-grid.js</a>
       </p>
-    </c>
+    </r-cell>
 
-    <c span="3.." span-s="row">
+    <r-cell span="3.." span-s="row">
       <div class="code-area">
         <div class="overlay"></div>
         <textarea class="code" id="css-output" autocomplete="off" spellcheck="false" readonly></textarea>
@@ -331,6 +336,8 @@ endfor
 let cssOutput = document.querySelector('#css-output')
 
 let inputs = {
+  tagPrefix: document.querySelector('input[name="tagPrefix"]'),
+
   // minColumns: document.querySelector('input[name="minColumns"]'),
   maxColumns: document.querySelector('input[name="maxColumns"]'),
   defaultColumns: document.querySelector('input[name="defaultColumns"]'),
@@ -346,6 +353,8 @@ let inputs = {
 }
 
 let values = {
+  tagPrefix:  'r-',
+
   // minColumns: parseInt(inputs.minColumns.value),
   maxColumns: parseInt(inputs.maxColumns.value),
   defaultColumns: parseInt(inputs.defaultColumns.value),
@@ -412,6 +421,11 @@ inputs.smallAttrSuffix.addEventListener('change', updateAttrs)
 inputs.largeAttrSuffix.addEventListener('input', updateAttrs)
 inputs.largeAttrSuffix.addEventListener('change', updateAttrs)
 
+inputs.tagPrefix.addEventListener('input', ev => {
+  values.tagPrefix = inputs.tagPrefix.value
+  genCSS()
+})
+
 inputs.includeDebug.addEventListener('change', ev => {
   values.includeDebug = inputs.includeDebug.checked
   genCSS()
@@ -475,33 +489,33 @@ cssOutput.addEventListener(
 genCSS()
 
 })()</script>
-    </c>
+    </r-cell>
 
-    <c span=row class="ruler"></c>
+    <r-cell span=row class="ruler"></r-cell>
 
-    <c span=row class="h3" id="custom-css">
+    <r-cell span=row class="h3" id="custom-css">
       <br>
       <a href="examples/">Explore the example gallery &rarr;</a>
       <br>
       <br>
-    </c>
+    </r-cell>
 
-    <c span=row>
+    <r-cell span=row>
       <a href="https://rsms.me/" class="clean">@rsms</a>
-    </c>
-  </grid>
+    </r-cell>
+  </r-grid>
 
 <div id="smallScreenBeacon"></div>
 <script>(function(){
 
 // debug grid
-let sg = document.querySelector('grid.demo')
+let sg = document.querySelector('r-grid.demo')
 sg.style.position = 'relative'
 let dg = sg.cloneNode(false)
 dg.classList.remove('demo')
 dg.classList.add('debug-lines')
 for (let col = 0; col < 8; col++) {
-  let c = document.createElement('c')
+  let c = document.createElement('r-cell')
   c.innerHTML = '&nbsp;'
   dg.appendChild(c)
 }

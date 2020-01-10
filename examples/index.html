@@ -24,7 +24,7 @@ endfor
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="../raster.css?v={{version}}">
+  <link rel="stylesheet" href="../raster2.css?v={{version}}">
   <link rel="stylesheet" href="scale.css?v={{scale_css_v}}">
   <style>
 
@@ -36,7 +36,7 @@ endfor
 .examples {
   margin-top: calc(var(--lineHeight) * 2);
 }
-.examples > c {
+.examples > r-cell {
   border-top: 2px solid var(--green);
   margin-top: calc(var(--lineHeight) - 2px);
 }
@@ -45,22 +45,22 @@ endfor
 </head>
 <body>
   <h1>Raster examples</h1>
-  <grid columns=4 columns-s=2 class="examples">
+  <r-grid columns=4 columns-s=2 class="examples">
 
-    <c><h4><a href="raster.html">Feature overview</a></h4><p>
+    <r-cell><h4><a href="raster.html">Feature overview</a></h4><p>
       Comprehensive overview of various Raster features,
       including a layout debug mode and grid visualizer.
-    </p></c>
+    </p></r-cell>
 
-    <c><h4><a href="columns.html">Columns</a></h4><p>
+    <r-cell><h4><a href="columns.html">Columns</a></h4><p>
       Simple examples of various column widths and cell spans.
-    </p></c>
+    </p></r-cell>
 
-    <c><h4><a href="poster.html">Posters</a></h4><p>
+    <r-cell><h4><a href="poster.html">Posters</a></h4><p>
       Scalable posters
-    </p></c>
+    </p></r-cell>
 
-  </grid>
+  </r-grid>
   <br>
   <br>
   <p>

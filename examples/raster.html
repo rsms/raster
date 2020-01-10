@@ -8,14 +8,14 @@ layout: none
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="../raster.css?v={{site.data.info.version}}">
+  <link rel="stylesheet" href="../raster2.css?v={{site.data.info.version}}">
 </head>
 <body>
 
-  <grid columns=8 columns-s=4>
-    <c span=row><h1>Raster</h1></c>
+  <r-grid columns=8 columns-s=4>
+    <r-cell span=row><h1>Raster</h1></r-cell>
 
-    <c span=2 span-s=row>
+    <r-cell span=2 span-s=row>
       <br>
       <p>
         Raster is a simple typography &amp; grid system for building
@@ -28,28 +28,28 @@ layout: none
         Raster makes sure that text lines up across columns and provides
         some simple customization via CSS variables.
       </p>
-    </c>
-    <c span=5-6 span-s=1-2>
+    </r-cell>
+    <r-cell span=5-6 span-s=1-2>
       <h4>Settings</h4>
-      <grid columns=2 class="compact settings">
-        <c>Debug mode:     </c><c><span id="debug-mode-msg">On</span> (D)</c>
-        <c>Baseline grid:  </c><c><span id="base-grid-msg">On</span> (G)</c>
-        <c>Size mode:      </c><c><span id="size-mode-msg">Constant</span> (S)</c>
-        <c>Inverted colors:</c><c><span id="inverted-msg">Off</span> (I)</c>
-      </grid>
-    </c>
-    <c span=2>
+      <r-grid columns=2 class="compact settings">
+        <r-cell>Debug mode:     </r-cell><r-cell><span id="debug-mode-msg">On</span> (D)</r-cell>
+        <r-cell>Baseline grid:  </r-cell><r-cell><span id="base-grid-msg">On</span> (G)</r-cell>
+        <r-cell>Size mode:      </r-cell><r-cell><span id="size-mode-msg">Constant</span> (S)</r-cell>
+        <r-cell>Inverted colors:</r-cell><r-cell><span id="inverted-msg">Off</span> (I)</r-cell>
+      </r-grid>
+    </r-cell>
+    <r-cell span=2>
       <h4>Values</h4>
-      <grid columns=2 class="compact">
-        <c>Font size:  </c><c id="fontsize-value-msg">10 dp</c>
-        <c>Baseline:   </c><c id="baseline-value-msg">10 dp</c>
-        <c>Line height:</c><c id="lineheight-value-msg">10 dp</c>
-      </grid>
-    </c>
+      <r-grid columns=2 class="compact">
+        <r-cell>Font size:  </r-cell><r-cell id="fontsize-value-msg">10 dp</r-cell>
+        <r-cell>Baseline:   </r-cell><r-cell id="baseline-value-msg">10 dp</r-cell>
+        <r-cell>Line height:</r-cell><r-cell id="lineheight-value-msg">10 dp</r-cell>
+      </r-grid>
+    </r-cell>
 
     <hr>
 
-    <c span=2>
+    <r-cell span=2>
       <h1>Level 1 heading</h1>
       <p>Paragraph<br>with two lines</p>
       <p>Paragraph<br>with two lines</p>
@@ -60,8 +60,8 @@ layout: none
       <p>Paragraph<br>with two lines</p>
       <h4>Level 4 heading</h4>
       <p>Paragraph<br>with two lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <p>Paragraph with one<br>two and<br>three lines</p>
       <p>Paragraph with one and<br>two lines</p>
       <p>Paragraph with one<br>two and<br>three lines</p>
@@ -70,8 +70,8 @@ layout: none
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
       <p>Paragraph with one<br>two and<br>three lines</p>
       <p>Paragraph with one<br>and two lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h2>Level 2 heading</h2>
       <p>Paragraph with one and<br>two lines</p>
       <p>Paragraph with one and<br>two lines</p>
@@ -81,8 +81,8 @@ layout: none
       <p>Paragraph with one line</p>
       <h3>Level 3 heading</h3>
       <p>Paragraph with one<br>and two lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h3>Level 3 heading</h3>
       <p>Paragraph with one and<br>two lines</p>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
@@ -91,195 +91,195 @@ layout: none
       <h5>Level 5 heading</h5>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
-    </c>
+    </r-cell>
 
     <hr>
 
-    <c span=2>
+    <r-cell span=2>
       <h1>Level 1 heading</h1>
       <h1>Level 1 heading</h1>
       <p>Paragraph with one line</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h1>Level 1 heading</h1>
       <h2>Level 2 heading</h2>
       <p>Paragraph with one<br>and two lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h1>Level 1 heading</h1>
       <h3>Level 3 heading</h3>
       <p>Paragraph with one<br>two and<br>three lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h1>Level 1 heading</h1>
       <h4>Level 4 heading</h4>
       <p>Paragraph with one<br>two and<br>three lines</p>
-    </c>
+    </r-cell>
 
-    <c span=row>&nbsp;</c>
+    <r-cell span=row>&nbsp;</r-cell>
 
-    <c span=2>
+    <r-cell span=2>
       <h2>Level 2 heading</h2>
       <h1>Level 1 heading</h1>
       <p>Paragraph with one line</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h2>Level 2 heading</h2>
       <h2>Level 2 heading</h2>
       <p>Paragraph with one<br>and two lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h2>Level 2 heading</h2>
       <h3>Level 3 heading</h3>
       <p>Paragraph with one<br>two and<br>three lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h2>Level 2 heading</h2>
       <h4>Level 4 heading</h4>
       <p>Paragraph with one<br>two and<br>three lines</p>
-    </c>
+    </r-cell>
 
-    <c span=row>&nbsp;</c>
+    <r-cell span=row>&nbsp;</r-cell>
 
-    <c span=2>
+    <r-cell span=2>
       <h3>Level 3 heading</h3>
       <h1>Level 1 heading</h1>
       <p>Paragraph with one line</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h3>Level 3 heading</h3>
       <h2>Level 2 heading</h2>
       <p>Paragraph with one<br>and two lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h3>Level 3 heading</h3>
       <h3>Level 3 heading</h3>
       <p>Paragraph with one<br>two and<br>three lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h3>Level 3 heading</h3>
       <h4>Level 4 heading</h4>
       <p>Paragraph with one<br>two and<br>three lines</p>
-    </c>
+    </r-cell>
 
-    <c span=row>&nbsp;</c>
+    <r-cell span=row>&nbsp;</r-cell>
 
-    <c span=2>
+    <r-cell span=2>
       <h4>Level 4 heading</h4>
       <h1>Level 1 heading</h1>
       <p>Paragraph with one line</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h4>Level 4 heading</h4>
       <h2>Level 2 heading</h2>
       <p>Paragraph with one<br>and two lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h4>Level 4 heading</h4>
       <h3>Level 3 heading</h3>
       <p>Paragraph with one<br>two and<br>three lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h4>Level 4 heading</h4>
       <h4>Level 4 heading</h4>
       <p>Paragraph with one<br>two and<br>three lines</p>
-    </c>
+    </r-cell>
 
     <hr>
 
-    <c span=2>
+    <r-cell span=2>
       <h1 class="single-line">Level 1 singĺỵ line heading</h1>
       <h1 class="single-line">Level 1 singĺỵ line heading</h1>
       <p>Paragraph with one line</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h1 class="single-line">Level 1 singĺỵ line heading</h1>
       <h2 class="single-line">Level 2 singĺỵ line heading</h2>
       <p>Paragraph with one<br>and two lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h1 class="single-line">Level 1 singĺỵ line heading</h1>
       <h3 class="single-line">Level 3 singĺỵ line heading</h3>
       <p>Paragraph with one<br>two and<br>three lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h1 class="single-line">Level 1 singĺỵ line heading</h1>
       <h4 class="single-line">Level 4 singĺỵ line heading</h4>
       <p>Paragraph with one<br>two and<br>three lines</p>
-    </c>
+    </r-cell>
 
-    <c span=row>&nbsp;</c>
+    <r-cell span=row>&nbsp;</r-cell>
 
-    <c span=2>
+    <r-cell span=2>
       <h2 class="single-line">Level 2 singĺỵ line heading</h2>
       <h1 class="single-line">Level 1 singĺỵ line heading</h1>
       <p>Paragraph with one line</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h2 class="single-line">Level 2 singĺỵ line heading</h2>
       <h2 class="single-line">Level 2 singĺỵ line heading</h2>
       <p>Paragraph with one<br>and two lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h2 class="single-line">Level 2 singĺỵ line heading</h2>
       <h3 class="single-line">Level 3 singĺỵ line heading</h3>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h2 class="single-line">Level 2 singĺỵ line heading</h2>
       <h4 class="single-line">Level 4 singĺỵ line heading</h4>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
-    </c>
+    </r-cell>
 
-    <c span=row>&nbsp;</c>
+    <r-cell span=row>&nbsp;</r-cell>
 
-    <c span=2>
+    <r-cell span=2>
       <h3 class="single-line">Level 3 singĺỵ line heading</h3>
       <h1 class="single-line">Level 1 singĺỵ line heading</h1>
       <p>Paragraph with one line</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h3 class="single-line">Level 3 singĺỵ line heading</h3>
       <h2 class="single-line">Level 2 singĺỵ line heading</h2>
       <p>Paragraph with one<br>and two lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h3 class="single-line">Level 3 singĺỵ line heading</h3>
       <h3 class="single-line">Level 3 singĺỵ line heading</h3>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h3 class="single-line">Level 3 singĺỵ line heading</h3>
       <h4 class="single-line">Level 4 singĺỵ line heading</h4>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
-    </c>
+    </r-cell>
 
-    <c span=row>&nbsp;</c>
+    <r-cell span=row>&nbsp;</r-cell>
 
-    <c span=2>
+    <r-cell span=2>
       <h4 class="single-line">Level 4 singĺỵ line heading</h4>
       <h1 class="single-line">Level 1 singĺỵ line heading</h1>
       <p>Paragraph with one line</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h4 class="single-line">Level 4 singĺỵ line heading</h4>
       <h2 class="single-line">Level 2 singĺỵ line heading</h2>
       <p>Paragraph with one<br>and two lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h4 class="single-line">Level 4 singĺỵ line heading</h4>
       <h3 class="single-line">Level 3 singĺỵ line heading</h3>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h4 class="single-line">Level 4 singĺỵ line heading</h4>
       <h4 class="single-line">Level 4 singĺỵ line heading</h4>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
-    </c>
+    </r-cell>
 
     <hr>
 
-    <c span=2>
+    <r-cell span=2>
       <h4>Level 4 heading</h4>
       <h1>Level 1 heading</h1>
       <p>single line</p>
@@ -295,8 +295,8 @@ layout: none
       <h4 class="single-line">Level 4 singĺỵ line</h4>
       <h1>Level 1 header</h1>
       <p>single line</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       single line<br>
       single line<br>
       single line<br>
@@ -330,9 +330,9 @@ layout: none
       single line<br>
       single line<br>
       single line
-    </c>
+    </r-cell>
 
-    <c span=2>
+    <r-cell span=2>
       <h1>Level 1 heading</h1>
       <h2>Level 2 heading</h2>
       <h3>Level 3 heading</h3>
@@ -342,8 +342,8 @@ layout: none
       <h3 class="single-line">Level 3 singĺỵ line</h3>
       <h4 class="single-line">Level 4 singĺỵ line</h4>
       <p>Paragraph with one<br>two<br>three<br>four and<br>five lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h4>Level 4 heading</h4>
       <h3>Level 3 heading</h3>
       <h2>Level 2 heading</h2>
@@ -353,11 +353,11 @@ layout: none
       <h2 class="single-line">Level 2 singĺỵ line</h2>
       <h1 class="single-line">Level 1 singĺỵ line</h1>
       <p>Paragraph with one<br>and two lines</p>
-    </c>
+    </r-cell>
 
     <hr>
 
-    <c span=2>
+    <r-cell span=2>
       <h1 class="single-line">Level 1 singĺỵ line</h1>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
       <h1 class="single-line">Level 1 singĺỵ line</h1>
@@ -369,8 +369,8 @@ layout: none
       Plain text<br>
       Plain text<br>
       Plain text
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h2 class="single-line">Level 2 singĺỵ line</h2>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
       <h2 class="single-line">Level 2 singĺỵ line</h2>
@@ -382,91 +382,91 @@ layout: none
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
       <h4 class="single-line">Level 4 singĺỵ line</h4>
       Plain text
-    </c>
+    </r-cell>
 
     <hr>
 
-    <c span=2>
+    <r-cell span=2>
       <h1>Level 1 heading</h1>
       <h2>Level 2 heading</h2>
       <p>Paragraph with one<br>two and<br>three lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h3>Level 3 heading</h3>
       <h4>Level 4 heading</h4>
       <p>Paragraph with one line</p>
       <p>Paragraph with one<br>two and<br>three lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <p>
         Paragraph with<br>line<br>line<br>line<br>line<br>line<br>
         line<br>line<br>line
       </p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h1>Level 1 heading</h1>
       <h2>Level 2 heading</h2>
       <h3>Level 3 heading</h3>
       <p>Paragraph with one line</p>
-    </c>
+    </r-cell>
 
     <hr>
 
-    <c span=2>
+    <r-cell span=2>
       <h1 class="single-line">Level 1 singĺỵ line</h1>
       <h2 class="single-line">Level 2 singĺỵ line</h2>
       <p>Paragraph with one<br>two and<br>three lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h3 class="single-line">Level 3 singĺỵ line</h3>
       <h4 class="single-line">Level 4 singĺỵ line</h4>
       <p>Paragraph with one line</p>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <p>
         Paragraph with<br>line<br>line<br>line<br>line<br>line<br>
         line<br>line<br>line<br>line
       </p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h1 class="single-line">Level 1 singĺỵ line</h1>
       <h2 class="single-line">Level 2 singĺỵ line</h2>
       <h3 class="single-line">Level 3 singĺỵ line</h3>
       <p>Paragraph with one line</p>
-    </c>
+    </r-cell>
 
     <hr>
 
-    <c span=2 span-s=row>
+    <r-cell span=2 span-s=row>
       <h1>Level 1</h1>
       <h2>Level 2</h2>
       <h3>Level 3</h3>
       <h4>Level 4</h4>
       <h5>Level 5</h5>
-    </c>
-    <c span=3.. span-s=row>
+    </r-cell>
+    <r-cell span=3.. span-s=row>
       <h1 class="large">Level 1 header<br>large size</h1>
       <h1 class="xlarge">Level 1 header<br>xlarge size</h1>
       <h1 class="xxlarge">Level 1 header<br>xxlarge size</h1>
       <h1 class="xxxlarge">Level 1 header<br>xxxlarge size</h1>
       <h1 class="xxxlarge single-line">Single-line xxxlarge size</h1>
-    </c>
+    </r-cell>
 
     <hr>
 
-    <c span=2>
+    <r-cell span=2>
       <h1>Level 1<br>heading<br>wråpping<br>Åuĺtipĺe<br>lines</h1>
       <p>Paragraph with one<br>two<br>three<br>four and<br>five lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <p>Paragraph with one<br>two and<br>three lines</p>
       <p>Paragraph with one and<br>two lines</p>
       <p>Paragraph with one<br>two and<br>three lines</p>
       <p>Paragraph with one line</p>
       <p>Paragraph with one<br>two and<br>three lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h2>Level 2 heading that wraps over Åuĺtipĺe lines and keeps on wrapping</h2>
       <p>Paragraph with one and<br>two lines</p>
       <h3>
@@ -474,8 +474,8 @@ layout: none
         and wrapping and wrapping and wrapping
       </h3>
       <p>Paragraph with one line</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
       <p>Paragraph with one line</p>
       <p>Paragraph with one line</p>
@@ -485,55 +485,55 @@ layout: none
       </h3>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
       <p>Paragraph with one and<br>two lines</p>
-    </c>
+    </r-cell>
 
     <hr>
-    <c span=row class=h3>Images</c>
+    <r-cell span=row class=h3>Images</r-cell>
 
-    <c span=2>
+    <r-cell span=2>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
       <p>Paragraph with one<br>two<br>three<br>four and<br>five lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <img src="image1.jpg" class="h-8 top" />
       <p>Contain and align to top</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <img src="image1.jpg" class="h-8 bottom right" />
       <p>Contain and align to bottom right</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <img src="image1.jpg" class="h-8 fill" />
       <p>Fill</p>
-    </c>
+    </r-cell>
 
-    <c span=3.. span-s=row><hr></c>
+    <r-cell span=3.. span-s=row><hr></r-cell>
 
-    <c span=2>
+    <r-cell span=2>
       <p>Paragraph with one<br>two<br>three<br>four and<br>five lines</p>
       <p>Paragraph with one<br>two<br>three<br>four and<br>five lines</p>
-    </c>
+    </r-cell>
 
-    <c span=2>
+    <r-cell span=2>
       <p>Fill from bottom left</p>
       <img src="image1.jpg" class="h-8 fill bottom left" />
       <p>Fill from bottom left</p>
-    </c>
+    </r-cell>
 
-    <c span=2>
+    <r-cell span=2>
       <p>Contain and align to top</p>
       <img src="image1.jpg" class="h-8 top" />
       <p>Contain and align to top</p>
-    </c>
+    </r-cell>
 
-    <c span=2 title="img is only child (no margins)">
+    <r-cell span=2 title="img is only child (no margins)">
       <img src="image1.jpg" width="100%" class="h-8 fill" />
-    </c>
+    </r-cell>
 
     <hr>
-    <c span=row class=h3>Flow columns</c>
+    <r-cell span=row class=h3>Flow columns</r-cell>
 
-    <c span=row flow-cols=4 flow-cols-s=2>
+    <r-cell span=row flow-cols=4 flow-cols-s=2>
       <p>A third of the distance across the Beach, the meadow ends and sand
       begins. This slopes gradually up for another third of the distance, to
       the foot of the sand hills, which seem tumbled into their places by some
@@ -555,11 +555,11 @@ layout: none
       mighty power, sometimes three tiers of them deep, sometimes two, and
       sometimes only one.
       </p>
-    </c>
+    </r-cell>
 
-    <c span=row><br></c>
+    <r-cell span=row><br></r-cell>
 
-    <c span=3-8 span-s=2-4 flow-cols=3 flow-cols-s=2>
+    <r-cell span=3-8 span-s=2-4 flow-cols=3 flow-cols-s=2>
       <p>A third of the distance across the Beach, the meadow ends and sand
       begins. This slopes gradually up for another third of the distance, to
       the foot of the sand hills, which seem tumbled into their places by some
@@ -581,11 +581,11 @@ layout: none
       mighty power, sometimes three tiers of them deep, sometimes two, and
       sometimes only one.
       </p>
-    </c>
+    </r-cell>
 
-    <c span=row><br></c>
+    <r-cell span=row><br></r-cell>
 
-    <c span=5-8 span-s=3-4 flow-cols=2 flow-cols-s=1>
+    <r-cell span=5-8 span-s=3-4 flow-cols=2 flow-cols-s=1>
       <p>A third of the distance across the Beach, the meadow ends and sand
       begins. This slopes gradually up for another third of the distance, to
       the foot of the sand hills, which seem tumbled into their places by some
@@ -607,59 +607,59 @@ layout: none
       mighty power, sometimes three tiers of them deep, sometimes two, and
       sometimes only one.
       </p>
-    </c>
+    </r-cell>
 
     <hr>
-    <c span=row class=h3>Horizontal rules</c>
+    <r-cell span=row class=h3>Horizontal rules</r-cell>
 
-    <c span=2>
+    <r-cell span=2>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
       <hr>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
       <p>Paragraph with one<br>two<br>three and<br>four lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <p>Paragraph with one line</p>
       <hr>
       <p>Paragraph with one line</p>
       <hr>
       <p>Paragraph with one and<br>two lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <p>Paragraph with one and<br>two lines</p>
       <p>Paragraph with one line</p>
       <hr>
       <p>Paragraph with one and<br>two lines</p>
-    </c>
+    </r-cell>
 
     <hr>
     <hr>
     <hr>
 
-    <c span=2><hr></c>
-    <c span=2><hr></c>
-    <c span=2><hr></c>
-    <c span=2><hr></c>
+    <r-cell span=2><hr></r-cell>
+    <r-cell span=2><hr></r-cell>
+    <r-cell span=2><hr></r-cell>
+    <r-cell span=2><hr></r-cell>
 
-    <c span=2><hr>hr with text</c>
-    <c span=2>text with hr<hr></c>
-    <c span=2><hr><p>hr with p</p></c>
-    <c span=2><p>p with hr</p><hr></c>
+    <r-cell span=2><hr>hr with text</r-cell>
+    <r-cell span=2>text with hr<hr></r-cell>
+    <r-cell span=2><hr><p>hr with p</p></r-cell>
+    <r-cell span=2><p>p with hr</p><hr></r-cell>
 
-    <c span=row><hr><p>hr with p</p></c>
-    <c span=row><hr><p>hr with p (multiple entries tests fractional baseline shift)</p></c>
+    <r-cell span=row><hr><p>hr with p</p></r-cell>
+    <r-cell span=row><hr><p>hr with p (multiple entries tests fractional baseline shift)</p></r-cell>
 
-    <c span=row><p>p with hr</p><hr></c>
-    <c span=row><p>p with hr</p><hr></c>
-    <c span=row><p>p with hr</p><hr></c>
+    <r-cell span=row><p>p with hr</p><hr></r-cell>
+    <r-cell span=row><p>p with hr</p><hr></r-cell>
+    <r-cell span=row><p>p with hr</p><hr></r-cell>
 
     <hr>
-    <c span=row class=h3>Lists</c>
+    <r-cell span=row class=h3>Lists</r-cell>
 
-    <c span=2>
+    <r-cell span=2>
       <h4>Unordered list</h4>
       <p>Leading paragraph</p>
       <ul>
@@ -683,8 +683,8 @@ layout: none
         <li>Unordered list item</li>
       </ul>
       <p>Paragraph with one and<br>two lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h4>Ordered list</h4>
       <p>Leading paragraph</p>
       <ol>
@@ -708,8 +708,8 @@ layout: none
         <li>Ordered list item</li>
       </ol>
       <p>Paragraph with one and<br>two lines</p>
-    </c>
-    <c span=2>
+    </r-cell>
+    <r-cell span=2>
       <h4>Ordered &amp; unordered lists</h4>
       <ol>
         <li>Ordered list item</li>
@@ -742,8 +742,8 @@ layout: none
         <li class="task-list-item"><input type="checkbox" disabled>Call Mom</li>
         <li>Regular list item</li>
       </ul>
-    </c>
-    <c span="2">
+    </r-cell>
+    <r-cell span="2">
       <h4>Ordered list with custom start</h4>
       <p>Paragraph</p>
       <ol start=100>
@@ -774,13 +774,13 @@ layout: none
           </ol>
         </li>
       </ol>
-    </c>
+    </r-cell>
 
 
 
 
     <hr>
-    <c span=2 span-s=row>
+    <r-cell span=2 span-s=row>
       <h3>Code</h3>
       <p>
         The variable <code>--fontMono</code> can be set to change the font
@@ -791,9 +791,9 @@ layout: none
       <p>
         <tt>Here is a really long single line that should wrap when the column is narrow</tt>
       </p>
-    </c>
+    </r-cell>
 
-    <c span=4 span-s=row>
+    <r-cell span=4 span-s=row>
       <h4>&lt;code&gt;&lt;pre&gt;</h4>
       <pre><code><em class=opacity6>// CopyN copies n bytes (or until an error) from src to dst.
 // It returns the number of bytes copied and the earliest
@@ -815,9 +815,9 @@ layout: none
   <b>return</b>
 }
       </code></pre>
-    </c>
+    </r-cell>
 
-    <c span=2 span-s=row>
+    <r-cell span=2 span-s=row>
       <h4>Inline</h4>
       <p>
         <code>CopyN</code> copies n bytes (or until an error)
@@ -832,13 +832,13 @@ layout: none
         If <code>dst</code> implements the <em class=code>ReaderFrom</em> interface,
         the copy is implemented using it.
       </p>
-    </c>
+    </r-cell>
 
 
 
     <hr>
-    <c span=row class=h3>Tables</c>
-    <c span=4>
+    <r-cell span=row class=h3>Tables</r-cell>
+    <r-cell span=4>
       <p>Leading paragraph before a table of file types</p>
       <table>
         <thead>
@@ -861,17 +861,17 @@ layout: none
         </tbody>
       </table>
       <p>Trailing paragraph</p>
-    </c>
+    </r-cell>
 
-    <c>
+    <r-cell>
       <p>Paragraph line one<br>line two<br>line three<br>line four</p>
       <p>Paragraph line one<br>line two<br>line three<br>line four<br>
         line five<br>line six<br>line seven</p>
       <p>Paragraph line one<br>line two<br>line three<br>line four<br>
         line five<br>line six</p>
-    </c>
+    </r-cell>
 
-    <c span=3 span-s=4>
+    <r-cell span=3 span-s=4>
       <p>Alignment demo. Table has <tt>class=w-full</tt></p>
       <table class=w-full>
       <thead>
@@ -886,10 +886,10 @@ layout: none
       <p>Paragraph line one<br>line two<br>line three<br>line four<br>
         line five<br>line six</p>
       <p>Paragraph line one<br>line two<br>line three<br>line four</p>
-    </c>
+    </r-cell>
 
 
-    <c span=4>
+    <r-cell span=4>
       <table>
         <thead>
           <tr><th>Header</th><th>Mime type</th>
@@ -931,18 +931,18 @@ layout: none
         </tbody>
       </table>
       <p>Trailing paragraph</p>
-    </c>
+    </r-cell>
 
-    <c>
+    <r-cell>
       <p>Paragraph line one<br>line two<br>line three<br>line four</p>
       <p>Paragraph line one<br>line two<br>line three<br>line four<br>
         line five<br>line six<br>line seven</p>
       <p>Paragraph line one<br>line two<br>line three<br>line four</p>
       <p>Paragraph line one<br>line two<br>line three<br>line four</p>
       <p>Paragraph line one<br>line two<br>line three<br>line four</p>
-    </c>
+    </r-cell>
 
-    <c>
+    <r-cell>
       <h3>H3</h3>
       <table>
         <thead><tr><th>Mime type</th></tr></thead>
@@ -964,9 +964,9 @@ layout: none
         </tbody>
       </table>
       <p>Trailing paragraph</p>
-    </c>
+    </r-cell>
 
-    <c>
+    <r-cell>
       <img src="image1.jpg" class="h-5 fill" />
       <table>
         <thead><tr><th>Mime type</th></tr></thead>
@@ -988,11 +988,11 @@ layout: none
         </tbody>
       </table>
       <p>Trailing paragraph</p>
-    </c>
+    </r-cell>
 
 
 
-  </grid>
+  </r-grid>
 
   <!-- ---- internal only -- not part of raster ---- -->
   <script>(function(){

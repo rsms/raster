@@ -51,25 +51,25 @@ textarea.code.scrolled {
 }
 
 /* document grid */
-body > grid {
+body > r-grid {
   grid-column-gap: calc(var(--lineHeight) * 2);
 }
 
-c.red {    background: var(--red) !important; color: white; }
-c.blue {   background: var(--blue) !important; color: white; }
-c.green {  background: var(--green) !important; color: white; }
-c.yellow { background: var(--yellow) !important; }
-c.grey {   background: var(--grey) !important; color: black; }
-c.dark-grey {   background: var(--darkGrey) !important; color: white; }
+r-cell.red {    background: var(--red) !important; color: white; }
+r-cell.blue {   background: var(--blue) !important; color: white; }
+r-cell.green {  background: var(--green) !important; color: white; }
+r-cell.yellow { background: var(--yellow) !important; }
+r-cell.grey {   background: var(--grey) !important; color: black; }
+r-cell.dark-grey {   background: var(--darkGrey) !important; color: white; }
 
-grid.example > c {
+r-grid.example > r-cell {
   padding: 0.75rem 1rem;
   pointer-events: none; -webkkit-pointer-events: none;
   user-select: none; -webkit-user-select: none;
   cursor: default;
   border: 0.1rem solid black;
 }
-grid.example > c.black {
+r-grid.example > r-cell.black {
   background: black;
   color: white;
 }
@@ -81,11 +81,11 @@ grid.example > c.black {
 .flash { animation: flash 120ms 3; }
 
 /* demo grid */
-grid.demo, grid.demo grid {
+r-grid.demo, r-grid.demo r-grid {
   --columnGap: var(--baseline);
   --rowGap: var(--baseline);
 }
-grid.demo c {
+r-grid.demo r-cell {
   background: #111;
   color: white;
 
@@ -95,14 +95,14 @@ grid.demo c {
   padding: var(--baseline) 0 var(--baseline) 1rem;
 }
 /* color first eight column cells in the demo */
-grid.demo > c:nth-child(100n+1),
-grid.demo > c:nth-child(100n+2),
-grid.demo > c:nth-child(100n+3),
-grid.demo > c:nth-child(100n+4),
-grid.demo > c:nth-child(100n+5),
-grid.demo > c:nth-child(100n+6),
-grid.demo > c:nth-child(100n+7),
-grid.demo > c:nth-child(100n+8) {
+r-grid.demo > r-cell:nth-child(100n+1),
+r-grid.demo > r-cell:nth-child(100n+2),
+r-grid.demo > r-cell:nth-child(100n+3),
+r-grid.demo > r-cell:nth-child(100n+4),
+r-grid.demo > r-cell:nth-child(100n+5),
+r-grid.demo > r-cell:nth-child(100n+6),
+r-grid.demo > r-cell:nth-child(100n+7),
+r-grid.demo > r-cell:nth-child(100n+8) {
   background-color: transparent;
   color: rgba(0, 0, 0, 0.2);
   height: 2.2rem;
@@ -112,7 +112,7 @@ grid.demo > c:nth-child(100n+8) {
   font-weight: 200; font-size: 1.2rem;
 }
 
-grid.debug-lines {
+r-grid.debug-lines {
   /*grid-column-gap: 0;*/
   position: absolute !important;
   z-index: 9;
@@ -125,7 +125,7 @@ grid.debug-lines {
   opacity: 0.1;
   pointer-events: none;
 }
-grid.debug-lines > c {
+r-grid.debug-lines > r-cell {
   margin-top: -1px;
   margin-bottom: -1px;
   grid-row: 1 / -1;
@@ -133,19 +133,19 @@ grid.debug-lines > c {
   background: transparent !important;
 }
 
-/*c > hr { display:none; }*/
+/*r-cell > hr { display:none; }*/
 
-c.ruler {
+r-cell.ruler {
   height: 0.2rem;
   background: black;
   margin-top: calc(var(--lineHeight) * 2);
 }
 
-grid > c.h2 {
+r-grid > r-cell.h2 {
   margin-top: var(--lineHeight);
 }
 
-/*c.ruler + c.h2 {
+/*r-cell.ruler + r-cell.h2 {
   background: red;
   color: red;
 }*/
@@ -176,11 +176,11 @@ a.download-button:active {
   align-items: center;
   height: calc(var(--lineHeight) * 2);
 }
-.form label > grid {
+.form label > r-grid {
   width:100%;
   grid-row-gap: 0;
 }
-.form label > grid > c:first-child {
+.form label > r-grid > r-cell:first-child {
   /* label */
   user-select: none; -webkit-user-select: none;
 }
@@ -200,9 +200,14 @@ a.download-button:active {
 .form input[type="checkbox"] + * {
   user-select: none; -webkit-user-select: none;
 }
-label > grid > c {
+label > r-grid > r-cell {
   display: flex;
   align-items: center;
+}
+
+pre.side-sample {
+  color: #333;
+  font-size: 0.85em;
 }
 
 
@@ -219,28 +224,28 @@ label > grid > c {
 
 @media only screen and (max-width: 600px) {
   #smallScreenBeacon { width:1px; }
-  body > grid { grid-row-gap: var(--lineHeight); }
+  body > r-grid { grid-row-gap: var(--lineHeight); }
   .only-large-screen { display: none; }
 }
 @media only screen and (min-width: 601px) {
   .only-small-screen { display: none; }
 }
 
-grid.examples {
+r-grid.examples {
 }
-grid.examples > c, grid.examples grid > c {
+r-grid.examples > r-cell, r-grid.examples r-grid > r-cell {
   padding: 0.5rem;
   overflow: hidden;
 }
-grid.examples grid > c {
+r-grid.examples r-grid > r-cell {
   border: 1px solid white;
 }
-grid.examples > c {
+r-grid.examples > r-cell {
   padding: 2rem;
   background: black;
   color: white;
 }
-grid.examples > c.yellow, grid.examples > c.yellow grid > c {
+r-grid.examples > r-cell.yellow, r-grid.examples > r-cell.yellow r-grid > r-cell {
   color: black;
   border-color: black;
 }

@@ -35,6 +35,7 @@ let generateCSS = exports.generateCSS = function generateCSS(props, writer) {
   // Configuration
   //
   //  local              user                      default
+  let tagPrefix        = props.tagPrefix        || ""
   let minColumns       = props.minColumns       || 1
   let maxColumns       = props.maxColumns       || minColumns
   let defaultColumns   = props.defaultColumns   || Math.min(4, props.maxColumns)
@@ -48,6 +49,9 @@ let generateCSS = exports.generateCSS = function generateCSS(props, writer) {
   let largeScreenWidth = props.largeScreenWidth || (props.largeScreenWidth === undefined ? 1600 : 0)
   let includeDebug     = props.includeDebug     || (props.includeDebug !== false)
   let version          = props.version          || ""
+
+  const GRID = `${tagPrefix}grid`
+  const CELL = tagPrefix ? `${tagPrefix}cell` : `c`  // c for legacy support
 
   // mstr takes a multi-line string and trims the start and end.
   // If the last line contains whitespace, that whitespace is trimmed from
@@ -75,7 +79,7 @@ let generateCSS = exports.generateCSS = function generateCSS(props, writer) {
 
   // grid
   w(`
-    grid {
+    ${GRID} {
       display: grid;
       --grid-tc: repeat(${defaultColumns}, 1fr);
       grid-template-columns: var(--grid-tc);
@@ -87,8 +91,8 @@ let generateCSS = exports.generateCSS = function generateCSS(props, writer) {
   // cell
   w("")
   w(`
-    /* c -- cell or column */
-    grid > c { display: block; appearance: none; -webkit-appearance: none }
+    /* ${CELL} -- cell or column */
+    ${GRID} > ${CELL} { display: block; appearance: none; -webkit-appearance: none }
     `)
 
   // base/normal window size
@@ -121,34 +125,34 @@ let generateCSS = exports.generateCSS = function generateCSS(props, writer) {
   function genWidthDependent(attr, gattr, w) {
 
     for (let col = minColumns; col <= maxColumns; col++) {
-      w(`grid[${gattr}="${col}"] { --grid-tc: repeat(${col}, 1fr) }`)
+      w(`${GRID}[${gattr}="${col}"] { --grid-tc: repeat(${col}, 1fr) }`)
     }
 
     w("")
     w(`
       /* ${attr}=start... */
-      grid > c[${attr}^="1"] { --grid-cs: 1 }
+      ${GRID} > ${CELL}[${attr}^="1"] { --grid-cs: 1 }
       `)
     for (let col = 2; col <= maxColumns; col++) {
-      w(`grid > c[${attr}^="${col}"] { --grid-cs: ${col} }`)
+      w(`${GRID} > ${CELL}[${attr}^="${col}"] { --grid-cs: ${col} }`)
     }
 
     w("")
     w(`
       /* ${attr}=...+width, ${attr}=...-end */
-      grid > c[${attr}$="+1"], grid > c[${attr}="1"] { --grid-ce: 1 }
+      ${GRID} > ${CELL}[${attr}$="+1"], ${GRID} > ${CELL}[${attr}="1"] { --grid-ce: 1 }
       `)
     for (let col = 2; col <= maxColumns; col++) {
       w(
-        `grid > c[${attr}$="+${col}"], ` +
-        `grid > c[${attr}$="-${col-1}"], ` +
-        `grid > c[${attr}="${col}"] ` +
+        `${GRID} > ${CELL}[${attr}$="+${col}"], ` +
+        `${GRID} > ${CELL}[${attr}$="-${col-1}"], ` +
+        `${GRID} > ${CELL}[${attr}="${col}"] ` +
         `{ --grid-ce: ${col} }`
       )
     }
     if (maxColumns > 1) {
       w(
-        `grid > c[${attr}$="-${maxColumns}"] ` +
+        `${GRID} > ${CELL}[${attr}$="-${maxColumns}"] ` +
         `{ --grid-ce: ${maxColumns+1} }`
       )
     }
@@ -156,24 +160,24 @@ let generateCSS = exports.generateCSS = function generateCSS(props, writer) {
     // w("")
     // w(`/* ${attr}=width */`)
     // for (let col = 1; col <= maxColumns; col++) {
-    //   w(`grid > c[${attr}="${col}"] { grid-column: span ${col} }`)
-    //   w(`grid > c[${attr}="${col}"] { --grid-ce: ${col} }`)
+    //   w(`${GRID} > ${CELL}[${attr}="${col}"] { grid-column: span ${col} }`)
+    //   w(`${GRID} > ${CELL}[${attr}="${col}"] { --grid-ce: ${col} }`)
     // }
 
     w("")
     w(`
       /* connect vars */
-      grid > c[${attr}] { grid-column-end: span var(--grid-ce) }
+      ${GRID} > ${CELL}[${attr}] { grid-column-end: span var(--grid-ce) }
       `)
     w(`
-      grid > c[${attr}*="+"], grid > c[${attr}*="-"], grid > c[${attr}*=".."] {
+      ${GRID} > ${CELL}[${attr}*="+"], ${GRID} > ${CELL}[${attr}*="-"], ${GRID} > ${CELL}[${attr}*=".."] {
         grid-column-start: var(--grid-cs) }
       `)
     w(`
-      grid > c[${attr}*="-"], grid > c[${attr}*=".."] {
+      ${GRID} > ${CELL}[${attr}*="-"], ${GRID} > ${CELL}[${attr}*=".."] {
         grid-column-end: var(--grid-ce) }
       `)
-    w(`grid > c[${attr}="row"] { grid-column: 1 / -1 }`)
+    w(`${GRID} > ${CELL}[${attr}="row"] { grid-column: 1 / -1 }`)
   }
 
 
@@ -188,9 +192,9 @@ let generateCSS = exports.generateCSS = function generateCSS(props, writer) {
     ]
     let alpha = 0.3
     w("")
-    w(`/* .debug can be added to a grid to visualize its effective cells */`)
+    w(`/* .debug can be added to a ${GRID} to visualize its effective cells */`)
     w(`
-      grid.debug > * {
+      ${GRID}.debug > * {
         --color: rgba(${colors[0]},${alpha});
         background-image:
           linear-gradient(to bottom, var(--color) 0%, var(--color) 100%);
@@ -198,7 +202,7 @@ let generateCSS = exports.generateCSS = function generateCSS(props, writer) {
       `)
     let ncolors = Math.min(maxColumns, colors.length)
     for (let col = 1; col <= ncolors; col++) {
-      w(`grid.debug > :nth-child(${ncolors}n+${col+1})` +
+      w(`${GRID}.debug > :nth-child(${ncolors}n+${col+1})` +
         ` { --color: rgba(${colors[col % colors.length]},${alpha}) }`)
     }
   }
@@ -218,13 +222,25 @@ if (typeof process != 'undefined' && process.argv && module.id == '.') {
     maxColumns: parseInt(argv[1]),
   }
   if (isNaN(props.maxColumns) || argv.indexOf('-h') != -1) {
-    console.error(`usage: ${argv[0]} <maxcols> [-version <version>]`)
+    console.error(`
+usage: ${argv[0]} <maxcols> [options]
+options:
+  -version  <version>
+  -prefix   <string>
+  `.trim())
     process.exit(1)
   }
+
   let vi = argv.indexOf('-version')
   if (vi != -1) {
     props.version = argv[vi+1]
   }
+
+  vi = argv.indexOf('-prefix')
+  if (vi != -1) {
+    props.tagPrefix = argv[vi+1]
+  }
+
   generateCSS(props, s => process.stdout.write(s + '\n'))
 }
 
