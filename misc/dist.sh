@@ -37,12 +37,14 @@ DST="$BUILDDIR/Raster"
 rm -rf "$DST"
 mkdir -p "$DST"
 cp LICENSE.txt \
-   "$WEBDIR/raster.css" \
    "$WEBDIR/raster.debug.css" \
    "$WEBDIR/raster.grid.css" \
    "$WEBDIR/raster.dev.css" \
-   "$WEBDIR/raster.d.ts" \
-   "$WEBDIR/raster-react.d.ts" \
+   "$WEBDIR/raster2.css" \
+   "$WEBDIR/raster2.d.ts" \
+   "$WEBDIR/raster2.js" \
+   "$WEBDIR/raster2-react.d.ts" \
+   "$WEBDIR/raster2-react.js" \
    "$WEBDIR/template.html" \
    "$DST/"
 cp -R "$WEBDIR/examples" "$DST/examples"
