@@ -1,8 +1,20 @@
 namespace JSX {
   interface IntrinsicElements {
-    grid: React.DetailedHTMLProps<React.HTMLAttributes<RasterGridElement>, RasterGridElement>,
-    c: React.DetailedHTMLProps<React.HTMLAttributes<RasterColumnElement>, RasterColumnElement>,
+    grid: React.DetailedHTMLProps<RasterGridAttributes<RasterGridElement>, RasterGridElement>,
+    c:    React.DetailedHTMLProps<RasterColumnAttributes<RasterColumnElement>, RasterColumnElement>,
   }
+}
+
+interface RasterGridAttributes<T> extends React.HTMLAttributes<T> {
+  columns?: string;
+  columnsS?: string;
+  columnsL?: string;
+}
+
+interface RasterColumnAttributes<T> extends React.HTMLAttributes<T> {
+  span?: string;
+  spanS?: string;
+  spanL?: string;
 }
 
 interface RasterGridElement extends HTMLElement {
