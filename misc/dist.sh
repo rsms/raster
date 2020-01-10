@@ -41,6 +41,8 @@ cp LICENSE.txt \
    "$WEBDIR/raster.debug.css" \
    "$WEBDIR/raster.grid.css" \
    "$WEBDIR/raster.dev.css" \
+   "$WEBDIR/raster.d.ts" \
+   "$WEBDIR/raster-react.d.ts" \
    "$WEBDIR/template.html" \
    "$DST/"
 cp -R "$WEBDIR/examples" "$DST/examples"
