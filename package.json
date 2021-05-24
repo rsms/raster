@@ -24,7 +24,7 @@
   "homepage": "https://github.com/rsms/raster#readme",
   "devDependencies": {
     "autoprefixer": "^9.7.3",
-    "browserslist": "^4.8.2",
+    "browserslist": "^4.16.5",
     "caniuse-lite": "^1.0.30001015",
     "cssnano": "^4.1.10",
     "postcss-banner": "^3.0.1",
