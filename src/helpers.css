@@ -68,18 +68,18 @@ img.right.bottom { object-position: right bottom; align-self:flex-end }
 .padding3 { padding: calc(var(--lineHeight) * 3) }
 .padding4 { padding: calc(var(--lineHeight) * 4) }
 .padding5 { padding: calc(var(--lineHeight) * 5) }
-.padding5 { padding: calc(var(--lineHeight) * 6) }
-.padding5 { padding: calc(var(--lineHeight) * 7) }
-.padding5 { padding: calc(var(--lineHeight) * 8) }
+.padding6 { padding: calc(var(--lineHeight) * 6) }
+.padding7 { padding: calc(var(--lineHeight) * 7) }
+.padding8 { padding: calc(var(--lineHeight) * 8) }
 .margin0 { margin: 0 }
 .margin1 { margin: calc(var(--lineHeight) * 1) }
 .margin2 { margin: calc(var(--lineHeight) * 2) }
 .margin3 { margin: calc(var(--lineHeight) * 3) }
 .margin4 { margin: calc(var(--lineHeight) * 4) }
 .margin5 { margin: calc(var(--lineHeight) * 5) }
-.margin5 { margin: calc(var(--lineHeight) * 6) }
-.margin5 { margin: calc(var(--lineHeight) * 7) }
-.margin5 { margin: calc(var(--lineHeight) * 8) }
+.margin6 { margin: calc(var(--lineHeight) * 6) }
+.margin7 { margin: calc(var(--lineHeight) * 7) }
+.margin8 { margin: calc(var(--lineHeight) * 8) }
 
 /* size */
 .w-1 { width: calc(var(--lineHeight) * 1) }
