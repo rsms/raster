@@ -48,8 +48,8 @@
 .bottom { }
 .center { text-align:center }
 
-.flex-v.center { align-self:center }
-.flex-h .bottom { align-self:flex-end }
+.flex-v > .center { align-self:center }
+.flex-h > .bottom { align-self:flex-end }
 
 img.top { object-position: center top; align-self:center }
 img.center { object-position: center center; align-self:center }
